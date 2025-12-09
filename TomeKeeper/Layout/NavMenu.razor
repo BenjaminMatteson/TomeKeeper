@@ -1,4 +1,9 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@inject TomeKeeper.Services.DragDropService DragDropService;
+@inject TomeKeeper.Services.PinnedSpellsService SavedSpellsService;
+@using TomeKeeper.ViewModels;
+@using TomeKeeper.Services;
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Tome Keeper</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -14,7 +19,12 @@
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Tome of All Spells
             </NavLink>
         </div>
-        <div class="nav-item px-3">
+        <div class="nav-item px-3" 
+             @ondragenter="HandleDragEnter"
+             @ondragleave="HandleDragLeave"
+             @ondrop="HandleDrop"
+             @ondragover:preventDefault="true"
+             @ondragover="HandleDragOver">
             <NavLink class="nav-link" href="counter">
                 <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> My Spellbook
             </NavLink>
@@ -35,5 +45,26 @@
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    private void HandleDragOver(DragEventArgs e)
+    {
+    }
+
+    private void HandleDrop(DragEventArgs e)
+    {
+        if(DragDropService.Payload != null)
+        {
+            Console.WriteLine($"Dropped payload: {DragDropService.Payload}");
+            PinnedSpellsService.AddSpell((string)DragDropService.Payload);
+        }
+    }
+
+    private void HandleDragEnter(DragEventArgs e)
+    {
+    }
+
+    private void HandleDragLeave(DragEventArgs e)
+    {
     }
 }

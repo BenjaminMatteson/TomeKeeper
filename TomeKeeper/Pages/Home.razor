@@ -5,6 +5,9 @@
 @rendermode InteractiveWebAssembly
 @inject IAPIService _ApiService
 @inject ITextFormatterService _TextFormatterService
+@inject DragDropService DragDropService;
+@inject SpellListItemsCacheService SpellListItemsCacheService;
+@inject SpellDetailsCacheService SpellDetailsCacheService;
 
 <PageTitle>All Spells</PageTitle>
 
@@ -27,7 +30,10 @@
     <div class="button-container">
         @foreach (var spell in _spellList)
         {
-            <button class="spell-button" @onclick="@(() => OnGetSpellDetailsClick(spell.Index))">
+            <button class="spell-button"
+                    @onclick="@(() => OnGetSpellDetailsClick(spell.Index))"
+                    draggable="true"
+                    @ondragstart="(() => HandleDragStart(spell.Index))">
                 @spell.Name
             </button>
 
@@ -35,7 +41,7 @@
             {
                 <p>Scrying @spell.Name details...</p>
             }
-            else if(_selectedSpellIndex == spell.Index)
+            else if (_selectedSpellIndex == spell.Index)
             {
                 <div class="spell-details">
                     <header>@_spellDetailsViewModel.Name</header>
@@ -74,21 +80,24 @@ else
     private SpellDetails _selectedSpellDetails { get; set; } = new();
     private SpellDetailsViewModel _spellDetailsViewModel { get; set; } = new();
     private bool _isLoadingDetails { get; set; } = false;
-    private List<SpellDetailsViewModel> _spellDetailsViewModels = new();
 
     protected override async Task OnInitializedAsync()
     {
-        // Initialization logic if needed
-        await GetSpellList();
+        if (!_spellList.Any())
+        {
+            await RefreshSpellList();
+
+        }
     }
 
+    #region Spell Loading
     private async Task OnRevealSpellsClick()
     {
-        await GetSpellList();
+        await RefreshSpellList();
         // Blazor automatically re-renders the component here, updating the UI
     }
 
-    private async Task GetSpellList()
+    private async Task RefreshSpellList()
     {
         var spellList = await _ApiService.GetSpellsList();
         _spellList = spellList;
@@ -103,23 +112,10 @@ else
         }
         else
         {
-            if (_spellDetailsViewModels.Any(x => x.Index == spellIndex))
-            {
-                _spellDetailsViewModel = _spellDetailsViewModels.First(x => x.Index == spellIndex);
-                _selectedSpellIndex = spellIndex;
-                return;
-            }
-
             try
             {
                 _isLoadingDetails = true;
-                _selectedSpellIndex = spellIndex;
-                var spellDetails = await _ApiService.GetSpellDetails(spellIndex);
-                _spellDetailsViewModel = new SpellDetailsViewModel(spellDetails);
-                if (!_spellDetailsViewModels.Contains(_spellDetailsViewModel))
-                {
-                    _spellDetailsViewModels.Add(_spellDetailsViewModel);
-                }
+                await GetSpellDetailsViewModelFromIndex(spellIndex);
             }
             finally
             {
@@ -129,4 +125,35 @@ else
         }
 
     }
+    #endregion
+
+    #region Drag and Drop
+    private void HandleDragStart(string spellIndex)
+    {
+        DragDropService.Payload = spellIndex;
+    }
+
+    private async Task GetSpellDetailsViewModelFromIndex(string spellIndex)
+    {
+        if (SpellDetailsCacheService.CachedSpells.Any(x => x.Index == spellIndex))
+        {
+            _spellDetailsViewModel = SpellDetailsCacheService.CachedSpells.First(x => x.Index == spellIndex);
+            _selectedSpellIndex = spellIndex;
+            return;
+        }
+
+        _isLoadingDetails = true;
+        _selectedSpellIndex = spellIndex;
+        var spellDetails = await _ApiService.GetSpellDetails(spellIndex);
+        _spellDetailsViewModel = new SpellDetailsViewModel(spellDetails);
+        if (!SpellDetailsCacheService.CachedSpells.Contains(_spellDetailsViewModel))
+        {
+            SpellDetailsCacheService.CachedSpells.Add(_spellDetailsViewModel);
+        }
+
+    }
+
+    //TODO: null default payload is not ideal
+    private void HandleDragEnd() => DragDropService.Payload = null;
+    #endregion
 }
