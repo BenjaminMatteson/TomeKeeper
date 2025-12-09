@@ -12,6 +12,7 @@
 <PageTitle>All Spells</PageTitle>
 
 <h1>The Tome of all Spells</h1>
+<h2>Drag and Drop any Spell onto "My Spellbook" to add it to your personal tome!</h2>
 
 <button class="btn btn-primary" @onclick="OnRevealSpellsClick">
     @if (_spellList.Any())
@@ -143,7 +144,6 @@ else
             return;
         }
 
-        _isLoadingDetails = true;
         _selectedSpellIndex = spellIndex;
         var spellDetails = await _ApiService.GetSpellDetails(spellIndex);
         _spellDetailsViewModel = new SpellDetailsViewModel(spellDetails);

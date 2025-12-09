@@ -20,7 +20,11 @@
                     @onclick="@(() => OnGetSpellDetailsClick(spell.Index))">
                 @spell.Name
             </button>
-            @if (_selectedSpellIndex == spell.Index)
+            @if (_isLoadingDetails && _selectedSpellIndex == spell.Index)
+            {
+                <p>Scrying @spell.Name details...</p>
+            }
+            else if (_selectedSpellIndex == spell.Index)
             {
                 <div class="spell-details">
                     <header>@_spellDetailsViewModel.Name</header>
@@ -62,7 +66,16 @@
         }
         else
         {
-            await GetSpellDetailsViewModelFromIndex(spellIndex);
+            try
+            {
+                _isLoadingDetails = true;
+                await GetSpellDetailsViewModelFromIndex(spellIndex);
+            }
+            finally
+            {
+                _isLoadingDetails = false;
+            }
+
         }
     }
 
@@ -75,7 +88,6 @@
             return;
         }
 
-        _isLoadingDetails = true;
         _selectedSpellIndex = spellIndex;
         var spellDetails = await _ApiService.GetSpellDetails(spellIndex);
         _spellDetailsViewModel = new SpellDetailsViewModel(spellDetails);
