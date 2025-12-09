@@ -6,7 +6,7 @@
 @inject IAPIService _ApiService
 @inject ITextFormatterService _TextFormatterService
 @inject DragDropService DragDropService;
-@inject SpellListItemsCacheService SpellListItemsCacheService;
+@inject ISpellListItemsCacheService SpellListItemsCacheService;
 @inject SpellDetailsCacheService SpellDetailsCacheService;
 
 <PageTitle>All Spells</PageTitle>
@@ -101,6 +101,7 @@ else
     {
         var spellList = await _ApiService.GetSpellsList();
         _spellList = spellList;
+        SpellListItemsCacheService.CachedSpellList = spellList;
     }
 
     private async Task OnGetSpellDetailsClick(string spellIndex)

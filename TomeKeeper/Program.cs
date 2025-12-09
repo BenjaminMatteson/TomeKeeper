@@ -10,6 +10,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddSingleton<IAPIService, APIService>();
 builder.Services.AddSingleton<ITextFormatterService, TextFormatterService>();
+builder.Services.AddSingleton<ISpellListItemsCacheService, SpellListItemsCacheService> ();
 builder.Services.AddScoped<DragDropService>();
 builder.Services.AddSingleton<PinnedSpellsService>();
 builder.Services.AddSingleton<SpellListItemsCacheService>();

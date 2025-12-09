@@ -1,17 +1,34 @@
-﻿using TomeKeeper.ViewModels;
-
+﻿using TomeKeeper.Models;
 namespace TomeKeeper.Services
 {
     public class PinnedSpellsService
     {
-        public static void AddSpell(string spellIndex)
+        private ISpellListItemsCacheService _spellListItemsCacheService { get; set; }
+
+        public PinnedSpellsService(ISpellListItemsCacheService spellListItemsCacheService)
         {
-            if (!SavedSpellIndices.Exists(s => s == spellIndex))
-            {
-                SavedSpellIndices.Add(spellIndex);
-            }
+            _spellListItemsCacheService = spellListItemsCacheService;
         }
 
-        public static List<string> SavedSpellIndices { get; set; } = new List<string>();
+        public void AddSpell(string spellIndex)
+        {
+            // Prevent duplicates and invalid entries
+            if (string.IsNullOrWhiteSpace(spellIndex) ||
+                SavedSpellListItems.Any(x => x.Index == spellIndex))
+            {
+                return;
+            }
+
+            var cachedSpellListItem = _spellListItemsCacheService.CachedSpellList
+                .FirstOrDefault(x => x.Index == spellIndex);
+            if (cachedSpellListItem == null)
+            {
+                //TODO: Get the spell from the API or throw an error
+                return;
+            }
+            SavedSpellListItems.Add(cachedSpellListItem);
+        }
+
+        public static List<SpellListItem> SavedSpellListItems { get; set; } = new List<SpellListItem>();
     }
 }

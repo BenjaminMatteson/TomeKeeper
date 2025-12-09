@@ -56,7 +56,7 @@
         if(DragDropService.Payload != null)
         {
             Console.WriteLine($"Dropped payload: {DragDropService.Payload}");
-            PinnedSpellsService.AddSpell((string)DragDropService.Payload);
+            SavedSpellsService.AddSpell((string)DragDropService.Payload);
         }
     }
 

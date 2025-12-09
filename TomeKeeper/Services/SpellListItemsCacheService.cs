@@ -2,8 +2,9 @@
 
 namespace TomeKeeper.Services
 {
-    public class SpellListItemsCacheService
+    public class SpellListItemsCacheService : ISpellListItemsCacheService
     {
-        public List<SpellListItem> CachedSpellListItems { get; set; } = new List<SpellListItem>();
+        public IList<SpellListItem> CachedSpellList { get; set; } = new List<SpellListItem>();
+
     }
 }
