@@ -1,0 +1,132 @@
+﻿@page "/"
+@using TomeKeeper.Models
+@using TomeKeeper.ViewModels
+@using TomeKeeper.Services
+@rendermode InteractiveWebAssembly
+@inject IAPIService _ApiService
+@inject ITextFormatterService _TextFormatterService
+
+<PageTitle>All Spells</PageTitle>
+
+<h1>The Tome of all Spells</h1>
+
+<button class="btn btn-primary" @onclick="OnRevealSpellsClick">
+    @if (_spellList.Any())
+    {
+        <text>Refresh Spell List</text>
+    }
+    else
+    {
+        <text>Reveal Spells</text>
+    }
+</button>
+<p />
+
+@if (_spellList.Any())
+{
+    <div class="button-container">
+        @foreach (var spell in _spellList)
+        {
+            <button class="spell-button" @onclick="@(() => OnGetSpellDetailsClick(spell.Index))">
+                @spell.Name
+            </button>
+
+            @if (_isLoadingDetails && _selectedSpellIndex == spell.Index)
+            {
+                <p>Scrying @spell.Name details...</p>
+            }
+            else if(_selectedSpellIndex == spell.Index)
+            {
+                <div class="spell-details">
+                    <header>@_spellDetailsViewModel.Name</header>
+                    <label>@_spellDetailsViewModel.SchoolLevelClassesString</label>
+                    <br />
+                    <label><b>Casting Time: </b>@_spellDetailsViewModel.CastingTimeString</label>
+                    <label><b>Range: </b> @_spellDetailsViewModel.Range</label>
+                    <label><b>Components: </b> @_spellDetailsViewModel.ComponentsString</label>
+                    <label><b>Duration: </b> @_spellDetailsViewModel.DurationString</label>
+                    <br />
+                    @if (_spellDetailsViewModel.Desc.Any())
+                    {
+                        @foreach (var desc in _spellDetailsViewModel.Desc)
+                        {
+                            var formattedDesc = @_TextFormatterService.FormatBoldWords(desc);
+                            <p>@((MarkupString)formattedDesc)</p>
+                        }
+                    }
+                </div>
+            }
+            else
+            {
+                <div></div>
+            }
+        }
+    </div>
+}
+else
+{
+    <p>Click "Reveal Spells" to divine the list of spells.</p>
+}
+
+@code {
+    private IList<SpellListItem> _spellList = new List<SpellListItem>();
+    private string _selectedSpellIndex { get; set; } = string.Empty;
+    private SpellDetails _selectedSpellDetails { get; set; } = new();
+    private SpellDetailsViewModel _spellDetailsViewModel { get; set; } = new();
+    private bool _isLoadingDetails { get; set; } = false;
+    private List<SpellDetailsViewModel> _spellDetailsViewModels = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Initialization logic if needed
+        await GetSpellList();
+    }
+
+    private async Task OnRevealSpellsClick()
+    {
+        await GetSpellList();
+        // Blazor automatically re-renders the component here, updating the UI
+    }
+
+    private async Task GetSpellList()
+    {
+        var spellList = await _ApiService.GetSpellsList();
+        _spellList = spellList;
+    }
+
+    private async Task OnGetSpellDetailsClick(string spellIndex)
+    {
+        if (_selectedSpellIndex == spellIndex)
+        {
+            _selectedSpellIndex = string.Empty;
+            _selectedSpellDetails = new();
+        }
+        else
+        {
+            if (_spellDetailsViewModels.Any(x => x.Index == spellIndex))
+            {
+                _spellDetailsViewModel = _spellDetailsViewModels.First(x => x.Index == spellIndex);
+                _selectedSpellIndex = spellIndex;
+                return;
+            }
+
+            try
+            {
+                _isLoadingDetails = true;
+                _selectedSpellIndex = spellIndex;
+                var spellDetails = await _ApiService.GetSpellDetails(spellIndex);
+                _spellDetailsViewModel = new SpellDetailsViewModel(spellDetails);
+                if (!_spellDetailsViewModels.Contains(_spellDetailsViewModel))
+                {
+                    _spellDetailsViewModels.Add(_spellDetailsViewModel);
+                }
+            }
+            finally
+            {
+                _isLoadingDetails = false;
+            }
+
+        }
+
+    }
+}
