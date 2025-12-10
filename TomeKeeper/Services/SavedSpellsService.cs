@@ -1,11 +1,11 @@
 ﻿using TomeKeeper.Models;
 namespace TomeKeeper.Services
 {
-    public class PinnedSpellsService
+    public class SavedSpellsService
     {
         private ISpellListItemsCacheService _spellListItemsCacheService { get; set; }
 
-        public PinnedSpellsService(ISpellListItemsCacheService spellListItemsCacheService)
+        public SavedSpellsService(ISpellListItemsCacheService spellListItemsCacheService)
         {
             _spellListItemsCacheService = spellListItemsCacheService;
         }

@@ -12,7 +12,7 @@ builder.Services.AddSingleton<IAPIService, APIService>();
 builder.Services.AddSingleton<ITextFormatterService, TextFormatterService>();
 builder.Services.AddSingleton<ISpellListItemsCacheService, SpellListItemsCacheService> ();
 builder.Services.AddScoped<DragDropService>();
-builder.Services.AddSingleton<PinnedSpellsService>();
+builder.Services.AddSingleton<SavedSpellsService>();
 builder.Services.AddSingleton<SpellListItemsCacheService>();
 builder.Services.AddSingleton<SpellDetailsCacheService>();
 

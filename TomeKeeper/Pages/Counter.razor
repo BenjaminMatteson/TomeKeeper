@@ -4,7 +4,7 @@
 @using TomeKeeper.Services
 @inject IAPIService _ApiService
 @inject ITextFormatterService _TextFormatterService
-@inject PinnedSpellsService PinnedSpellsService;
+@inject SavedSpellsService SavedSpellsService;
 @inject SpellDetailsCacheService SpellDetailsCacheService;
 
 <PageTitle>Personal Tome</PageTitle>
@@ -51,7 +51,7 @@
 }
 
 @code {
-    private IList<SpellListItem> _spellList = PinnedSpellsService.SavedSpellListItems;
+    private IList<SpellListItem> _spellList = SavedSpellsService.SavedSpellListItems;
     private string _selectedSpellIndex { get; set; } = string.Empty;
     private SpellDetails _selectedSpellDetails { get; set; } = new();
     private SpellDetailsViewModel _spellDetailsViewModel { get; set; } = new();
