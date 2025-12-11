@@ -8,6 +8,7 @@
 @inject DragDropService DragDropService;
 @inject ISpellListItemsCacheService SpellListItemsCacheService;
 @inject SpellDetailsCacheService SpellDetailsCacheService;
+@inject SavedSpellsService SavedSpellsService;
 
 <PageTitle>All Spells</PageTitle>
 
@@ -89,6 +90,8 @@ else
             await RefreshSpellList();
 
         }
+
+        await SavedSpellsService.InitializeSavedSpellsAsync();
     }
 
     #region Spell Loading
