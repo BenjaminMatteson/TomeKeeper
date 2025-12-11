@@ -16,7 +16,7 @@
     <div class="button-container">
         @foreach (var spell in _spellList)
         {
-            <button class="spell-button"
+            <button class="btn-base spell-button"
                     @onclick="@(() => OnGetSpellDetailsClick(spell.Index))">
                 @spell.Name
             </button>

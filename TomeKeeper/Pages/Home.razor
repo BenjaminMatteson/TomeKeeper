@@ -15,7 +15,7 @@
 <h1>The Tome of all Spells</h1>
 <h2>Drag and Drop any Spell onto "My Spellbook" to add it to your personal tome!</h2>
 
-<button class="btn btn-primary" @onclick="OnRevealSpellsClick">
+<button class="btn-base btn-primary" @onclick="OnRevealSpellsClick">
     @if (_spellList.Any())
     {
         <text>Refresh Spell List</text>
@@ -32,7 +32,7 @@
     <div class="button-container">
         @foreach (var spell in _spellList)
         {
-            <button class="spell-button"
+            <button class="btn-base spell-button"
                     @onclick="@(() => OnGetSpellDetailsClick(spell.Index))"
                     draggable="true"
                     @ondragstart="(() => HandleDragStart(spell.Index))">
