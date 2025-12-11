@@ -12,20 +12,29 @@
 
 <PageTitle>All Spells</PageTitle>
 
-<h1>The Tome of all Spells</h1>
-<h2>Drag and Drop any Spell onto "My Spellbook" to add it to your personal tome!</h2>
+<div class="page-banner">
+    <h1>The Tome of all Spells</h1>
+    <h2>Drag and Drop any Spell onto "My Spellbook" to add it to your personal tome!</h2>
+</div>
 
-<button class="btn-base btn-primary" @onclick="OnRevealSpellsClick">
-    @if (_spellList.Any())
-    {
-        <text>Refresh Spell List</text>
-    }
-    else
-    {
-        <text>Reveal Spells</text>
-    }
-</button>
+<div class="button-container">
+    <button class="btn-base btn-primary" @onclick="OnRevealSpellsClick">
+        @if (SpellListItemsCacheService.CachedSpellList.Any())
+        {
+            <text>Refresh Spell List</text>
+        }
+        else
+        {
+            <text>Reveal Spells</text>
+        }
+    </button>
+</div>
 <p />
+
+@if (SpellListItemsCacheService.CachedSpellList.Any())
+{
+    _spellList = SpellListItemsCacheService.CachedSpellList;
+}
 
 @if (_spellList.Any())
 {
@@ -160,4 +169,5 @@ else
     //TODO: null default payload is not ideal
     private void HandleDragEnd() => DragDropService.Payload = null;
     #endregion
+
 }

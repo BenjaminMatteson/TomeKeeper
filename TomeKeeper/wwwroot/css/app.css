@@ -8,6 +8,7 @@
     --ink-black: #1B1B1B;
     --iron-grey: #4A4A4A;
     --arcane-blue: #2D4F75;
+    --arcane-purple: #5B3A70;
     --forest-green: #4A6B42;
     --blood-orange: #B0451B;
 }
@@ -31,6 +32,10 @@ a, .btn-link {
 
 .content {
     padding-top: 1.1rem;
+}
+
+.content-text {
+    font-family: 'MedievalSharp', cursive; /* Use for body text if it remains readable */
 }
 
 .valid.modified:not([type=checkbox]) {
@@ -150,10 +155,11 @@ code {
 }
 
 .button-container {
-    display: flex; /* Use flexbox for easy vertical arrangement */
-    flex-direction: column; /* Stack items vertically */
-    gap: 10px; /* Add some space between buttons */
-    width: fit-content; /* Optional: Adjust container width to fit content */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Horizontally centers the *buttons* within this container */
+    width: 100%; /* Make the container span full width to give align-items space to work */
 }
 
 .spell-details {
@@ -167,35 +173,52 @@ code {
 }
 
 /* Nav Bar */
-/* Top Bar */
 .top-row {
     background-color: var(--primary-red-dark) !important;
     border-bottom: 3px solid var(--accent-gold);
 }
-
 .top-row a, .top-row button {
     color: var(--parchment-light);
 }
-
 /* Main Side Menu Container */
 .nav-scrollable {
     background-color: var(--parchment-dark);
 }
-
 /* Nav Links */
 .nav-link {
     color: var(--primary-red-dark) !important;
     font-weight: bold;
 }
-
 /* Active Nav Page */
 .nav-item .nav-link.active {
     background-color: var(--primary-red);
     color: var(--parchment-light);
     border-radius: 4px;
 }
-
 /* On Hover */
 .nav-link:hover {
     background-color: var(--parchment-light) !important;
+}
+
+/* Page Banner */
+.page-banner {
+    font-family: 'MedievalSharp'; /* Use the arcane font for headings */
+    background-color: var(--primary-red-dark);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--accent-gold);
+    margin: 0 0 30px 0;
+    border-radius: 8px;
+}
+
+.page-banner h1,
+.page-banner h2 {
+    color: inherit;
+    margin: 0 0 10px 0;
+}
+
+.page-banner h2 {
+    margin-bottom: 0;
+    font-size: 1.2rem;
 }
