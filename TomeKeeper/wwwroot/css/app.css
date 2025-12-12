@@ -7,7 +7,8 @@
     --lightning-yellow: #FFDE64;
     --ink-black: #1B1B1B;
     --iron-grey: #4A4A4A;
-    --arcane-blue: #2D4F75;
+    --arcane-blue: #5890C3;
+    --arcane-blue-dark: #2D4F75;
     --arcane-purple: #5B3A70;
     --forest-green: #4A6B42;
     --blood-orange: #B0451B;
@@ -157,6 +158,86 @@ code {
     cursor: grab;
 }
 
+/* Scroll Button Styles */
+.invisible-button {
+    /* Removes all browser default styling */
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+/* For accessibility, you can add a visible effect when the button is focused via keyboard navigation */
+.invisible-button:focus {
+    outline: 2px solid var(--arcane-blue); /* Add a custom focus indicator */
+}
+
+.scroll-button-container {
+    position: relative; /* Makes this the positioning context for absolute children */
+    display: inline-block; /* Helps wrap the button tightly around the image size */
+    width: 200px; /* Must match the width of your SVG/Image */
+    height: 100px; /* Must match the height of your SVG/Image */
+}
+
+
+/* The new subtle shadow class */
+.subtle-shadow {
+    /* Horizontal offset | Vertical offset | Blur radius | Color (semi-transparent black) */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+    /* You may need a small margin to ensure the shadow doesn't get clipped by nearby elements */
+    margin: 5px;
+}
+
+.scroll-text {
+    position: absolute; /* Positions the text relative to the button container */
+    top: 55%; /* Starts text positioning halfway down from the top */
+    left: 55%; /* Starts text positioning halfway across from the left */
+    transform: translate(-50%, -50%); /* Centers the text perfectly within that midpoint */
+    /* Text styling */
+    color: var(--ink-black); /* Dark gray text color */
+    
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    pointer-events: none; /* Allows clicks to pass through the text to the button below it */
+    width: 100%; /* Ensures text doesn't overflow container */
+}
+
+.scroll-activated {
+    color: var(--arcane-blue);
+    text-shadow: 1px 1px 0 var(--ink-black), /* Bottom-right outline */
+                -1px 1px 0 var(--ink-black), /* Bottom-left outline */
+                1px -1px 0 var(--ink-black), /* Top-right outline */
+                -1px -1px 0 var(--ink-black); /* Top-left outline */
+}
+
+.glowing-text {
+    color: var(--lightning-yellow); /* The color inside the letters */
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+        /* 1. Static Black Outline (No blur) */
+        1px 1px 0 var(--ink-black), -1px 1px 0 var(--ink-black), 1px -1px 0 var(--ink-black), -1px -1px 0 var(--ink-black),
+        /* 2. The Subtle Blue Glow (Animates from subtle to intense) */
+        0 0 15px var(--arcane-purple);
+    }
+
+    to {
+        text-shadow:
+        /* 1. Static Black Outline (Must be repeated here) */
+        1px 3px 0 var(--ink-black), -1px 1px 0 var(--ink-black), 1px -1px 0 var(--ink-black), -1px -1px 0 var(--ink-black),
+        /* 2. The Intense Blue Glow */
+        0 0 45px var(--arcane-purple), 0 0 60px var(--arcane-purple); /* Added extra intensity for the peak animation */
+    }
+}
+
 .btn-active-clicked {
     background-color: var(--arcane-purple) !important; /* Arcane Purple background */
     border-color: var(--accent-gold) !important;
@@ -194,9 +275,10 @@ code {
     background-color: var(--primary-red-dark) !important;
     border-bottom: 3px solid var(--accent-gold);
 }
-.top-row a, .top-row button {
-    color: var(--parchment-light);
-}
+
+    .top-row a, .top-row button {
+        color: var(--parchment-light);
+    }
 /* Main Side Menu Container */
 .nav-scrollable {
     background-color: var(--parchment-dark);
@@ -229,13 +311,13 @@ code {
     border-radius: 8px;
 }
 
-.page-banner h1,
-.page-banner h2 {
-    color: inherit;
-    margin: 0 0 10px 0;
-}
+    .page-banner h1,
+    .page-banner h2 {
+        color: inherit;
+        margin: 0 0 10px 0;
+    }
 
-.page-banner h2 {
-    margin-bottom: 0;
-    font-size: 1.2rem;
-}
+    .page-banner h2 {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
