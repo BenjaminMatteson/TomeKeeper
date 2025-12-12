@@ -4,6 +4,8 @@
     --accent-gold: #C29233; /* Gold Accent */
     --parchment-light: #E9D9B6; /* Parchment Light */
     --parchment-dark: #CBB68A; /* Parchment Dark */
+    --parchment-medium: #f5deb3;
+    --parchment-dark-border: #704a2c;
     --lightning-yellow: #FFDE64;
     --ink-black: #1B1B1B;
     --iron-grey: #4A4A4A;
@@ -260,10 +262,33 @@ code {
     width: 100%; /* Make the container span full width to give align-items space to work */
 }
 
+/* Container for the sliding content (Manages layout space) */
+.collapsible-details {
+    /* Takes up zero vertical space when closed */
+    max-height: 0;
+    overflow: hidden;
+    /* The transition property for smooth opening/closing */
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    padding: 0 10px;
+}
+
+/* Class applied when the details are selected/visible */
+.collapsible-details.is-open {
+    max-height: 500px; /* Must be large enough for all content */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Style the details content itself (Keep your border styles) */
 .spell-details {
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    gap: 8px;
+    border: 1px solid var(--parchment-dark-border); /* Use the dark color for the border */
+    padding: 15px;
+    border-radius: 4px;
+    color: var(--ink-black);
+    background: var(--parchment-medium);
 }
 
 .spell-button:hover {
