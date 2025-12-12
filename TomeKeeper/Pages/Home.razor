@@ -5,8 +5,8 @@
 @rendermode InteractiveWebAssembly
 @inject IAPIService _ApiService
 @inject ITextFormatterService _TextFormatterService
-@inject DragDropService DragDropService;
 @inject ISpellListItemsCacheService SpellListItemsCacheService;
+@inject DragDropService DragDropService;
 @inject SpellDetailsCacheService SpellDetailsCacheService;
 @inject SavedSpellsService SavedSpellsService;
 
@@ -41,12 +41,12 @@
     <div class="button-container">
         @foreach (var spell in _spellList)
         {
-            <button class="btn-base spell-button"
-                    @onclick="@(() => OnGetSpellDetailsClick(spell.Index))"
-                    draggable="true"
-                    @ondragstart="(() => HandleDragStart(spell.Index))">
-                @spell.Name
-            </button>
+            <DraggableSpellButton 
+                SpellIndex="@spell.Index"
+                SpellName="@spell.Name"
+                SelectedSpellIndex="@_selectedSpellIndex"
+                OnSpellDetailsSelected="@HandleSelectedSpellDetails"
+                OnSpellSelected="@HandleSpellSelected"/>
 
             @if (_isLoadingDetails && _selectedSpellIndex == spell.Index)
             {
@@ -72,10 +72,6 @@
                         }
                     }
                 </div>
-            }
-            else
-            {
-                <div></div>
             }
         }
     </div>
@@ -104,70 +100,29 @@ else
     }
 
     #region Spell Loading
+    //TODO: move to viewmodel
     private async Task OnRevealSpellsClick()
     {
         await RefreshSpellList();
         // Blazor automatically re-renders the component here, updating the UI
     }
 
+    //TODO: move to viewmodel
     private async Task RefreshSpellList()
     {
         var spellList = await _ApiService.GetSpellsList();
         _spellList = spellList;
         SpellListItemsCacheService.CachedSpellList = spellList;
     }
-
-    private async Task OnGetSpellDetailsClick(string spellIndex)
-    {
-        if (_selectedSpellIndex == spellIndex)
-        {
-            _selectedSpellIndex = string.Empty;
-            _selectedSpellDetails = new();
-        }
-        else
-        {
-            try
-            {
-                _isLoadingDetails = true;
-                await GetSpellDetailsViewModelFromIndex(spellIndex);
-            }
-            finally
-            {
-                _isLoadingDetails = false;
-            }
-
-        }
-
-    }
     #endregion
 
-    #region Drag and Drop
-    private void HandleDragStart(string spellIndex)
+    public void HandleSpellSelected(string spellIndex)
     {
-        DragDropService.Payload = spellIndex;
-    }
-
-    private async Task GetSpellDetailsViewModelFromIndex(string spellIndex)
-    {
-        if (SpellDetailsCacheService.CachedSpells.Any(x => x.Index == spellIndex))
-        {
-            _spellDetailsViewModel = SpellDetailsCacheService.CachedSpells.First(x => x.Index == spellIndex);
-            _selectedSpellIndex = spellIndex;
-            return;
-        }
-
         _selectedSpellIndex = spellIndex;
-        var spellDetails = await _ApiService.GetSpellDetails(spellIndex);
-        _spellDetailsViewModel = new SpellDetailsViewModel(spellDetails);
-        if (!SpellDetailsCacheService.CachedSpells.Contains(_spellDetailsViewModel))
-        {
-            SpellDetailsCacheService.CachedSpells.Add(_spellDetailsViewModel);
-        }
-
     }
 
-    //TODO: null default payload is not ideal
-    private void HandleDragEnd() => DragDropService.Payload = null;
-    #endregion
-
+    public void HandleSelectedSpellDetails(SpellDetailsViewModel spellDetailsViewModel)
+    {
+        _spellDetailsViewModel = spellDetailsViewModel;
+    }
 }

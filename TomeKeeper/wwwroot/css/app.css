@@ -4,7 +4,7 @@
     --accent-gold: #C29233; /* Gold Accent */
     --parchment-light: #E9D9B6; /* Parchment Light */
     --parchment-dark: #CBB68A; /* Parchment Dark */
-    --lightning-yellow: #f5f56311;
+    --lightning-yellow: #FFDE64;
     --ink-black: #1B1B1B;
     --iron-grey: #4A4A4A;
     --arcane-blue: #2D4F75;
@@ -26,9 +26,9 @@ a, .btn-link {
     color: #0071c1;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
+    .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+        box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    }
 
 .content {
     padding-top: 1.1rem;
@@ -140,7 +140,6 @@ code {
     white-space: normal;
     border-radius: 999px; /* Makes the left and right ends perfectly rounded */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-
     text-transform: uppercase !important; /* Force uppercase */
 }
 
@@ -152,6 +151,24 @@ code {
 /* Inherits all base styles, adds Primary Red background */
 .spell-button {
     background-color: var(--primary-red-dark);
+    /* Add a smooth transition for the color change */
+    transition: background-color 0.2s, transform 0.1s;
+    /* Optional: Change the cursor to indicate it can be grabbed/dragged */
+    cursor: grab;
+}
+
+.btn-active-clicked {
+    background-color: var(--arcane-purple) !important; /* Arcane Purple background */
+    border-color: var(--accent-gold) !important;
+}
+
+/* The state while actively being dragged */
+.btn-dragging-state {
+    background-color: var(--iron-grey) !important; /* Arcane Purple background */
+    border-color: var(--accent-gold) !important;
+    cursor: grabbing !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05); /* Optional visual flair */
 }
 
 .button-container {

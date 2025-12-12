@@ -1,0 +1,140 @@
+﻿@using TomeKeeper.Models;
+@using TomeKeeper.ViewModels;
+@using TomeKeeper.Services;
+@inject IAPIService _ApiService;
+@inject ISpellListItemsCacheService SpellListItemsCacheService;
+
+@inject DragDropService DragDropService;
+@inject SpellDetailsCacheService SpellDetailsCacheService;
+@inject SavedSpellsService SavedSpellsService;
+
+<button @onclick="@(() => OnGetSpellDetailsClick(SpellIndex))"
+        draggable="true"
+        @ondragstart="HandleDragStart"
+        @ondragend="HandleDragEnd"
+        class="@_buttonCssClass btn-base spell-button">
+    @SpellName
+</button>
+
+@code {
+    [Parameter]
+    public string SpellIndex { get; set; } = string.Empty;
+
+    [Parameter]
+    public string SpellName { get; set; } = string.Empty;
+
+    [Parameter]
+    public string SelectedSpellIndex
+    {
+        get
+        {
+            return _selectedSpellIndex;
+        }
+        set
+        {
+            _selectedSpellIndex = value;
+        }
+    }
+
+
+    [Parameter]
+    public EventCallback<string> OnSpellSelected { get; set; }
+
+    [Parameter]
+    public EventCallback<SpellDetailsViewModel> OnSpellDetailsSelected { get; set; } = new();
+
+    // These variables are unique to each instance of this component
+    private string _selectedSpellIndex { get; set; } = string.Empty;
+    private SpellDetails _selectedSpellDetails { get; set; } = new();
+    private SpellDetailsViewModel _spellDetailsViewModel { get; set; } = new();
+
+    private string _buttonCssClass = "btn-base spell-button";
+    private bool _isClicked = false;
+    private bool _isDragging = false;
+
+    private async Task OnGetSpellDetailsClick(string spellIndex)
+    {
+        _isClicked = true;
+
+        if (_selectedSpellIndex == spellIndex)
+        {
+            _selectedSpellIndex = string.Empty;
+            _selectedSpellDetails = new();
+            await CallBackToParent();
+
+            _isClicked = false;
+        }
+        else
+        {
+            await GetSpellDetailsViewModelFromIndex(spellIndex);
+        }
+
+        UpdateButtonClass();
+    }
+
+    private async Task CallBackToParent()
+    {
+        await OnSpellSelected.InvokeAsync(_selectedSpellIndex);
+        await OnSpellDetailsSelected.InvokeAsync(_spellDetailsViewModel);
+    }
+
+    private async Task GetSpellDetailsViewModelFromIndex(string spellIndex)
+    {
+        if (SpellDetailsCacheService.CachedSpells.Any(x => x.Index == spellIndex))
+        {
+            _spellDetailsViewModel = SpellDetailsCacheService.CachedSpells.First(x => x.Index == spellIndex);
+            _selectedSpellIndex = spellIndex;
+        }
+        else
+        {
+            var spellDetails = await _ApiService.GetSpellDetails(spellIndex);
+            _spellDetailsViewModel = new SpellDetailsViewModel(spellDetails);
+            if (!SpellDetailsCacheService.CachedSpells.Contains(_spellDetailsViewModel))
+            {
+                SpellDetailsCacheService.CachedSpells.Add(_spellDetailsViewModel);
+            }
+
+            _selectedSpellIndex = spellIndex;
+            _spellDetailsViewModel = _spellDetailsViewModel;
+        }
+
+        await CallBackToParent();
+    }
+
+    private void HandleDragStart()
+    {
+        _isDragging = true;
+        UpdateButtonClass();
+        DragDropService.Payload = SpellIndex;
+    }
+
+
+    private void HandleDragEnd()
+    {
+        _isDragging = false;
+        _isClicked = false;
+        UpdateButtonClass();
+        //TODO: Make payload something better
+        DragDropService.Payload = null;
+    }
+
+    private void UpdateButtonClass()
+    {
+        if (_isDragging)
+        {
+            // Priority: if actively dragging, use the dragging style
+            _buttonCssClass = "btn-dragging-state";
+        }
+        else if (_isClicked)
+        {
+            // If clicked but not dragging, use the clicked style (Arcane Purple/Gold)
+            _buttonCssClass = "btn-active-clicked";
+        }
+        else
+        {
+            // Default state
+            _buttonCssClass = "btn-base spell-button";
+        }
+    }
+
+}
