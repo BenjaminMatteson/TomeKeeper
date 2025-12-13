@@ -1,0 +1,365 @@
+:root {
+    --primary-red: #A6312A; /* Primary Red */
+    --primary-red-dark: #7D251F; /* Deep Ember */
+    --accent-gold: #C29233; /* Gold Accent */
+    --parchment-light: #E9D9B6; /* Parchment Light */
+    --parchment-dark: #CBB68A; /* Parchment Dark */
+    --parchment-medium: #f5deb3;
+    --parchment-dark-border: #704a2c;
+    --lightning-yellow: #FFDE64;
+    --ink-black: #1B1B1B;
+    --iron-grey: #4A4A4A;
+    --arcane-blue: #5890C3;
+    --arcane-blue-dark: #2D4F75;
+    --arcane-purple: #5B3A70;
+    --forest-green: #4A6B42;
+    --blood-orange: #B0451B;
+}
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--parchment-light);
+}
+
+h1:focus {
+    outline: none;
+}
+
+a, .btn-link {
+    color: #0071c1;
+}
+
+    .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+        box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    }
+
+.content {
+    padding-top: 1.1rem;
+}
+
+.content-text {
+    font-family: 'MedievalSharp', cursive; /* Use for body text if it remains readable */
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.validation-message {
+    color: red;
+}
+
+#blazor-error-ui {
+    color-scheme: light only;
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+.blazor-error-boundary {
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=) no-repeat 1rem/1.8rem, #b32121;
+    padding: 1rem 1rem 1rem 3.7rem;
+    color: white;
+}
+
+    .blazor-error-boundary::after {
+        content: "An error has occurred."
+    }
+
+.loading-progress {
+    position: absolute;
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    inset: 20vh 0 auto 0;
+    margin: 0 auto 0 auto;
+}
+
+    .loading-progress circle {
+        fill: none;
+        stroke: #e0e0e0;
+        stroke-width: 0.6rem;
+        transform-origin: 50% 50%;
+        transform: rotate(-90deg);
+    }
+
+        .loading-progress circle:last-child {
+            stroke: #1b6ec2;
+            stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
+            transition: stroke-dasharray 0.05s ease-in-out;
+        }
+
+.loading-progress-text {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
+}
+
+    .loading-progress-text:after {
+        content: var(--blazor-load-percentage-text, "Loading");
+    }
+
+code {
+    color: #c02d76;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+.btn-base {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    min-width: 300px;
+    max-width: 300px;
+    word-wrap: break-word;
+    white-space: normal;
+    border-radius: 999px; /* Makes the left and right ends perfectly rounded */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase !important; /* Force uppercase */
+}
+
+/* Inherits all base styles, adds Arcane Blue background */
+.btn-primary {
+    background-color: var(--arcane-blue);
+}
+
+/* Inherits all base styles, adds Primary Red background */
+.spell-button {
+    background-color: var(--primary-red-dark);
+    /* Add a smooth transition for the color change */
+    transition: background-color 0.2s, transform 0.1s;
+    /* Optional: Change the cursor to indicate it can be grabbed/dragged */
+    cursor: grab;
+}
+
+/* Scroll Button Styles */
+.invisible-button {
+    /* Removes all browser default styling */
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+/* For accessibility, you can add a visible effect when the button is focused via keyboard navigation */
+.invisible-button:focus {
+    outline: 2px solid var(--arcane-blue); /* Add a custom focus indicator */
+}
+
+.scroll-button-container {
+    position: relative; /* Makes this the positioning context for absolute children */
+    display: inline-block; /* Helps wrap the button tightly around the image size */
+    width: 200px; /* Must match the width of your SVG/Image */
+    height: 100px; /* Must match the height of your SVG/Image */
+}
+
+
+/* The new subtle shadow class */
+.subtle-shadow {
+    /* Horizontal offset | Vertical offset | Blur radius | Color (semi-transparent black) */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+    /* You may need a small margin to ensure the shadow doesn't get clipped by nearby elements */
+    margin: 5px;
+}
+
+.scroll-text {
+    position: absolute; /* Positions the text relative to the button container */
+    top: 55%; /* Starts text positioning halfway down from the top */
+    left: 55%; /* Starts text positioning halfway across from the left */
+    transform: translate(-50%, -50%); /* Centers the text perfectly within that midpoint */
+    /* Text styling */
+    color: var(--ink-black); /* Dark gray text color */
+    
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    pointer-events: none; /* Allows clicks to pass through the text to the button below it */
+    width: 100%; /* Ensures text doesn't overflow container */
+}
+
+.btn-active-clicked {
+    background-color: var(--arcane-purple) !important; /* Arcane Purple background */
+    border-color: var(--accent-gold) !important;
+}
+
+/* The state while actively being dragged */
+.btn-dragging-state {
+    background-color: var(--iron-grey) !important; /* Arcane Purple background */
+    border-color: var(--accent-gold) !important;
+    cursor: grabbing !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05); /* Optional visual flair */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Horizontally centers the *buttons* within this container */
+    width: 100%; /* Make the container span full width to give align-items space to work */
+}
+
+/* Container for the sliding content (Manages layout space) */
+.collapsible-details {
+    /* Takes up zero vertical space when closed */
+    max-height: 0;
+    overflow: hidden;
+    /* The transition property for smooth opening/closing */
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    padding: 0 10px;
+}
+
+/* Class applied when the details are selected/visible */
+.collapsible-details.is-open {
+    max-height: 500px; /* Must be large enough for all content */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Style the details content itself (Keep your border styles) */
+.spell-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid var(--parchment-dark-border); /* Use the dark color for the border */
+    padding: 15px;
+    border-radius: 4px;
+    color: var(--ink-black);
+    background: var(--parchment-medium);
+}
+
+.spell-button:hover {
+    background-color: var(--primary-red);
+}
+
+/* Nav Bar */
+.top-row {
+    background-color: var(--primary-red-dark) !important;
+    border-bottom: 3px solid var(--accent-gold);
+}
+
+    .top-row a, .top-row button {
+        color: var(--parchment-light);
+    }
+/* Main Side Menu Container */
+.nav-scrollable {
+    background-color: var(--parchment-dark);
+}
+/* Nav Links */
+.nav-link {
+    color: var(--primary-red-dark) !important;
+    font-weight: bold;
+}
+/* Active Nav Page */
+.nav-item .nav-link.active {
+    background-color: var(--primary-red);
+    color: var(--parchment-light);
+    border-radius: 4px;
+}
+/* On Hover */
+.nav-link:hover {
+    background-color: var(--parchment-light) !important;
+}
+
+/* Page Banner */
+.page-banner {
+    font-family: 'MedievalSharp'; /* Use the arcane font for headings */
+    background-color: var(--primary-red-dark);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--accent-gold);
+    margin: 0 0 30px 0;
+    border-radius: 8px;
+}
+
+    .page-banner h1,
+    .page-banner h2 {
+        color: inherit;
+        margin: 0 0 10px 0;
+    }
+
+    .page-banner h2 {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
+
+/* Expandable Scroll Button Styles */
+.expandable-scroll-button-text {
+    position: absolute; /* Positions the text relative to the button container */
+    top: 55%; /* Starts text positioning halfway down from the top */
+    left: 55%; /* Starts text positioning halfway across from the left */
+    transform: translate(-50%, -50%); /* Centers the text perfectly within that midpoint */
+    /* Text styling */
+    color: var(--ink-black);
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    pointer-events: none; /* Allows clicks to pass through the text to the button below it */
+    width: 100%; /* Ensures text doesn't overflow container */
+}
+
+.expandable-scroll-button {
+    position: relative; /* Makes this the positioning context for absolute children */
+    display: inline-block; /* Helps wrap the button tightly around the image size */
+    width: 200px; /* Must match the width of your SVG/Image */
+    height: 100px; /* Must match the height of your SVG/Image */
+}
+
+.glowing-text {
+    color: var(--lightning-yellow); /* The color inside the letters */
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+        /* 1. Static Black Outline (No blur) */
+        1px 1px 0 var(--ink-black), -1px 1px 0 var(--ink-black), 1px -1px 0 var(--ink-black), -1px -1px 0 var(--ink-black),
+        /* 2. The Subtle Blue Glow (Animates from subtle to intense) */
+        0 0 15px var(--arcane-purple);
+    }
+
+    to {
+        text-shadow:
+        /* 1. Static Black Outline (Must be repeated here) */
+        1px 3px 0 var(--ink-black), -1px 1px 0 var(--ink-black), 1px -1px 0 var(--ink-black), -1px -1px 0 var(--ink-black),
+        /* 2. The Intense Blue Glow */
+        0 0 45px var(--arcane-purple), 0 0 60px var(--arcane-purple); /* Added extra intensity for the peak animation */
+    }
+}
