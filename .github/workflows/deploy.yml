@@ -1,0 +1,36 @@
+﻿name: Build and Deploy Blazor WASM
+on:
+  push:
+    branches: [ master ] # Runs every time you push to master
+
+jobs:
+  deploy-to-github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x' # Update to match your project version (e.g., 8.0.x)
+
+      - name: Publish App
+        run: dotnet publish TomeKeeper.csproj -c Release -o release
+
+      - name: Fix Base Href
+        uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
+        with:
+          html_path: release/wwwroot/index.html
+          base_href: /TomeKeeper/ # Matches your repo name
+
+      - name: Copy index.html to 404.html
+        run: cp release/wwwroot/index.html release/wwwroot/404.html
+
+      - name: Add .nojekyll file
+        run: touch release/wwwroot/.nojekyll
+
+      - name: Commit and Push to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: release/wwwroot
+          branch: gh-pages # This is where your live site files will live
