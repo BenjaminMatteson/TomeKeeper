@@ -15,7 +15,7 @@ jobs:
           dotnet-version: '10.0.x' # Update to match your project version (e.g., 8.0.x)
 
       - name: Publish App
-        run: dotnet publish TomeKeeper.csproj -c Release -o release
+        run: dotnet publish TomeKeeper/TomeKeeper.csproj -c Release -o release
 
       - name: Fix Base Href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
