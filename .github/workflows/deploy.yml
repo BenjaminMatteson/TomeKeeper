@@ -1,36 +1,45 @@
 ﻿name: Build and Deploy Blazor WASM
 on:
   push:
-    branches: [ master ] # Runs every time you push to master
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy-to-github-pages:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '10.0.x' # Update to match your project version (e.g., 8.0.x)
+          dotnet-version: '9.0.x' # Use your project's .NET version
 
       - name: Publish App
-        run: dotnet publish TomeKeeper/TomeKeeper.csproj -c Release -o release
+        # Replace 'TomeKeeper.csproj' with the full path if it's in a subfolder
+        run: dotnet publish TomeKeeper.csproj -c Release -o release
 
       - name: Fix Base Href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
         with:
           html_path: release/wwwroot/index.html
-          base_href: /TomeKeeper/ # Matches your repo name
+          base_href: /TomeKeeper/ # Matches your repository name
 
-      - name: Copy index.html to 404.html
-        run: cp release/wwwroot/index.html release/wwwroot/404.html
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: Add .nojekyll file
-        run: touch release/wwwroot/.nojekyll
-
-      - name: Commit and Push to gh-pages branch
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: release/wwwroot
-          branch: gh-pages # This is where your live site files will live
+          # Only upload the compiled web files
+          path: 'release/wwwroot'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
