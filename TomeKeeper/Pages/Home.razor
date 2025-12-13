@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using TomeKeeper.Components
 @using TomeKeeper.Models
 @using TomeKeeper.ViewModels
 @using TomeKeeper.Services
@@ -41,42 +42,7 @@
     <div class="button-container">
         @foreach (var spell in _spellList)
         {
-            <DraggableSpellButton SpellIndex="@spell.Index"
-                                  SpellName="@spell.Name"
-                                  SelectedSpellIndex="@_selectedSpellIndex"
-                                  OnSpellDetailsSelected="@HandleSelectedSpellDetails"
-                                  OnSpellSelected="@HandleSpellSelected" />
-
-            <!-- The wrapper now always contains the content -->
-            <div class="collapsible-details @(GetDetailsClass(spell.Index))">
-                @if (_isLoadingDetails && _selectedSpellIndex == spell.Index)
-                {
-                    <!-- Loading text remains here temporarily while loading -->
-                    <p class="spell-details">Scrying @spell.Name details...</p>
-                }
-                else
-                {
-                    <div class="spell-details">
-                        <!-- Your full details content here -->
-                        <header>@_spellDetailsViewModel.Name</header>
-                        <label>@_spellDetailsViewModel.SchoolLevelClassesString</label>
-                        <br />
-                        <label><b>Casting Time: </b>@_spellDetailsViewModel.CastingTimeString</label>
-                        <label><b>Range: </b> @_spellDetailsViewModel.Range</label>
-                        <label><b>Components: </b> @_spellDetailsViewModel.ComponentsString</label>
-                        <label><b>Duration: </b> @_spellDetailsViewModel.DurationString</label>
-                        <br />
-                        @if (_spellDetailsViewModel.Desc.Any())
-                        {
-                            @foreach (var desc in _spellDetailsViewModel.Desc)
-                            {
-                                var formattedDesc = @_TextFormatterService.FormatBoldWords(desc);
-                                <p>@((MarkupString)formattedDesc)</p>
-                            }
-                        }
-                    </div>
-                }
-            </div>
+            <ExpandableSpellDetailsControl SpellListItem="spell"/>
         }
     </div>
 }
@@ -88,9 +54,10 @@ else
 @code {
     private IList<SpellListItem> _spellList = new List<SpellListItem>();
     private string _selectedSpellIndex { get; set; } = string.Empty;
-    private SpellDetails _selectedSpellDetails { get; set; } = new();
+
     private SpellDetailsViewModel _spellDetailsViewModel { get; set; } = new();
     private bool _isLoadingDetails { get; set; } = false;
+    private bool _isActive { get; set; } = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -119,24 +86,4 @@ else
         SpellListItemsCacheService.CachedSpellList = spellList;
     }
     #endregion
-
-    public void HandleSpellSelected(string spellIndex)
-    {
-        _selectedSpellIndex = spellIndex;
-    }
-
-    public void HandleSelectedSpellDetails(SpellDetailsViewModel spellDetailsViewModel)
-    {
-        _spellDetailsViewModel = spellDetailsViewModel;
-    }
-
-    private string GetDetailsClass(string spellIndex)
-    {
-        // If this is the selected spell index, apply the 'is-open' class
-        if (_selectedSpellIndex == spellIndex && (_isLoadingDetails || _spellDetailsViewModel != null))
-        {
-            return "is-open";
-        }
-        return string.Empty;
-    }
 }

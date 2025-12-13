@@ -1,0 +1,105 @@
+﻿@using TomeKeeper.Models
+@using TomeKeeper.Services
+@using TomeKeeper.ViewModels;
+
+@inject IAPIService iApiService;
+@inject DragDropService dragDropService;
+@inject SpellDetailsCacheService spellDetailsCacheService;
+@inject SavedSpellsService savedSpellsService;
+
+<button @onclick="@(() => OnExpandableSpellButtonClick(SelectedSpellIndex))"
+        draggable="true"
+        @ondragstart="HandleDragStart"
+        @ondragend="HandleDragEnd"
+        class="invisible-button expandable-scroll-button">
+    <img src="images/rolled-up-scroll.svg" alt="Clickable scroll icon" class="subtle-shadow" />
+    <span class="@_textCssClass">
+        @SpellName
+    </span>
+</button>
+
+@code {
+
+    [Parameter]
+    public string SpellName { get; set; } = string.Empty;
+
+    [Parameter]
+    public string SelectedSpellIndex { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnSpellSelected { get; set; }
+
+    [Parameter]
+    public EventCallback<SpellDetailsViewModel> OnSpellDetailsSelected { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<bool> OnIsActiveChanged { get; set; }
+
+    private IExpandableScrollButtonViewModel _expandableScrollButtonViewModel;
+
+    private string _textCssClass = "expandable-scroll-button-text";
+    private bool _isDragging = false;
+    private bool _isClicked = false;
+
+    public ExpandableScrollButton(IExpandableScrollButtonViewModel expandableScrollButtonViewModel)
+    {
+        _expandableScrollButtonViewModel = expandableScrollButtonViewModel;
+        SelectedSpellIndex = string.Empty;
+    }
+
+    private async Task OnExpandableSpellButtonClick(string spellIndex)
+    {
+        if (_expandableScrollButtonViewModel.IsActive)
+        {
+            _expandableScrollButtonViewModel.IsActive = false;
+        }
+        else
+        {
+            _expandableScrollButtonViewModel.IsActive = true;
+        }
+
+        await _expandableScrollButtonViewModel.SetSpellDetailsViewModel(spellIndex);
+
+        UpdateTextClass();
+
+        await CallBackToParent();
+    }
+
+    private async Task CallBackToParent()
+    {
+        await OnIsActiveChanged.InvokeAsync(_expandableScrollButtonViewModel.IsActive);
+        await OnSpellSelected.InvokeAsync(_expandableScrollButtonViewModel.SelectedSpellIndex);
+        await OnSpellDetailsSelected.InvokeAsync(_expandableScrollButtonViewModel.SpellDetailsViewModel);
+    }
+
+    private void HandleDragStart()
+    {
+        _isDragging = true;
+        //UpdateButtonClass();
+        UpdateTextClass();
+        dragDropService.Payload = SelectedSpellIndex;
+    }
+
+    private void HandleDragEnd()
+    {
+        _isDragging = false;
+        _isClicked = false;
+        //UpdateButtonClass();
+        UpdateTextClass();
+
+        //TODO: Make payload something better
+        dragDropService.Payload = null;
+    }
+
+    private void UpdateTextClass()
+    {
+        if (_isDragging || _expandableScrollButtonViewModel.IsActive)
+        {
+            _textCssClass = "expandable-scroll-button-text glowing-text";
+        }
+        else
+        {
+            _textCssClass = "expandable-scroll-button-text";
+        }
+    }
+}

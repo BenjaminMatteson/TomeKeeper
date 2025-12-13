@@ -1,0 +1,47 @@
+﻿@using TomeKeeper.Models
+@using TomeKeeper.ViewModels
+
+<div class="button-container">
+    <ExpandableScrollButton SelectedSpellIndex="@_spellListItem?.Index"
+                            SpellName="@_spellListItem?.Name"
+                            OnSpellSelected="@HandleSpellSelected"
+                            OnSpellDetailsSelected="@HandleSelectedSpellDetails"
+                            OnIsActiveChanged="@HandleIsActiveChanged" />
+
+    <ExpandedScrollContent SpellDetailsViewModel="@_spellDetailsViewModel" />
+</div>
+
+@code {
+
+    //TODO: don't love the null 
+    private SpellListItem _spellListItem { get; set; }
+    [Parameter]
+    public SpellListItem SpellListItem
+    {
+        get => _spellListItem;
+        set
+        {
+            _spellListItem = value;
+        }
+    }
+
+    private SpellDetailsViewModel _spellDetailsViewModel { get; set; } = new();
+
+    //TODO: This might not be needed
+    private string _selectedSpellIndex { get; set; } = string.Empty;
+
+    public void HandleSpellSelected(string spellIndex)
+    {
+        _selectedSpellIndex = spellIndex;
+    }
+
+    public void HandleSelectedSpellDetails(SpellDetailsViewModel spellDetailsViewModel)
+    {
+        _spellDetailsViewModel = spellDetailsViewModel;
+    }
+
+    public void HandleIsActiveChanged(bool isActive)
+    {
+        _spellDetailsViewModel.isActive = isActive;
+    }
+}
