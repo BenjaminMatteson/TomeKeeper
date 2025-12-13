@@ -293,6 +293,13 @@ namespace TomeKeeper.ViewModels
         }
         #endregion
 
+        private bool _isActive;
+        public bool isActive
+        {
+            get { return _isActive; }
+            set { _isActive = value; OnPropertyChanged(); }
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string? name = null) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
