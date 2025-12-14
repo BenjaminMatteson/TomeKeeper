@@ -18,20 +18,6 @@
     <h2>Drag and Drop any Spell onto "My Spellbook" to add it to your personal tome!</h2>
 </div>
 
-<div class="button-container">
-    <button class="btn-base btn-primary" @onclick="OnRevealSpellsClick">
-        @if (SpellListItemsCacheService.CachedSpellList.Any())
-        {
-            <text>Refresh Spell List</text>
-        }
-        else
-        {
-            <text>Reveal Spells</text>
-        }
-    </button>
-</div>
-<p />
-
 @if (SpellListItemsCacheService.CachedSpellList.Any())
 {
     _spellList = SpellListItemsCacheService.CachedSpellList;
@@ -39,12 +25,14 @@
 
 @if (_spellList.Any())
 {
-    <div class="button-container">
+    <MudExpansionPanels
+        Class=""
+        MultiExpansion="true">
         @foreach (var spell in _spellList)
         {
-            <ExpandableSpellDetailsControl SpellListItem="spell"/>
+            <ExpandableScroll SpellListItem="@spell"/>
         }
-    </div>
+    </MudExpansionPanels>
 }
 else
 {
@@ -85,4 +73,5 @@ else
         SpellListItemsCacheService.CachedSpellList = spellList;
     }
     #endregion
+
 }

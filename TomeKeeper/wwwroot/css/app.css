@@ -363,3 +363,19 @@ code {
         0 0 45px var(--arcane-purple), 0 0 60px var(--arcane-purple); /* Added extra intensity for the peak animation */
     }
 }
+
+.pill-cap {
+    height: 52px; /* Matches the standard MudExpansionPanel header height */
+    background-color: var(--accent-gold); /* Your primary color */
+    flex-shrink: 0;
+}
+
+.left-semi {
+    width: 26px; /* Half of height for a perfect semi-circle */
+    border-radius: 26px 0 0 26px;
+}
+
+.right-semi {
+    width: 26px;
+    border-radius: 0 26px 26px 0;
+}
