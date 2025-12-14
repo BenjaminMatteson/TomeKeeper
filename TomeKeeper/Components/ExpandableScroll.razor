@@ -6,11 +6,13 @@
 @inject IAPIService _apiService;
 @inject SpellDetailsCacheService _spellDetailsCacheService;
 
-<div class="d-flex align-center mb-2 w-100 px-1">
-    @* Left Pill-Cap *@
-    <div class="pill-cap left-semi" style="flex: 0 0 20px; height: 40px;"></div>
+<div class="position-relative mb-2 w-100 px-1">
+    @* Left Pill-Cap - Added align-self-start *@
+    <div class="pill-cap left-semi position-absolute"
+         style="left: -10px; top: 4px; height: 40px; width: 20px; z-index: 1;"></div>
 
-    <MudExpansionPanel Class="flex-grow-1 flex-shrink-1 rounded-lg" Style="min-width: 0; background-color: #f5deb3"
+
+    <MudExpansionPanel Class="flex-grow-1 flex-shrink-1 rounded-lg" Style="min-width: 0; background-color: #f5deb3; z-index: 2;"
                        ExpandedChanged="SetSpellDetailsViewModel">
         <TitleContent>
             <MudText>@_spellListItem?.Name</MudText>
@@ -34,8 +36,9 @@
         </ChildContent>
     </MudExpansionPanel>
 
-    @* Right Pill-Cap *@
-    <div class="pill-cap right-semi" style="flex: 0 0 20px; height: 40px;"></div>
+    @* Right Pill-Cap: Absolutely positioned at the top-right *@
+    <div class="pill-cap right-semi position-absolute"
+         style="right: -10px; top: 4px; height: 40px; width: 20px; z-index: 1;"></div>
 </div>
 
 @code {
