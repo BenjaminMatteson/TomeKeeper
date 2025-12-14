@@ -1,0 +1,72 @@
+﻿@using TomeKeeper.Models
+@using TomeKeeper.Services
+@using TomeKeeper.ViewModels
+
+@inject ITextFormatterService _TextFormatterService
+@inject IAPIService _apiService;
+@inject SpellDetailsCacheService _spellDetailsCacheService;
+
+<div class="position-relative mb-2 w-100 px-1">
+    @* Left Pill-Cap *@
+    <div class="pill-cap left-semi position-absolute"
+         style="left: -10px; top: 4px; height: 40px; width: 20px; z-index: 1;"></div>
+
+
+    <MudExpansionPanel Class="flex-grow-1 flex-shrink-1 rounded-lg" Style="min-width: 0; background-color: #f5deb3; z-index: 2;"
+                       ExpandedChanged="SetSpellDetailsViewModel">
+        <TitleContent>
+            <MudText>@_spellListItem?.Name</MudText>
+        </TitleContent>
+        <ChildContent>
+            <MudText>@_expandableScrollViewModel.SpellDetailsViewModel.SchoolLevelClassesString</MudText>
+            <br />
+            <MudText><b>Casting Time: </b>@_expandableScrollViewModel.SpellDetailsViewModel.CastingTimeString</MudText>
+            <MudText><b>Range: </b> @_expandableScrollViewModel.SpellDetailsViewModel.Range</MudText>
+            <MudText><b>Components: </b> @_expandableScrollViewModel.SpellDetailsViewModel.ComponentsString</MudText>
+            <MudText><b>Duration: </b> @_expandableScrollViewModel.SpellDetailsViewModel.DurationString</MudText>
+            <br />
+            @if (_expandableScrollViewModel.SpellDetailsViewModel.Desc.Any())
+            {
+                @foreach (var desc in _expandableScrollViewModel.SpellDetailsViewModel.Desc)
+                {
+                    var formattedDesc = @_TextFormatterService.FormatBoldWords(desc);
+                    <p>@((MarkupString)formattedDesc)</p>
+                }
+            }
+        </ChildContent>
+    </MudExpansionPanel>
+
+    @* Right Pill-Cap *@
+    <div class="pill-cap right-semi position-absolute"
+         style="right: -10px; top: 4px; height: 40px; width: 20px; z-index: 1;"></div>
+</div>
+
+@code {
+
+    private IExpandableScrollViewModel _expandableScrollViewModel;
+
+    private SpellListItem _spellListItem { get; set; }
+    [Parameter]
+    public SpellListItem SpellListItem
+    {
+        get => _spellListItem;
+        set
+        {
+            _spellListItem = value;
+        }
+    }
+
+    [Parameter]
+    public EventCallback OnScrollExpanded { get; set; } = new();
+
+    public ExpandableScroll(IExpandableScrollViewModel expandableScrollViewModel)
+    {
+        _expandableScrollViewModel = expandableScrollViewModel;
+    }
+
+    public async Task SetSpellDetailsViewModel()
+    {
+        await _expandableScrollViewModel.SetSpellDetailsViewModel(_spellListItem.Index);
+    }
+
+}

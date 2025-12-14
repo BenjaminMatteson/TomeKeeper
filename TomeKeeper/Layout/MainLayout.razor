@@ -1,4 +1,9 @@
 ﻿@inherits LayoutComponentBase
+
+@* Required *@
+<MudThemeProvider />
+<MudPopoverProvider />
+
 <div class="page">
     <div class="sidebar">
         <NavMenu />
@@ -14,3 +19,17 @@
         </article>
     </main>
 </div>
+
+<MudThemeProvider Theme="_customTheme" />
+
+@code {
+    private MudTheme _customTheme = new MudTheme()
+    {
+        PaletteLight = new PaletteLight()
+        {
+            Background = "#E9D9B6", //Parchment Light
+            AppbarBackground = "#3e3e42",
+            Surface = "#ffffff"
+        }
+    };
+}
