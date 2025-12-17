@@ -51,7 +51,6 @@ namespace TomeKeeper.Services
             await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "UserSpellList", jsonString);
         }
 
-        //TODO: make not static since static instances are shared among all user sessions
         public static List<SpellListItem> SavedSpellListItems { get; set; } = new List<SpellListItem>();
     }
 }
