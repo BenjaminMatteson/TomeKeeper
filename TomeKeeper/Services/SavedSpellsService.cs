@@ -51,6 +51,20 @@ namespace TomeKeeper.Services
             await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "UserSpellList", jsonString);
         }
 
+        public async Task RemoveSpell(string spellIndex)
+        {
+            if (!string.IsNullOrWhiteSpace(spellIndex))
+            {
+                var savedSpellListItem = SavedSpellListItems.FirstOrDefault(x => x.Index == spellIndex);
+
+                if (savedSpellListItem != null)
+                    SavedSpellListItems.Remove(savedSpellListItem);
+            }
+
+            var jsonString = JsonSerializer.Serialize(SavedSpellListItems);
+            await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "UserSpellList", jsonString);
+        }
+
         public static List<SpellListItem> SavedSpellListItems { get; set; } = new List<SpellListItem>();
     }
 }

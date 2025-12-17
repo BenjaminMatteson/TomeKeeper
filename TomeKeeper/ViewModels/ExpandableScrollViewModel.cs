@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using TomeKeeper.Enums;
+﻿using TomeKeeper.Enums;
 using TomeKeeper.Models;
 using TomeKeeper.Services;
 
@@ -8,6 +7,7 @@ namespace TomeKeeper.ViewModels
     public class ExpandableScrollViewModel : IExpandableScrollViewModel
     {
         private SpellDetailsCacheService _spellDetailsCacheService;
+        private SavedSpellsService _savedSpellsService;
         private IAPIService _apiService;
         public ExpandableScrollMode ScrollMode { get; set; }
 
@@ -46,6 +46,7 @@ namespace TomeKeeper.ViewModels
             IAPIService apiService)
         {
             _spellDetailsCacheService = spellDetailsCacheService;
+            _savedSpellsService = savedSpellsService;
             _apiService = apiService;
         }
 
@@ -59,6 +60,24 @@ namespace TomeKeeper.ViewModels
             }
 
             await GetFreshSpellDetails(spellIndex);
+        }
+
+        public async Task HandleSpellAction()
+        {
+            if (ScrollState == ScrollState.NoAction || 
+                ScrollState == ScrollState.Added ||
+                SpellListItem == null ||
+                SpellListItem?.Index == string.Empty) 
+                return;
+
+            if (ScrollState == ScrollState.Remove)
+            {
+                await _savedSpellsService.RemoveSpell(SpellListItem?.Index);
+                return;
+            }
+
+            if (ScrollState == ScrollState.Add)
+                await _savedSpellsService.AddSpell(SpellListItem?.Index);
         }
 
         private async Task GetFreshSpellDetails(string spellIndex)

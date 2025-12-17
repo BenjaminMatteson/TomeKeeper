@@ -95,7 +95,7 @@
 
     private async Task HandleOnClick()
     {
-        return;
+        await _expandableScrollViewModel.HandleSpellAction();
     }
 
     private string GetIcon() => _expandableScrollViewModel.ScrollState switch
