@@ -80,9 +80,31 @@
     [Parameter]
     public EventCallback OnScrollExpanded { get; set; } = new();
 
+    [Parameter] 
+    public EventCallback<SpellListItem> OnRemoved { get; set; }
+
     public ExpandableScroll(IExpandableScrollViewModel expandableScrollViewModel)
     {
         _expandableScrollViewModel = expandableScrollViewModel;
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _expandableScrollViewModel.OnSpellRemoved += HandleSpellRemoval;
+    }
+
+    public void Dispose()
+    {
+        _expandableScrollViewModel.OnSpellRemoved -= HandleSpellRemoval;
+    }
+
+    private void HandleSpellRemoval(SpellListItem spell)
+    {
+        if (spell.Index == SpellListItem.Index)
+        {
+            OnRemoved.InvokeAsync(spell);
+        }
     }
 
     private async Task SetSpellDetailsViewModel(bool expanded)

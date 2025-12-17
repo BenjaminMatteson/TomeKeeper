@@ -11,5 +11,6 @@ namespace TomeKeeper.ViewModels
         public Task HandleSpellAction();
         public ExpandableScrollMode ScrollMode { get; set; }
         public ScrollState ScrollState { get; }
+        public Action<SpellListItem>? OnSpellRemoved { get; set; }
     }
 }

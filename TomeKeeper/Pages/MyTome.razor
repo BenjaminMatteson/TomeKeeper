@@ -22,7 +22,9 @@
         <Virtualize Items="@_spellList" Context="spell" ItemSize="48">
             <ItemContent>
                 <ExpandableScroll SpellListItem="spell"
-                    ScrollMode="@ExpandableScrollMode.PersonalTome"/>
+                    @key="spell.Index"
+                    ScrollMode="@ExpandableScrollMode.PersonalTome"
+                    OnRemoved="HandleRemoved"/>
             </ItemContent>
         </Virtualize>
     </MudExpansionPanels>
@@ -55,6 +57,12 @@
             }
 
         }
+    }
+
+    private void HandleRemoved(SpellListItem spell)
+    {
+        _spellList.Remove(spell);
+        StateHasChanged();
     }
 
     private async Task GetSpellDetailsViewModelFromIndex(string spellIndex)

@@ -40,6 +40,8 @@ namespace TomeKeeper.ViewModels
             }
         }
 
+        public Action<SpellListItem>? OnSpellRemoved { get; set; }
+
         public ExpandableScrollViewModel(
             SpellDetailsCacheService spellDetailsCacheService,
             SavedSpellsService savedSpellsService,
@@ -73,6 +75,7 @@ namespace TomeKeeper.ViewModels
             if (ScrollState == ScrollState.Remove)
             {
                 await _savedSpellsService.RemoveSpell(SpellListItem?.Index);
+                OnSpellRemoved?.Invoke(SpellListItem);
                 return;
             }
 
