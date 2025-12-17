@@ -1,4 +1,6 @@
 ﻿@page "/mytome"
+@using TomeKeeper.Components
+@using TomeKeeper.Enums
 @using TomeKeeper.Models
 @using TomeKeeper.ViewModels
 @using TomeKeeper.Services
@@ -15,41 +17,17 @@
 
 @if (_spellList.Any())
 {
-    <div class="button-container">
-        @foreach (var spell in _spellList)
-        {
-            <button class="btn-base spell-button"
-                    @onclick="@(() => OnGetSpellDetailsClick(spell.Index))">
-                @spell.Name
-            </button>
-            @if (_isLoadingDetails && _selectedSpellIndex == spell.Index)
-            {
-                <p>Scrying @spell.Name details...</p>
-            }
-            else if (_selectedSpellIndex == spell.Index)
-            {
-                <div class="spell-details">
-                    <header>@_spellDetailsViewModel.Name</header>
-                    <label>@_spellDetailsViewModel.SchoolLevelClassesString</label>
-                    <br />
-                    <label><b>Casting Time: </b>@_spellDetailsViewModel.CastingTimeString</label>
-                    <label><b>Range: </b> @_spellDetailsViewModel.Range</label>
-                    <label><b>Components: </b> @_spellDetailsViewModel.ComponentsString</label>
-                    <label><b>Duration: </b> @_spellDetailsViewModel.DurationString</label>
-                    <br />
-                    @if (_spellDetailsViewModel.Desc.Any())
-                    {
-                        @foreach (var desc in _spellDetailsViewModel.Desc)
-                        {
-                            var formattedDesc = @_TextFormatterService.FormatBoldWords(desc);
-                            <p>@((MarkupString)formattedDesc)</p>
-                        }
-                    }
-                </div>
-            }
-        }
-
-    </div>
+    <MudExpansionPanels
+        MultiExpansion="true">
+        <Virtualize Items="@_spellList" Context="spell" ItemSize="48">
+            <ItemContent>
+                <ExpandableScroll SpellListItem="spell"
+                    @key="spell.Index"
+                    ScrollMode="@ExpandableScrollMode.PersonalTome"
+                    OnRemoved="HandleRemoved"/>
+            </ItemContent>
+        </Virtualize>
+    </MudExpansionPanels>
 }
 
 @code {
@@ -79,6 +57,12 @@
             }
 
         }
+    }
+
+    private void HandleRemoved(SpellListItem spell)
+    {
+        _spellList.Remove(spell);
+        StateHasChanged();
     }
 
     private async Task GetSpellDetailsViewModelFromIndex(string spellIndex)

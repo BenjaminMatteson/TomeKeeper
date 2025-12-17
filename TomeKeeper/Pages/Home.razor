@@ -3,6 +3,7 @@
 @using TomeKeeper.Models
 @using TomeKeeper.ViewModels
 @using TomeKeeper.Services
+@using TomeKeeper.Enums;
 @rendermode InteractiveWebAssembly
 @inject IAPIService _ApiService
 @inject ITextFormatterService _TextFormatterService
@@ -27,10 +28,14 @@
 {
     <MudExpansionPanels
         MultiExpansion="true">
-        @foreach (var spell in _spellList)
-        {
-            <ExpandableScroll SpellListItem="@spell"/>
-        }
+        <Virtualize Items="@_spellList" Context="spell" ItemSize="48">
+            <ItemContent>
+                <ExpandableScroll
+                    SpellListItem="spell"
+                    ScrollMode="@ExpandableScrollMode.All"/>
+
+            </ItemContent>
+        </Virtualize>
     </MudExpansionPanels>
 }
 else

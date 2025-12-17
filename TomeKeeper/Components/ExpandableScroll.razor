@@ -1,21 +1,29 @@
-﻿@using TomeKeeper.Models
+﻿@using TomeKeeper.Enums
+@using TomeKeeper.Models
 @using TomeKeeper.Services
 @using TomeKeeper.ViewModels
 
 @inject ITextFormatterService _TextFormatterService
-@inject IAPIService _apiService;
-@inject SpellDetailsCacheService _spellDetailsCacheService;
 
 <div class="position-relative mb-2 w-100 px-1">
     @* Left Pill-Cap *@
     <div class="pill-cap left-semi position-absolute"
          style="left: -10px; top: 4px; height: 40px; width: 20px; z-index: 1;"></div>
 
-
-    <MudExpansionPanel Class="flex-grow-1 flex-shrink-1 rounded-lg" Style="min-width: 0; background-color: #f5deb3; z-index: 2;"
+    <MudExpansionPanel Class="flex-grow-1 flex-shrink-1 rounded-lg"
+                       Style="min-width: 0; background-color: #f5deb3; z-index: 2;"
                        ExpandedChanged="SetSpellDetailsViewModel">
         <TitleContent>
-            <MudText>@_spellListItem?.Name</MudText>
+            <div class="d-flex justify-space-between align-center">
+                <MudText>@SpellListItem?.Name</MudText>
+                @if (_expandableScrollViewModel.ScrollState != ScrollState.NoAction)
+                {
+                    <MudIconButton Icon="@GetIcon()"
+                                   Color="@GetColor()"
+                                   OnClick="HandleOnClick"
+                                   Size="Size.Small" />
+                }
+            </div>
         </TitleContent>
         <ChildContent>
             <MudText>@_expandableScrollViewModel.SpellDetailsViewModel.SchoolLevelClassesString</MudText>
@@ -36,6 +44,7 @@
         </ChildContent>
     </MudExpansionPanel>
 
+
     @* Right Pill-Cap *@
     <div class="pill-cap right-semi position-absolute"
          style="right: -10px; top: 4px; height: 40px; width: 20px; z-index: 1;"></div>
@@ -45,28 +54,87 @@
 
     private IExpandableScrollViewModel _expandableScrollViewModel;
 
-    private SpellListItem _spellListItem { get; set; }
     [Parameter]
     public SpellListItem SpellListItem
     {
-        get => _spellListItem;
+        get => _expandableScrollViewModel.SpellListItem;
         set
         {
-            _spellListItem = value;
+            _expandableScrollViewModel.SpellListItem = value;
+        }
+    }
+
+    [Parameter]
+    public ExpandableScrollMode ScrollMode
+    {
+        get
+        {
+            return _expandableScrollViewModel.ScrollMode;
+        }
+        set
+        {
+            _expandableScrollViewModel.ScrollMode = value;
         }
     }
 
     [Parameter]
     public EventCallback OnScrollExpanded { get; set; } = new();
 
+    [Parameter] 
+    public EventCallback<SpellListItem> OnRemoved { get; set; }
+
     public ExpandableScroll(IExpandableScrollViewModel expandableScrollViewModel)
     {
         _expandableScrollViewModel = expandableScrollViewModel;
     }
 
-    public async Task SetSpellDetailsViewModel()
+    protected override void OnInitialized()
     {
-        await _expandableScrollViewModel.SetSpellDetailsViewModel(_spellListItem.Index);
+        base.OnInitialized();
+        _expandableScrollViewModel.OnSpellRemoved += HandleSpellRemoval;
     }
+
+    public void Dispose()
+    {
+        _expandableScrollViewModel.OnSpellRemoved -= HandleSpellRemoval;
+    }
+
+    private void HandleSpellRemoval(SpellListItem spell)
+    {
+        if (spell.Index == SpellListItem.Index)
+        {
+            OnRemoved.InvokeAsync(spell);
+        }
+    }
+
+    private async Task SetSpellDetailsViewModel(bool expanded)
+    {
+        if (expanded)
+        {
+            _ = _expandableScrollViewModel.SetSpellDetailsViewModel(SpellListItem.Index);
+        }
+    }
+
+    private async Task HandleOnClick()
+    {
+        await _expandableScrollViewModel.HandleSpellAction();
+    }
+
+    private string GetIcon() => _expandableScrollViewModel.ScrollState switch
+    {
+        ScrollState.Add => Icons.Material.Filled.Add,
+        ScrollState.Added => Icons.Material.Filled.Check,
+        ScrollState.Remove => Icons.Material.Filled.Remove,
+        _ => ""
+    };
+
+    //TODO: these colors don't match the theme
+    private Color GetColor() => _expandableScrollViewModel.ScrollState switch
+    {
+        ScrollState.Add => Color.Success,
+        ScrollState.Added => Color.Success,
+        ScrollState.Remove => Color.Error,
+        _ => Color.Default
+    };
 
 }
