@@ -22,13 +22,14 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Publish App
-        run: dotnet publish /TomeKeeper.csproj -c Release -o release
-
+        # This assumes TomeKeeper.csproj is now in the root of your repo
+        run: dotnet publish TomeKeeper.csproj -c Release -o release
+      
       - name: Fix Base Href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
         with:
           html_path: release/wwwroot/index.html
-          base_href: /
+          base_href: / # Ensure this is '/' for your custom domain
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
