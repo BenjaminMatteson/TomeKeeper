@@ -1,7 +1,7 @@
 ﻿name: Build and Deploy Blazor WASM
 on:
   push:
-    branches: ["master"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -19,25 +19,29 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0.x' # Use your project's .NET version
+          dotnet-version: '1-.0.x'
 
       - name: Publish App
-        # Replace 'TomeKeeper.csproj' with the full path if it's in a subfolder
-        run: dotnet publish TomeKeeper/TomeKeeper.csproj -c Release -o release
+        run: dotnet publish /TomeKeeper.csproj -c Release -o release
 
       - name: Fix Base Href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
         with:
           html_path: release/wwwroot/index.html
-          base_href: /TomeKeeper/ # Matches your repository name
+          base_href: /
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Add CNAME
+        run: echo "www.tomekeeper.quest" > release/wwwroot/CNAME
+
+      - name: Add .nojekyll
+        run: touch release/wwwroot/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Only upload the compiled web files
           path: 'release/wwwroot'
 
       - name: Deploy to GitHub Pages
