@@ -16,7 +16,6 @@
 
 <div class="page-banner">
     <h1>The Tome of all Spells</h1>
-    <h2>Drag and Drop any Spell onto "My Spellbook" to add it to your personal tome!</h2>
 </div>
 
 @if (SpellListItemsCacheService.CachedSpellList.Any())
@@ -26,13 +25,23 @@
 
 @if (_spellList.Any())
 {
-    <MudExpansionPanels
-        MultiExpansion="true">
-        <Virtualize Items="@_spellList" Context="spell" ItemSize="48">
+    <MudAutocomplete T="SpellListItem"
+                     Label="Search Spells"
+                     Value="_selectedSpell"
+                     ValueChanged="OnSpellSelected"
+                     SearchFunc="@SearchSpells"
+                     ToStringFunc="@(s => s?.Name)"
+                     ResetValueOnEmptyText="true"
+                     CoerceText="true"
+                     Placeholder="Enter spell name..."
+                     Variant="Variant.Outlined"
+                     Class="mb-4" />
+
+    <MudExpansionPanels MultiExpansion="true">
+        <Virtualize Items="@_filteredSpellList" Context="spell" ItemSize="48">
             <ItemContent>
-                <ExpandableScroll
-                    SpellListItem="spell"
-                    ScrollMode="@ExpandableScrollMode.All"/>
+                <ExpandableScroll SpellListItem="spell"
+                                  ScrollMode="@ExpandableScrollMode.All" />
 
             </ItemContent>
         </Virtualize>
@@ -47,6 +56,9 @@ else
     private IList<SpellListItem> _spellList = new List<SpellListItem>();
     private string _selectedSpellIndex { get; set; } = string.Empty;
 
+    private IList<SpellListItem> _filteredSpellList = new List<SpellListItem>(); 
+    private SpellListItem _selectedSpell;
+
     private bool _isLoadingDetails { get; set; } = false;
     private bool _isActive { get; set; } = false;
 
@@ -55,8 +67,9 @@ else
         if (!_spellList.Any())
         {
             await RefreshSpellList();
-
         }
+
+        _filteredSpellList = _spellList;
 
         await SavedSpellsService.InitializeSavedSpellsAsync();
     }
@@ -75,6 +88,31 @@ else
         var spellList = await _ApiService.GetSpellsList();
         _spellList = spellList;
         SpellListItemsCacheService.CachedSpellList = spellList;
+    }
+    #endregion
+
+    #region Spell Search
+    private async Task<IEnumerable<SpellListItem>> SearchSpells(string value, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrEmpty(value))
+            return _spellList;
+
+        return _spellList.Where(x => x.Name.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+    }
+
+    private void OnSpellSelected(SpellListItem selected)
+    {
+        _selectedSpell = selected;
+
+        if(selected == null)
+        {
+            _filteredSpellList = _spellList;
+        }
+        else
+        {
+            _filteredSpellList = _spellList.Where(x => x.Index == selected.Index).ToList();
+        }
+
     }
     #endregion
 
