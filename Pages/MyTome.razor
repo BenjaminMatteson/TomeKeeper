@@ -17,9 +17,21 @@
 
 @if (_spellList.Any())
 {
+    <MudAutocomplete T="SpellListItem"
+                     Label="Search Spells"
+                     Value="_selectedSpell"
+                     ValueChanged="OnSpellSelected"
+                     SearchFunc="@SearchSpells"
+                     ToStringFunc="@(s => s?.Name)"
+                     ResetValueOnEmptyText="true"
+                     CoerceText="true"
+                     Placeholder="Enter spell name..."
+                     Variant="Variant.Outlined"
+                     Class="mb-4" />
+
     <MudExpansionPanels
         MultiExpansion="true">
-        <Virtualize Items="@_spellList" Context="spell" ItemSize="48">
+        <Virtualize Items="@_filteredSpellList" Context="spell" ItemSize="48">
             <ItemContent>
                 <ExpandableScroll SpellListItem="spell"
                     @key="spell.Index"
@@ -37,6 +49,19 @@
     private SpellDetailsViewModel _spellDetailsViewModel { get; set; } = new();
     private bool _isLoadingDetails { get; set; } = false;
 
+    private IList<SpellListItem> _filteredSpellList = new List<SpellListItem>();
+    private SpellListItem _selectedSpell;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!_spellList.Any())
+        {
+            await SavedSpellsService.InitializeSavedSpellsAsync();
+        }
+
+        _filteredSpellList = _spellList;
+
+    }
     private async Task OnGetSpellDetailsClick(string spellIndex)
     {
         if (_selectedSpellIndex == spellIndex)
@@ -82,4 +107,29 @@
             SpellDetailsCacheService.CachedSpells.Add(_spellDetailsViewModel);
         }
     }
+
+    #region Spell Search
+    private async Task<IEnumerable<SpellListItem>> SearchSpells(string value, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrEmpty(value))
+            return _spellList;
+
+        return _spellList.Where(x => x.Name.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+    }
+
+    private void OnSpellSelected(SpellListItem selected)
+    {
+        _selectedSpell = selected;
+
+        if (selected == null)
+        {
+            _filteredSpellList = _spellList;
+        }
+        else
+        {
+            _filteredSpellList = _spellList.Where(x => x.Index == selected.Index).ToList();
+        }
+
+    }
+    #endregion
 }
