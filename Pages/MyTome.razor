@@ -12,34 +12,43 @@
 <PageTitle>My Spellbook</PageTitle>
 
 <div class="page-banner">
-    <h1>My Spellbook</h1>
+    <span class="tome-header-big">
+        MY SPELLBOOK
+    </span>
 </div>
 
 @if (_spellList.Any())
 {
-    <MudAutocomplete T="SpellListItem"
-                     Label="Search Spells"
-                     Value="_selectedSpell"
-                     ValueChanged="OnSpellSelected"
-                     SearchFunc="@SearchSpells"
-                     ToStringFunc="@(s => s?.Name)"
-                     ResetValueOnEmptyText="true"
-                     CoerceText="true"
-                     Placeholder="Enter spell name..."
-                     Variant="Variant.Outlined"
-                     Class="mb-4" />
+    <MudContainer MaxWidth=MaxWidth.Large>
+        <MudAutocomplete T="SpellListItem"
+                         Label="Search Spells"
+                         Value="_selectedSpell"
+                         ValueChanged="OnSpellSelected"
+                         SearchFunc="@SearchSpells"
+                         ToStringFunc="@(s => s?.Name)"
+                         ResetValueOnEmptyText="true"
+                         CoerceText="true"
+                         Placeholder="Enter spell name..."
+                         Variant="Variant.Outlined"
+                         Class="mb-4" />
 
-    <MudExpansionPanels
-        MultiExpansion="true">
-        <Virtualize Items="@_filteredSpellList" Context="spell" ItemSize="48">
-            <ItemContent>
-                <ExpandableScroll SpellListItem="spell"
-                    @key="spell.Index"
-                    ScrollMode="@ExpandableScrollMode.PersonalTome"
-                    OnRemoved="HandleRemoved"/>
-            </ItemContent>
-        </Virtualize>
-    </MudExpansionPanels>
+        <MudExpansionPanels MultiExpansion="true">
+            <Virtualize Items="@_filteredSpellList" Context="spell" ItemSize="48">
+                <ItemContent>
+                    <ExpandableScroll SpellListItem="spell"
+                                      @key="spell.Index"
+                                      ScrollMode="@ExpandableScrollMode.PersonalTome"
+                                      OnRemoved="HandleRemoved" />
+                </ItemContent>
+            </Virtualize>
+        </MudExpansionPanels>
+    </MudContainer>
+
+}
+else
+{
+    <p class="tome-header">🐸✨ You have no spells!</p>
+    <p class="tome-header"> Go add some from the <i class="glowing-text">TOME OF ALL SPELLS!</i></p>
 }
 
 @code {
