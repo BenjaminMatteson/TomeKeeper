@@ -208,6 +208,40 @@ code {
     width: 100%; /* Ensures text doesn't overflow container */
 }
 
+.tome-header-small {
+    /* Text styling */
+    color: var(--ink-black); /* Dark gray text color */
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    pointer-events: none; /* Allows clicks to pass through the text to the button below it */
+    width: 100%; /* Ensures text doesn't overflow container */
+}
+
+.tome-header {
+    /* Text styling */
+    color: var(--arcane-blue-dark); /* Dark gray text color */
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    pointer-events: none; /* Allows clicks to pass through the text to the button below it */
+    width: 100%; /* Ensures text doesn't overflow container */
+}
+.tome-header-big {
+    /* Text styling */
+    color: var(--parchment-medium); 
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    pointer-events: none; /* Allows clicks to pass through the text to the button below it */
+    width: 100%; /* Ensures text doesn't overflow container */
+}
+
 .btn-active-clicked {
     background-color: var(--arcane-purple) !important; /* Arcane Purple background */
     border-color: var(--accent-gold) !important;
@@ -341,9 +375,9 @@ code {
 }
 
 .glowing-text {
-    color: var(--lightning-yellow); /* The color inside the letters */
+    color: var(--lightning-yellow);/* The color inside the letters */
     text-align: center;
-    animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
@@ -352,7 +386,7 @@ code {
         /* 1. Static Black Outline (No blur) */
         1px 1px 0 var(--ink-black), -1px 1px 0 var(--ink-black), 1px -1px 0 var(--ink-black), -1px -1px 0 var(--ink-black),
         /* 2. The Subtle Blue Glow (Animates from subtle to intense) */
-        0 0 15px var(--arcane-purple);
+        0 0 15px var(--arcane-blue);
     }
 
     to {
@@ -360,7 +394,7 @@ code {
         /* 1. Static Black Outline (Must be repeated here) */
         1px 3px 0 var(--ink-black), -1px 1px 0 var(--ink-black), 1px -1px 0 var(--ink-black), -1px -1px 0 var(--ink-black),
         /* 2. The Intense Blue Glow */
-        0 0 45px var(--arcane-purple), 0 0 60px var(--arcane-purple); /* Added extra intensity for the peak animation */
+        0 0 45px var(--arcane-blue-dark), 0 0 60px var(--arcane-purple); /* Added extra intensity for the peak animation */
     }
 }
 
