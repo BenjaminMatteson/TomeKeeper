@@ -41,7 +41,7 @@ namespace TomeKeeper.Services
                 .FirstOrDefault(x => x.Index == spellIndex);
             if (cachedSpellListItem == null)
             {
-                //TODO: Get the spell from the API or throw an error
+                Console.WriteLine($"Warning: Spell '{spellIndex}' not found in cache. Spell was not added.");
                 return;
             }
 
@@ -65,6 +65,6 @@ namespace TomeKeeper.Services
             await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "UserSpellList", jsonString);
         }
 
-        public static List<SpellListItem> SavedSpellListItems { get; set; } = new List<SpellListItem>();
+        public List<SpellListItem> SavedSpellListItems { get; set; } = new List<SpellListItem>();
     }
 }

@@ -46,12 +46,12 @@
     {
     }
 
-    private void HandleDrop(DragEventArgs e)
+    private async Task HandleDrop(DragEventArgs e)
     {
-        if(DragDropService.Payload != null)
+        if (DragDropService.Payload is string spellIndex)
         {
-            Console.WriteLine($"Dropped payload: {DragDropService.Payload}");
-            SavedSpellsService.AddSpell((string)DragDropService.Payload);
+            Console.WriteLine($"Dropped payload: {spellIndex}");
+            await SavedSpellsService.AddSpell(spellIndex);
         }
     }
 

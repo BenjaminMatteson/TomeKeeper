@@ -4,39 +4,6 @@ namespace TomeKeeper.Models
 {
     public class SpellDetails
     {
-        //Empty constructor for deserialization
-        public SpellDetails() { }
-
-//        [JsonConstructor]
-//        public SpellDetails(string index, string name, List<string>? desc, List<string>? higherLevel,
-//            string range, List<string> components, string? material, bool ritual,
-//            string duration, bool concentration, string? castingTime, int level,
-//            string? attackType, DamageInfo? damage, ApiReference? school,
-//            List<ApiReference> classes, List<ApiReference> subclasses,
-//            string url, DateTimeOffset? updatedAt)
-//        {
-//            Index = index;
-//            Name = name;
-//            Desc = desc ?? new List<string>();
-//            HigherLevel = higherLevel ?? new List<string>();
-//            Range = range;
-//            Components = components;
-//            Material = material;
-//            Ritual = ritual;
-//            Duration = duration;
-//            Concentration = concentration;
-//            CastingTime = castingTime;
-//            Level = level;
-//            AttackType = attackType;
-//            Damage = damage;
-//            School = school;
-//            Classes = classes;
-//            Subclasses = subclasses;
-//            Url = url;
-//            UpdatedAt = updatedAt;
-//            Description = string.Join("\n", Desc);
-//        }
-
         [JsonPropertyName("index")]
         public string Index { get; set; } = string.Empty;
 

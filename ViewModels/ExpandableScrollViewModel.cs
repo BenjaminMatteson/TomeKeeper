@@ -11,22 +11,19 @@ namespace TomeKeeper.ViewModels
         private IAPIService _apiService;
         public ExpandableScrollMode ScrollMode { get; set; }
 
-        public SpellListItem SpellListItem { get; set; }
+        public SpellListItem? SpellListItem { get; set; }
 
         public SpellDetailsViewModel SpellDetailsViewModel { get; set; } = new();
         public ScrollState ScrollState
         {
             get
             {
-                if (SavedSpellsService.SavedSpellListItems != null)
+                if (_savedSpellsService.SavedSpellListItems != null && SpellListItem != null)
                 {
-
                     if (SpellListItem.Index == string.Empty)
                         return ScrollState.NoAction;
 
-                    var spellIsSaved =
-                        SavedSpellsService.SavedSpellListItems.FirstOrDefault(x => x.Index == SpellListItem.Index) != null ?
-                        true : false;
+                    var spellIsSaved = _savedSpellsService.SavedSpellListItems.Any(x => x.Index == SpellListItem.Index);
 
                     if (spellIsSaved)
                     {
@@ -54,8 +51,7 @@ namespace TomeKeeper.ViewModels
 
         public async Task SetSpellDetailsViewModel(string spellIndex)
         {
-            var cachedSpellDetails = _spellDetailsCacheService.CachedSpells.FirstOrDefault(x => x.Index == spellIndex);
-            if (cachedSpellDetails != null)
+            if (_spellDetailsCacheService.TryGetSpell(spellIndex, out var cachedSpellDetails) && cachedSpellDetails != null)
             {
                 SpellDetailsViewModel = cachedSpellDetails;
                 return;
@@ -66,31 +62,28 @@ namespace TomeKeeper.ViewModels
 
         public async Task HandleSpellAction()
         {
-            if (ScrollState == ScrollState.NoAction || 
+            if (ScrollState == ScrollState.NoAction ||
                 ScrollState == ScrollState.Added ||
                 SpellListItem == null ||
-                SpellListItem?.Index == string.Empty) 
+                string.IsNullOrEmpty(SpellListItem.Index))
                 return;
 
             if (ScrollState == ScrollState.Remove)
             {
-                await _savedSpellsService.RemoveSpell(SpellListItem?.Index);
+                await _savedSpellsService.RemoveSpell(SpellListItem.Index);
                 OnSpellRemoved?.Invoke(SpellListItem);
                 return;
             }
 
             if (ScrollState == ScrollState.Add)
-                await _savedSpellsService.AddSpell(SpellListItem?.Index);
+                await _savedSpellsService.AddSpell(SpellListItem.Index);
         }
 
         private async Task GetFreshSpellDetails(string spellIndex)
         {
             var spellDetails = await _apiService.GetSpellDetails(spellIndex);
             SpellDetailsViewModel = new SpellDetailsViewModel(spellDetails);
-            if (!_spellDetailsCacheService.CachedSpells.Contains(SpellDetailsViewModel))
-            {
-                _spellDetailsCacheService.CachedSpells.Add(SpellDetailsViewModel);
-            }
+            _spellDetailsCacheService.AddSpell(SpellDetailsViewModel);
         }
     }
 }

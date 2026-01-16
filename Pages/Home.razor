@@ -62,21 +62,32 @@ else
     private string _selectedSpellIndex { get; set; } = string.Empty;
 
     private IList<SpellListItem> _filteredSpellList = new List<SpellListItem>();
-    private SpellListItem _selectedSpell;
+    private SpellListItem? _selectedSpell;
 
     private bool _isLoadingDetails { get; set; } = false;
     private bool _isActive { get; set; } = false;
 
     protected override async Task OnInitializedAsync()
     {
-        if (!_spellList.Any())
+        try
         {
-            await RefreshSpellList();
+            if (!_spellList.Any())
+            {
+                await RefreshSpellList();
+            }
+
+            _filteredSpellList = _spellList;
+
+            await SavedSpellsService.InitializeSavedSpellsAsync();
         }
-
-        _filteredSpellList = _spellList;
-
-        await SavedSpellsService.InitializeSavedSpellsAsync();
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"Error loading spells: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Unexpected error during initialization: {ex.Message}");
+        }
     }
 
     #region Spell Loading
@@ -97,12 +108,13 @@ else
     #endregion
 
     #region Spell Search
-    private async Task<IEnumerable<SpellListItem>> SearchSpells(string value, CancellationToken cancellationToken)
+    private Task<IEnumerable<SpellListItem>> SearchSpells(string value, CancellationToken cancellationToken)
     {
         if (string.IsNullOrEmpty(value))
-            return _spellList;
+            return Task.FromResult<IEnumerable<SpellListItem>>(_spellList);
 
-        return _spellList.Where(x => x.Name.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+        var results = _spellList.Where(x => x.Name.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+        return Task.FromResult<IEnumerable<SpellListItem>>(results);
     }
 
     private void OnSpellSelected(SpellListItem selected)

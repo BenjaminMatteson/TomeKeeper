@@ -52,24 +52,27 @@ else
 }
 
 @code {
-    private IList<SpellListItem> _spellList = SavedSpellsService.SavedSpellListItems;
+    private IList<SpellListItem> _spellList = new List<SpellListItem>();
     private string _selectedSpellIndex { get; set; } = string.Empty;
     private SpellDetails _selectedSpellDetails { get; set; } = new();
     private SpellDetailsViewModel _spellDetailsViewModel { get; set; } = new();
     private bool _isLoadingDetails { get; set; } = false;
 
     private IList<SpellListItem> _filteredSpellList = new List<SpellListItem>();
-    private SpellListItem _selectedSpell;
+    private SpellListItem? _selectedSpell;
 
     protected override async Task OnInitializedAsync()
     {
-        if (!_spellList.Any())
+        try
         {
             await SavedSpellsService.InitializeSavedSpellsAsync();
+            _spellList = SavedSpellsService.SavedSpellListItems;
+            _filteredSpellList = _spellList;
         }
-
-        _filteredSpellList = _spellList;
-
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading saved spells: {ex.Message}");
+        }
     }
     private async Task OnGetSpellDetailsClick(string spellIndex)
     {
@@ -84,6 +87,14 @@ else
             {
                 _isLoadingDetails = true;
                 await GetSpellDetailsViewModelFromIndex(spellIndex);
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine($"Error loading spell details: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error loading spell details: {ex.Message}");
             }
             finally
             {
@@ -101,9 +112,9 @@ else
 
     private async Task GetSpellDetailsViewModelFromIndex(string spellIndex)
     {
-        if (SpellDetailsCacheService.CachedSpells.Any(x => x.Index == spellIndex))
+        if (SpellDetailsCacheService.TryGetSpell(spellIndex, out var cachedSpell) && cachedSpell != null)
         {
-            _spellDetailsViewModel = SpellDetailsCacheService.CachedSpells.First(x => x.Index == spellIndex);
+            _spellDetailsViewModel = cachedSpell;
             _selectedSpellIndex = spellIndex;
             return;
         }
@@ -111,19 +122,17 @@ else
         _selectedSpellIndex = spellIndex;
         var spellDetails = await _ApiService.GetSpellDetails(spellIndex);
         _spellDetailsViewModel = new SpellDetailsViewModel(spellDetails);
-        if (!SpellDetailsCacheService.CachedSpells.Contains(_spellDetailsViewModel))
-        {
-            SpellDetailsCacheService.CachedSpells.Add(_spellDetailsViewModel);
-        }
+        SpellDetailsCacheService.AddSpell(_spellDetailsViewModel);
     }
 
     #region Spell Search
-    private async Task<IEnumerable<SpellListItem>> SearchSpells(string value, CancellationToken cancellationToken)
+    private Task<IEnumerable<SpellListItem>> SearchSpells(string value, CancellationToken cancellationToken)
     {
         if (string.IsNullOrEmpty(value))
-            return _spellList;
+            return Task.FromResult<IEnumerable<SpellListItem>>(_spellList);
 
-        return _spellList.Where(x => x.Name.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+        var results = _spellList.Where(x => x.Name.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+        return Task.FromResult<IEnumerable<SpellListItem>>(results);
     }
 
     private void OnSpellSelected(SpellListItem selected)
