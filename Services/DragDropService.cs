@@ -2,6 +2,6 @@
 {
     public class DragDropService
     {
-        public object Payload { get; set; }
+        public object? Payload { get; set; }
     }
 }

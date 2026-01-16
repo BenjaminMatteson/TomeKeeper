@@ -51,7 +51,6 @@
     private SpellDetails _selectedSpellDetails { get; set; } = new();
     private SpellDetailsViewModel _spellDetailsViewModel { get; set; } = new();
 
-    private string _buttonCssClass = "btn-base spell-button";
     private string _textCssClass = "scroll-text";
     private bool _isClicked = false;
     private bool _isDragging = false;
@@ -73,7 +72,6 @@
             await GetSpellDetailsViewModelFromIndex(spellIndex);
         }
 
-        UpdateButtonClass();
         UpdateTextClass();
     }
 
@@ -85,22 +83,17 @@
 
     private async Task GetSpellDetailsViewModelFromIndex(string spellIndex)
     {
-        if (SpellDetailsCacheService.CachedSpells.Any(x => x.Index == spellIndex))
+        if (SpellDetailsCacheService.TryGetSpell(spellIndex, out var cachedSpell) && cachedSpell != null)
         {
-            _spellDetailsViewModel = SpellDetailsCacheService.CachedSpells.First(x => x.Index == spellIndex);
+            _spellDetailsViewModel = cachedSpell;
             _selectedSpellIndex = spellIndex;
         }
         else
         {
             var spellDetails = await _ApiService.GetSpellDetails(spellIndex);
             _spellDetailsViewModel = new SpellDetailsViewModel(spellDetails);
-            if (!SpellDetailsCacheService.CachedSpells.Contains(_spellDetailsViewModel))
-            {
-                SpellDetailsCacheService.CachedSpells.Add(_spellDetailsViewModel);
-            }
-
+            SpellDetailsCacheService.AddSpell(_spellDetailsViewModel);
             _selectedSpellIndex = spellIndex;
-            _spellDetailsViewModel = _spellDetailsViewModel;
         }
 
         await CallBackToParent();
@@ -109,7 +102,6 @@
     private void HandleDragStart()
     {
         _isDragging = true;
-        UpdateButtonClass();
         UpdateTextClass();
         DragDropService.Payload = SpellIndex;
     }
@@ -118,29 +110,8 @@
     {
         _isDragging = false;
         _isClicked = false;
-        UpdateButtonClass();
         UpdateTextClass();
-        //TODO: Make payload something better
         DragDropService.Payload = null;
-    }
-
-    private void UpdateButtonClass()
-    {
-        if (_isDragging)
-        {
-            // Priority: if actively dragging, use the dragging style
-            _buttonCssClass = "btn-dragging-state";
-        }
-        else if (_isClicked)
-        {
-            // If clicked but not dragging, use the clicked style (Arcane Purple/Gold)
-            _buttonCssClass = "btn-active-clicked";
-        }
-        else
-        {
-            // Default state
-            _buttonCssClass = "btn-base spell-button";
-        }
     }
 
     private void UpdateTextClass()
