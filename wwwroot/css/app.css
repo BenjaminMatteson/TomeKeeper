@@ -2,6 +2,7 @@
     --primary-red: #A6312A; /* Primary Red */
     --primary-red-dark: #7D251F; /* Deep Ember */
     --accent-gold: #C29233; /* Gold Accent */
+    --accent-gold-light: #D4A84B;
     --parchment-light: #E9D9B6; /* Parchment Light */
     --parchment-dark: #CBB68A; /* Parchment Dark */
     --parchment-medium: #f5deb3;
@@ -12,13 +13,38 @@
     --arcane-blue: #5890C3;
     --arcane-blue-dark: #2D4F75;
     --arcane-purple: #5B3A70;
+    --arcane-purple-light: #8B5FA0;
     --forest-green: #4A6B42;
     --blood-orange: #B0451B;
+    --mystic-teal: #2A6B6B;
 }
 
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Crimson Text', Georgia, serif;
     background-color: var(--parchment-light);
+    min-height: 100vh;
+}
+
+/* Parchment texture background for main content */
+body {
+    background:
+        /* Subtle noise texture */
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+        linear-gradient(180deg, var(--parchment-light) 0%, var(--parchment-dark) 100%);
+    background-blend-mode: soft-light, normal;
+}
+
+/* Vignette overlay for atmosphere */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(59, 43, 30, 0.4) 100%);
+    z-index: 9999;
 }
 
 h1:focus {
@@ -209,37 +235,40 @@ code {
 }
 
 .tome-header-small {
-    /* Text styling */
-    color: var(--ink-black); /* Dark gray text color */
-    font-family: Arial, sans-serif;
-    font-size: 8px;
-    font-weight: bold;
+    color: var(--ink-black);
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    font-weight: 600;
     text-transform: uppercase;
-    pointer-events: none; /* Allows clicks to pass through the text to the button below it */
-    width: 100%; /* Ensures text doesn't overflow container */
+    letter-spacing: 1px;
+    pointer-events: none;
+    width: 100%;
 }
 
 .tome-header {
-    /* Text styling */
-    color: var(--arcane-blue-dark); /* Dark gray text color */
-    font-family: Arial, sans-serif;
-    font-size: 32px;
-    font-weight: bold;
+    color: var(--arcane-blue-dark);
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    font-weight: 600;
     text-transform: uppercase;
     text-align: center;
-    pointer-events: none; /* Allows clicks to pass through the text to the button below it */
-    width: 100%; /* Ensures text doesn't overflow container */
+    letter-spacing: 2px;
+    pointer-events: none;
+    width: 100%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
+
 .tome-header-big {
-    /* Text styling */
-    color: var(--parchment-medium); 
-    font-family: Arial, sans-serif;
-    font-size: 32px;
-    font-weight: bold;
+    color: var(--parchment-medium);
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    pointer-events: none; /* Allows clicks to pass through the text to the button below it */
-    width: 100%; /* Ensures text doesn't overflow container */
+    letter-spacing: 3px;
+    pointer-events: none;
+    width: 100%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .btn-active-clicked {
@@ -326,16 +355,49 @@ code {
     background-color: var(--parchment-light) !important;
 }
 
-/* Page Banner */
+/* Page Banner - Ornate spell book header */
 .page-banner {
-    font-family: 'MedievalSharp'; /* Use the arcane font for headings */
-    background-color: var(--primary-red-dark);
+    font-family: 'Cinzel', 'MedievalSharp', serif;
+    background: linear-gradient(180deg, var(--primary-red-dark) 0%, #4a1510 100%);
     color: white;
-    padding: 20px;
+    padding: 25px 20px;
     text-align: center;
-    border-bottom: 3px solid var(--accent-gold);
+    border: 3px solid var(--accent-gold);
+    border-left-width: 6px;
+    border-right-width: 6px;
     margin: 0 0 30px 0;
-    border-radius: 8px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Decorative corner flourishes */
+.page-banner::before,
+.page-banner::after {
+    content: '✦';
+    position: absolute;
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: 0 0 10px var(--accent-gold);
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.page-banner::before {
+    left: 15px;
+}
+
+.page-banner::after {
+    right: 15px;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.6; transform: translateY(-50%) scale(1); }
+    50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
 }
 
     .page-banner h1,
@@ -412,4 +474,268 @@ code {
 .right-semi {
     width: 26px;
     border-radius: 0 26px 26px 0;
+}
+
+/* ================================================
+   MAGICAL FLOATING PARTICLES
+   ================================================ */
+.magical-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float-up 15s infinite linear;
+    opacity: 0;
+}
+
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+.particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 14s; }
+.particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 11s; }
+.particle:nth-child(4) { left: 40%; animation-delay: 1s; animation-duration: 16s; }
+.particle:nth-child(5) { left: 50%; animation-delay: 3s; animation-duration: 13s; }
+.particle:nth-child(6) { left: 60%; animation-delay: 5s; animation-duration: 15s; }
+.particle:nth-child(7) { left: 70%; animation-delay: 2.5s; animation-duration: 12s; }
+.particle:nth-child(8) { left: 80%; animation-delay: 4.5s; animation-duration: 14s; }
+.particle:nth-child(9) { left: 90%; animation-delay: 1.5s; animation-duration: 11s; }
+.particle:nth-child(10) { left: 15%; animation-delay: 3.5s; animation-duration: 13s; }
+.particle:nth-child(11) { left: 25%; animation-delay: 0.5s; animation-duration: 15s; }
+.particle:nth-child(12) { left: 75%; animation-delay: 2.2s; animation-duration: 12s; }
+
+@keyframes float-up {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* ================================================
+   ENHANCED SPELL DETAILS - Old Book Style
+   ================================================ */
+.spell-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 2px solid var(--parchment-dark-border);
+    padding: 20px;
+    border-radius: 4px;
+    color: var(--ink-black);
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%),
+        var(--parchment-medium);
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Aged corner effect */
+.spell-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, var(--parchment-dark) 50%, transparent 50%);
+    opacity: 0.5;
+}
+
+/* ================================================
+   ENHANCED MUD EXPANSION PANELS - Scroll Style
+   ================================================ */
+.mud-expand-panel {
+    background-color: var(--parchment-medium) !important;
+    border: 1px solid var(--parchment-dark-border) !important;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.mud-expand-panel:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.mud-expand-panel-header {
+    font-family: 'Cinzel', serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+}
+
+/* ================================================
+   MAGICAL HOVER EFFECTS
+   ================================================ */
+.mud-icon-button:hover {
+    animation: magic-pulse 0.5s ease-in-out;
+}
+
+@keyframes magic-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); filter: drop-shadow(0 0 8px var(--arcane-blue)); }
+    100% { transform: scale(1); }
+}
+
+/* ================================================
+   LOADING SCREEN - Mystical Theme
+   ================================================ */
+.loading-progress circle {
+    stroke: var(--parchment-dark);
+}
+
+.loading-progress circle:last-child {
+    stroke: var(--arcane-purple);
+}
+
+.loading-progress-text:after {
+    font-family: 'Cinzel', serif;
+    color: var(--primary-red-dark);
+}
+
+/* ================================================
+   AUTOCOMPLETE SEARCH - Enchanted Look
+   ================================================ */
+.mud-input-outlined .mud-input-outlined-border {
+    border-color: var(--parchment-dark-border) !important;
+}
+
+.mud-input-outlined:hover .mud-input-outlined-border {
+    border-color: var(--accent-gold) !important;
+}
+
+.mud-input-outlined.mud-input-focused .mud-input-outlined-border {
+    border-color: var(--arcane-purple) !important;
+    box-shadow: 0 0 8px rgba(91, 58, 112, 0.3);
+}
+
+/* ================================================
+   CONTENT AREA STYLING
+   ================================================ */
+.content {
+    padding-top: 1.1rem;
+    position: relative;
+}
+
+article.content {
+    background:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"),
+        transparent;
+}
+
+/* ================================================
+   EMPTY SPELLBOOK STATE
+   ================================================ */
+.empty-spellbook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 30px;
+    margin: 40px auto;
+    max-width: 500px;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%),
+        var(--parchment-medium);
+    border: 2px solid var(--parchment-dark-border);
+    border-radius: 8px;
+    box-shadow:
+        inset 0 0 40px rgba(0, 0, 0, 0.1),
+        0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Decorative corners */
+.empty-spellbook::before,
+.empty-spellbook::after {
+    content: '⚜';
+    position: absolute;
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    opacity: 0.6;
+}
+
+.empty-spellbook::before {
+    top: 15px;
+    left: 15px;
+}
+
+.empty-spellbook::after {
+    bottom: 15px;
+    right: 15px;
+}
+
+.empty-spellbook-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.empty-spellbook-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-red-dark);
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.empty-spellbook-text {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 1.15rem;
+    color: var(--ink-black);
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.empty-spellbook-runes {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+    letter-spacing: 8px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.mystical-link {
+    color: var(--arcane-purple);
+    text-decoration: none;
+    font-weight: 600;
+    font-style: normal;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.mystical-link:hover {
+    color: var(--arcane-blue);
+    border-bottom-color: var(--arcane-blue);
+    text-shadow: 0 0 8px rgba(88, 144, 195, 0.5);
 }
