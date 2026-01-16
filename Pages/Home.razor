@@ -54,7 +54,24 @@
 }
 else
 {
-    <p>Click "Reveal Spells" to divine the list of spells.</p>
+    <div class="scrying-container">
+        <div class="crystal-orb">
+            <div class="orb-glow"></div>
+            <div class="orb-inner">
+                <div class="magic-swirl"></div>
+            </div>
+            <div class="orb-reflection"></div>
+        </div>
+        <h2 class="scrying-title">Divining the Arcane...</h2>
+        <p class="scrying-text">The ancient spells are being revealed</p>
+        <div class="scrying-runes">
+            <span class="rune">᛭</span>
+            <span class="rune">ᚨ</span>
+            <span class="rune">ᚱ</span>
+            <span class="rune">ᚲ</span>
+            <span class="rune">᛭</span>
+        </div>
+    </div>
 }
 
 @code {
@@ -66,27 +83,33 @@ else
 
     private bool _isLoadingDetails { get; set; } = false;
     private bool _isActive { get; set; } = false;
+    private bool _isInitialized = false;
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        try
+        if (firstRender && !_isInitialized)
         {
-            if (!_spellList.Any())
+            _isInitialized = true;
+            try
             {
-                await RefreshSpellList();
+                if (!_spellList.Any())
+                {
+                    await RefreshSpellList();
+                }
+
+                _filteredSpellList = _spellList;
+
+                await SavedSpellsService.InitializeSavedSpellsAsync();
+                StateHasChanged();
             }
-
-            _filteredSpellList = _spellList;
-
-            await SavedSpellsService.InitializeSavedSpellsAsync();
-        }
-        catch (HttpRequestException ex)
-        {
-            Console.WriteLine($"Error loading spells: {ex.Message}");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Unexpected error during initialization: {ex.Message}");
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine($"Error loading spells: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error during initialization: {ex.Message}");
+            }
         }
     }
 

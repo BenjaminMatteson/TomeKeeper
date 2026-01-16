@@ -67,21 +67,27 @@ else
     private SpellDetails _selectedSpellDetails { get; set; } = new();
     private SpellDetailsViewModel _spellDetailsViewModel { get; set; } = new();
     private bool _isLoadingDetails { get; set; } = false;
+    private bool _isInitialized = false;
 
     private IList<SpellListItem> _filteredSpellList = new List<SpellListItem>();
     private SpellListItem? _selectedSpell;
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        try
+        if (firstRender && !_isInitialized)
         {
-            await SavedSpellsService.InitializeSavedSpellsAsync();
-            _spellList = SavedSpellsService.SavedSpellListItems;
-            _filteredSpellList = _spellList;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error loading saved spells: {ex.Message}");
+            _isInitialized = true;
+            try
+            {
+                await SavedSpellsService.InitializeSavedSpellsAsync();
+                _spellList = SavedSpellsService.SavedSpellListItems;
+                _filteredSpellList = _spellList;
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading saved spells: {ex.Message}");
+            }
         }
     }
     private async Task OnGetSpellDetailsClick(string spellIndex)
