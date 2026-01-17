@@ -23,12 +23,122 @@
 
 <body>
     <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+        <div class="initial-loading">
+            <div class="loading-orb">
+                <div class="loading-orb-glow"></div>
+                <div class="loading-orb-inner">
+                    <div class="loading-orb-swirl"></div>
+                </div>
+                <div class="loading-orb-reflection"></div>
+            </div>
+            <div class="loading-title">TomeKeeper</div>
+            <div class="loading-subtitle">Awakening the arcane...</div>
+        </div>
     </div>
+
+    <style>
+        .initial-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Cinzel', Georgia, serif;
+        }
+
+        .loading-orb {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 25px;
+        }
+
+        .loading-orb-glow {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(88, 144, 195, 0.4) 0%, transparent 70%);
+            animation: loading-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes loading-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.15); opacity: 1; }
+        }
+
+        .loading-orb-inner {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%,
+                rgba(200, 220, 255, 0.9) 0%,
+                rgba(88, 144, 195, 0.8) 30%,
+                rgba(45, 79, 117, 0.9) 60%,
+                rgba(91, 58, 112, 0.95) 100%);
+            box-shadow:
+                inset 0 0 25px rgba(255, 255, 255, 0.3),
+                inset 0 0 50px rgba(88, 144, 195, 0.5),
+                0 0 15px rgba(88, 144, 195, 0.5);
+            overflow: hidden;
+        }
+
+        .loading-orb-swirl {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 222, 100, 0.3), transparent, rgba(139, 95, 160, 0.3), transparent);
+            animation: loading-swirl 3s linear infinite;
+            border-radius: 50%;
+        }
+
+        @keyframes loading-swirl {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-orb-reflection {
+            position: absolute;
+            top: 12px;
+            left: 20px;
+            width: 30px;
+            height: 18px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
+            border-radius: 50%;
+            transform: rotate(-40deg);
+        }
+
+        .loading-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #7D251F;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .loading-subtitle {
+            font-size: 1rem;
+            color: #4A4A4A;
+            font-style: italic;
+            font-family: 'Crimson Text', Georgia, serif;
+            animation: loading-shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes loading-shimmer {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+    </style>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
