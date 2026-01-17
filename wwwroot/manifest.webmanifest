@@ -4,10 +4,16 @@
   "id": "./",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#03173d",
+  "background_color": "#0f0f1a",
+  "theme_color": "#5890c3",
   "prefer_related_applications": false,
   "icons": [
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
     {
       "src": "icon-512.png",
       "type": "image/png",

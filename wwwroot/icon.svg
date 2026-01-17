@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="orb-main" cx="35%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#c8dcff" stop-opacity="0.95"/>
+      <stop offset="30%" stop-color="#5890c3" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#2d4f75" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#5b3a70" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="orb-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5890c3" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#5890c3" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#5890c3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="orb-shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="bg-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f0f1a"/>
+    </radialGradient>
+    <filter id="orb-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#5890c3" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" fill="url(#bg-gradient)" rx="64"/>
+
+  <!-- Outer glow -->
+  <circle cx="256" cy="256" r="200" fill="url(#orb-glow)"/>
+
+  <!-- Main orb with shadow -->
+  <circle cx="256" cy="256" r="160" fill="url(#orb-main)" filter="url(#orb-shadow)"/>
+
+  <!-- Inner rim highlight -->
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#8ab4d9" stroke-width="2" stroke-opacity="0.3"/>
+
+  <!-- Swirl effect -->
+  <path d="M256 96 Q350 180 256 256 Q162 332 256 416" fill="none" stroke="#ffde64" stroke-width="8" stroke-opacity="0.25" stroke-linecap="round"/>
+  <path d="M256 96 Q162 180 256 256 Q350 332 256 416" fill="none" stroke="#8b5fa0" stroke-width="6" stroke-opacity="0.2" stroke-linecap="round"/>
+
+  <!-- Main highlight reflection -->
+  <ellipse cx="190" cy="190" rx="55" ry="35" fill="url(#orb-shine)" transform="rotate(-40 190 190)"/>
+
+  <!-- Secondary small highlight -->
+  <ellipse cx="220" cy="165" rx="20" ry="10" fill="#ffffff" fill-opacity="0.4" transform="rotate(-40 220 165)"/>
+
+  <!-- Magical sparkles -->
+  <circle cx="320" cy="320" r="8" fill="#ffde64" fill-opacity="0.8"/>
+  <circle cx="340" cy="290" r="4" fill="#ffde64" fill-opacity="0.6"/>
+  <circle cx="300" cy="340" r="3" fill="#ffde64" fill-opacity="0.5"/>
+
+  <!-- Bottom rim shadow -->
+  <ellipse cx="256" cy="400" rx="100" ry="15" fill="#2d4f75" fill-opacity="0.3"/>
+</svg>
