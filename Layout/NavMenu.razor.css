@@ -84,6 +84,16 @@
     background: linear-gradient(90deg, rgba(194, 146, 51, 0.15) 0%, transparent 100%);
     color: #E9D9B6;
     border-left: 3px solid rgba(194, 146, 51, 0.5);
+    animation: nav-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes nav-shimmer {
+    0%, 100% {
+        text-shadow: 0 0 4px rgba(194, 146, 51, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 12px rgba(194, 146, 51, 0.8), 0 0 20px rgba(233, 217, 182, 0.4);
+    }
 }
 
 @media (min-width: 641px) {
