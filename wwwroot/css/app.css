@@ -44,7 +44,7 @@ body::before {
     height: 100%;
     pointer-events: none;
     background: radial-gradient(ellipse at center, transparent 40%, rgba(59, 43, 30, 0.4) 100%);
-    z-index: 9999;
+    z-index: 0;
 }
 
 h1:focus {
@@ -870,4 +870,189 @@ article.content {
 @keyframes rune-glow {
     0%, 100% { opacity: 0.4; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ================================================
+   SPELL CARD GRID - Enhanced Card Design
+   ================================================ */
+.spell-card {
+    transition: all 0.3s ease;
+    border: 2px solid var(--parchment-dark-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 12px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+/* Torn parchment effect at bottom - inside card */
+.spell-card .mud-card-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(to bottom, transparent, rgba(203, 182, 138, 0.3));
+    clip-path: polygon(
+        0% 30%, 3% 70%, 6% 40%, 9% 80%, 12% 50%, 15% 65%,
+        18% 45%, 21% 75%, 24% 55%, 27% 70%, 30% 50%, 33% 80%,
+        36% 60%, 39% 75%, 42% 50%, 45% 85%, 48% 55%, 51% 70%,
+        54% 45%, 57% 80%, 60% 60%, 63% 70%, 66% 50%, 69% 75%,
+        72% 55%, 75% 80%, 78% 60%, 81% 70%, 84% 50%, 87% 75%,
+        90% 60%, 93% 70%, 96% 55%, 100% 40%
+    );
+    pointer-events: none;
+}
+
+.spell-card:hover {
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.2),
+        0 0 10px rgba(125, 37, 31, 0.3);
+    border-color: var(--primary-red-dark);
+}
+
+.spell-card .mud-card-header {
+    background: linear-gradient(180deg, var(--primary-red-dark) 0%, #4a1510 100%) !important;
+    border-bottom: 2px solid var(--accent-gold) !important;
+}
+
+.spell-card .mud-card-content {
+    background-color: var(--parchment-medium);
+}
+
+/* ================================================
+   SPELL MODAL OVERLAY
+   ================================================ */
+.spell-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    backdrop-filter: blur(3px);
+}
+
+.spell-modal-content {
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    animation: modal-slide-in 0.3s ease-out;
+}
+
+@keyframes modal-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.spell-stats strong {
+    color: var(--primary-red-dark);
+    font-weight: 600;
+}
+
+.spell-description {
+    line-height: 1.8;
+}
+
+/* ================================================
+   MOBILE OPTIMIZATIONS
+   ================================================ */
+
+/* Small mobile devices (phones in portrait) */
+@media (max-width: 480px) {
+    /* Reduce header size on very small screens */
+    .tome-header-big {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    .page-banner {
+        padding: 15px 10px;
+    }
+
+    .page-banner::before,
+    .page-banner::after {
+        font-size: 0.9rem;
+        left: 8px;
+    }
+
+    .page-banner::after {
+        right: 8px;
+    }
+
+    /* Make spell cards slightly smaller on very small screens */
+    .spell-card {
+        margin-bottom: 8px;
+    }
+
+    /* Reduce modal padding on small screens */
+    .spell-modal-content {
+        padding: 10px;
+    }
+
+    .spell-modal-overlay {
+        padding: 10px;
+    }
+
+    /* Make search box more compact */
+    .mud-autocomplete {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets and larger phones */
+@media (max-width: 768px) {
+    /* Ensure proper touch targets (at least 44x44px) */
+    .mud-icon-button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* Make modal full height on tablets */
+    .spell-modal-content {
+        max-height: 95vh;
+    }
+
+    /* Adjust particle count for performance */
+    .particle:nth-child(n+7) {
+        display: none;
+    }
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+    .spell-card:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        border-color: var(--parchment-dark-border);
+    }
+
+    .nav-item ::deep a:hover {
+        animation: none;
+    }
+}
+
+/* Improve scrolling performance on mobile */
+@media (max-width: 768px) {
+    .spell-card {
+        transform: translateZ(0);
+        will-change: auto;
+    }
+
+    /* Disable backdrop blur on mobile for performance */
+    .spell-modal-overlay {
+        backdrop-filter: none;
+    }
 }

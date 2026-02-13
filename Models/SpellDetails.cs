@@ -60,5 +60,8 @@ namespace TomeKeeper.Models
 
         [JsonPropertyName("updated_at")]
         public DateTimeOffset? UpdatedAt { get; set; }
+
+        [JsonPropertyName("edition")]
+        public string? Edition { get; set; } = "2014";
     }
 }

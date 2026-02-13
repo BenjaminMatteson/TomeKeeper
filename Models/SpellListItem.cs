@@ -24,5 +24,11 @@ namespace TomeKeeper.Models
 
         [JsonPropertyName("url")]
         public string Url { get; set; } = string.Empty;
+
+        [JsonPropertyName("school")]
+        public string School { get; set; } = string.Empty;
+
+        [JsonPropertyName("desc_preview")]
+        public string DescPreview { get; set; } = string.Empty;
     }
 }

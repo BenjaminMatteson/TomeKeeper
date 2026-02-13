@@ -96,6 +96,29 @@
     }
 }
 
+/* Mobile menu styling */
+@media (max-width: 640.98px) {
+    .nav-scrollable {
+        background-color: rgba(30, 15, 10, 0.98);
+        border-bottom: 3px solid var(--accent-gold);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-scrollable.collapse {
+        display: none;
+    }
+
+    .nav-scrollable:not(.collapse) {
+        display: block;
+    }
+
+    .top-row {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
 @media (min-width: 641px) {
     .navbar-toggler {
         display: none;

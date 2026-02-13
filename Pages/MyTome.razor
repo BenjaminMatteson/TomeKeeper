@@ -20,7 +20,7 @@
 
 @if (_spellList.Any())
 {
-    <MudContainer MaxWidth=MaxWidth.Large>
+    <MudContainer MaxWidth=MaxWidth.ExtraLarge Class="pb-4">
         <MudAutocomplete T="SpellListItem"
                          Label="Search Spells"
                          Value="_selectedSpell"
@@ -31,19 +31,120 @@
                          CoerceText="true"
                          Placeholder="Enter spell name..."
                          Variant="Variant.Outlined"
+                         Adornment="Adornment.Start"
+                         AdornmentIcon="@Icons.Material.Filled.Search"
                          Class="mb-4" />
 
-        <MudExpansionPanels MultiExpansion="true">
-            <Virtualize Items="@_filteredSpellList" Context="spell" ItemSize="48">
-                <ItemContent>
-                    <ExpandableScroll SpellListItem="spell"
-                                      @key="spell.Index"
-                                      ScrollMode="@ExpandableScrollMode.PersonalTome"
-                                      OnRemoved="HandleRemoved" />
-                </ItemContent>
-            </Virtualize>
-        </MudExpansionPanels>
+        <MudGrid Spacing="3" Justify="Justify.FlexStart">
+            @foreach (var spell in _filteredSpellList)
+            {
+                <MudItem xs="12" sm="6" md="4" lg="3">
+                    <MudCard Class="spell-card" Style="height: 180px;">
+                            <MudCardHeader Style="background: linear-gradient(180deg, var(--primary-red-dark) 0%, #4a1510 100%); color: var(--parchment-light); padding: 12px 16px; border-bottom: 2px solid var(--accent-gold);">
+                                <CardHeaderContent>
+                                    <div @onclick="@(() => OnCardClick(spell))" style="cursor: pointer;">
+                                        <MudText Typo="Typo.h6" Style="font-weight: 600; margin-bottom: 4px; font-family: 'Cinzel', serif;">@spell.Name</MudText>
+                                        <MudText Typo="Typo.caption" Style="color: var(--accent-gold-light);">
+                                            @if (spell.Level == 0)
+                                            {
+                                                <text>Cantrip</text>
+                                            }
+                                            else
+                                            {
+                                                <text>Level @spell.Level</text>
+                                            }
+                                        </MudText>
+                                    </div>
+                                </CardHeaderContent>
+                                <CardHeaderActions>
+                                    <MudIconButton Icon="@Icons.Material.Filled.Delete"
+                                                   Color="Color.Error"
+                                                   Size="Size.Small"
+                                                   OnClick="@(() => RemoveFromSpellbook(spell))" />
+                                </CardHeaderActions>
+                            </MudCardHeader>
+                            <MudCardContent Style="padding: 8px 16px; background-color: var(--parchment-medium); cursor: pointer; height: 70px; overflow: hidden;" @onclick="@(() => OnCardClick(spell))">
+                                <MudText Typo="Typo.caption" Style="color: var(--primary-red-dark); font-weight: 600; margin-bottom: 4px;">
+                                    @spell.School @(spell.Level == 0 ? "Cantrip" : $"• Level {spell.Level}")
+                                </MudText>
+                                <MudText Typo="Typo.body2" Style="color: var(--iron-grey); font-size: 0.7rem; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                                    @spell.DescPreview
+                                </MudText>
+                            </MudCardContent>
+                        </MudCard>
+                    </MudItem>
+            }
+        </MudGrid>
     </MudContainer>
+
+    @* Spell Details Modal Overlay *@
+    @if (_showSpellDialog)
+    {
+        <div class="spell-modal-overlay" @onclick="CloseDialog">
+            <div class="spell-modal-content" @onclick:stopPropagation="true">
+                <MudPaper Elevation="8" Class="pa-6" Style="max-height: 80vh; overflow-y: auto; background-color: var(--parchment-medium); border: 3px solid var(--accent-gold);">
+                    <div class="d-flex justify-space-between align-center mb-4">
+                        <MudText Typo="Typo.h4" Style="font-family: 'Cinzel', serif; font-weight: 700; color: var(--primary-red-dark);">@_selectedSpellForDialog?.Name</MudText>
+                        <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="CloseDialog" Color="Color.Default" />
+                    </div>
+
+                    @if (_selectedSpellDetails != null)
+                    {
+                        <div class="d-flex justify-space-between align-center mb-3">
+                            <MudText Typo="Typo.body1" Color="Color.Secondary" Style="font-style: italic;">@GetSchoolLevelString(_selectedSpellDetails)</MudText>
+                            @if (!string.IsNullOrEmpty(_selectedSpellDetails.Edition))
+                            {
+                                <MudChip T="string" Size="Size.Small" Color="@(_selectedSpellDetails.Edition == "2024" ? Color.Primary : Color.Secondary)" Style="font-weight: 600;">@_selectedSpellDetails.Edition</MudChip>
+                            }
+                        </div>
+                        <MudDivider Class="my-3" />
+
+                        <div class="spell-stats mb-3">
+                            <MudText Typo="Typo.body1" Class="mb-2"><strong>Casting Time:</strong> @_selectedSpellDetails.CastingTime</MudText>
+                            <MudText Typo="Typo.body1" Class="mb-2"><strong>Range:</strong> @_selectedSpellDetails.Range</MudText>
+                            <MudText Typo="Typo.body1" Class="mb-2"><strong>Components:</strong> @GetComponentsString(_selectedSpellDetails)</MudText>
+                            <MudText Typo="Typo.body1" Class="mb-2"><strong>Duration:</strong> @_selectedSpellDetails.Duration</MudText>
+                        </div>
+
+                        <MudDivider Class="my-4" />
+
+                        @if (_selectedSpellDetails.Desc.Any())
+                        {
+                            <div class="spell-description">
+                                @foreach (var desc in _selectedSpellDetails.Desc)
+                                {
+                                    var formattedDesc = _TextFormatterService.FormatBoldWords(System.Net.WebUtility.HtmlEncode(desc));
+                                    <MudText Typo="Typo.body1" Class="mb-3">@((MarkupString)formattedDesc)</MudText>
+                                }
+                            </div>
+                        }
+
+                        @if (_selectedSpellDetails.HigherLevel != null && _selectedSpellDetails.HigherLevel.Any())
+                        {
+                            <MudDivider Class="my-4" />
+                            <MudText Typo="Typo.h6" Style="font-weight: 700; color: var(--primary-red-dark);" Class="mb-2">At Higher Levels:</MudText>
+                            @foreach (var higherLevel in _selectedSpellDetails.HigherLevel)
+                            {
+                                <MudText Typo="Typo.body1" Class="mb-2">@higherLevel</MudText>
+                            }
+                        }
+
+                        <MudDivider Class="my-4" />
+                        <div class="d-flex justify-end gap-2">
+                            <MudButton OnClick="@(() => RemoveFromSpellbook(_selectedSpellForDialog))" Variant="Variant.Filled" Color="Color.Error">Remove from Spellbook</MudButton>
+                            <MudButton OnClick="CloseDialog" Variant="Variant.Filled" Style="background-color: var(--primary-red-dark); color: white;">Close</MudButton>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex justify-center align-center" style="min-height: 200px;">
+                            <MudProgressCircular Indeterminate="true" Size="Size.Large" Color="Color.Primary" />
+                        </div>
+                    }
+                </MudPaper>
+            </div>
+        </div>
+    }
 
 }
 else
@@ -64,13 +165,17 @@ else
 @code {
     private IList<SpellListItem> _spellList = new List<SpellListItem>();
     private string _selectedSpellIndex { get; set; } = string.Empty;
-    private SpellDetails _selectedSpellDetails { get; set; } = new();
+    private SpellDetails? _selectedSpellDetails = null;
     private SpellDetailsViewModel _spellDetailsViewModel { get; set; } = new();
     private bool _isLoadingDetails { get; set; } = false;
     private bool _isInitialized = false;
 
     private IList<SpellListItem> _filteredSpellList = new List<SpellListItem>();
     private SpellListItem? _selectedSpell;
+
+    // Dialog-related fields
+    private bool _showSpellDialog = false;
+    private SpellListItem? _selectedSpellForDialog;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -125,6 +230,62 @@ else
         _spellList.Remove(spell);
         StateHasChanged();
     }
+
+    #region Card and Dialog
+    private async Task OnCardClick(SpellListItem spell)
+    {
+        _selectedSpellForDialog = spell;
+        _selectedSpellDetails = null;
+        _showSpellDialog = true;
+        StateHasChanged();
+
+        // Load spell details
+        try
+        {
+            _selectedSpellDetails = await _ApiService.GetSpellDetails(spell.Index);
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading spell details: {ex.Message}");
+        }
+    }
+
+    private void CloseDialog()
+    {
+        _showSpellDialog = false;
+        _selectedSpellForDialog = null;
+        _selectedSpellDetails = null;
+    }
+
+    private async Task RemoveFromSpellbook(SpellListItem? spell)
+    {
+        if (spell == null) return;
+
+        await SavedSpellsService.RemoveSpell(spell.Index);
+        _spellList.Remove(spell);
+        _filteredSpellList = _spellList;
+        CloseDialog();
+        StateHasChanged();
+    }
+
+    private string GetSchoolLevelString(SpellDetails spell)
+    {
+        var levelText = spell.Level == 0 ? "Cantrip" : $"Level {spell.Level}";
+        var schoolName = spell.School?.Name ?? "Unknown";
+        return $"{schoolName} - {levelText}";
+    }
+
+    private string GetComponentsString(SpellDetails spell)
+    {
+        var components = string.Join(", ", spell.Components ?? new List<string>());
+        if (!string.IsNullOrEmpty(spell.Material))
+        {
+            components += $" ({spell.Material})";
+        }
+        return components;
+    }
+    #endregion
 
     private async Task GetSpellDetailsViewModelFromIndex(string spellIndex)
     {
