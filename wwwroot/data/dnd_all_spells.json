@@ -253,7 +253,7 @@
       "index": "eldritch-blast",
       "name": "Eldritch Blast",
       "url": "http://dnd2024.wikidot.com/spell:eldritch-blast",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -1718,7 +1718,7 @@
       "index": "alarm",
       "name": "Alarm",
       "url": "http://dnd2024.wikidot.com/spell:alarm",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -1765,7 +1765,7 @@
       "index": "animal-friendship",
       "name": "Animal Friendship",
       "url": "http://dnd2024.wikidot.com/spell:animal-friendship",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -1811,7 +1811,7 @@
       "index": "armor-of-agathys",
       "name": "Armor of Agathys",
       "url": "http://dnd2024.wikidot.com/spell:armor-of-agathys",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -1847,7 +1847,7 @@
       "index": "arms-of-hadar",
       "name": "Arms of Hadar",
       "url": "http://dnd2024.wikidot.com/spell:arms-of-hadar",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -1890,7 +1890,7 @@
       "index": "bane",
       "name": "Bane",
       "url": "http://dnd2024.wikidot.com/spell:bane",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -1944,7 +1944,7 @@
       "index": "bless",
       "name": "Bless",
       "url": "http://dnd2024.wikidot.com/spell:bless",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -1993,7 +1993,7 @@
       "index": "burning-hands",
       "name": "Burning Hands",
       "url": "http://dnd2024.wikidot.com/spell:burning-hands",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -2042,7 +2042,7 @@
       "index": "charm-person",
       "name": "Charm Person",
       "url": "http://dnd2024.wikidot.com/spell:charm-person",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -2097,7 +2097,7 @@
       "index": "chromatic-orb",
       "name": "Chromatic Orb",
       "url": "http://dnd2024.wikidot.com/spell:chromatic-orb",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -2148,7 +2148,7 @@
       "index": "color-spray",
       "name": "Color Spray",
       "url": "http://dnd2024.wikidot.com/spell:color-spray",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -2193,7 +2193,7 @@
       "index": "command",
       "name": "Command",
       "url": "http://dnd2024.wikidot.com/spell:command",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -2242,7 +2242,7 @@
       "index": "compelled-duel",
       "name": "Compelled Duel",
       "url": "http://dnd2024.wikidot.com/spell:compelled-duel",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -2276,7 +2276,7 @@
       "index": "comprehend-languages",
       "name": "Comprehend Languages",
       "url": "http://dnd2024.wikidot.com/spell:comprehend-languages",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -2326,7 +2326,7 @@
       "index": "create-or-destroy-water",
       "name": "Create or Destroy Water",
       "url": "http://dnd2024.wikidot.com/spell:create-or-destroy-water",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -2369,7 +2369,7 @@
       "index": "cure-wounds",
       "name": "Cure Wounds",
       "url": "http://dnd2024.wikidot.com/spell:cure-wounds",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -2437,7 +2437,7 @@
       "index": "detect-evil-and-good",
       "name": "Detect Evil and Good",
       "url": "http://dnd2024.wikidot.com/spell:detect-evil-and-good",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -2477,7 +2477,7 @@
       "index": "detect-magic",
       "name": "Detect Magic",
       "url": "http://dnd2024.wikidot.com/spell:detect-magic",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -2552,7 +2552,7 @@
       "index": "detect-poison-and-disease",
       "name": "Detect Poison and Disease",
       "url": "http://dnd2024.wikidot.com/spell:detect-poison-and-disease",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -2603,7 +2603,7 @@
       "index": "disguise-self",
       "name": "Disguise Self",
       "url": "http://dnd2024.wikidot.com/spell:disguise-self",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -2654,7 +2654,7 @@
       "index": "dissonant-whispers",
       "name": "Dissonant Whispers",
       "url": "http://dnd2024.wikidot.com/spell:dissonant-whispers",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -2696,7 +2696,7 @@
       "index": "divine-favor",
       "name": "Divine Favor",
       "url": "http://dnd2024.wikidot.com/spell:divine-favor",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -2738,7 +2738,7 @@
       "index": "divine-smite",
       "name": "Divine Smite",
       "url": "http://dnd2024.wikidot.com/spell:divine-smite",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -2780,7 +2780,7 @@
       "index": "ensnaring-strike",
       "name": "Ensnaring Strike",
       "url": "http://dnd2024.wikidot.com/spell:ensnaring-strike",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -2823,7 +2823,7 @@
       "index": "entangle",
       "name": "Entangle",
       "url": "http://dnd2024.wikidot.com/spell:entangle",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -2863,7 +2863,7 @@
       "index": "expeditious-retreat",
       "name": "Expeditious Retreat",
       "url": "http://dnd2024.wikidot.com/spell:expeditious-retreat",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -2912,7 +2912,7 @@
       "index": "faerie-fire",
       "name": "Faerie Fire",
       "url": "http://dnd2024.wikidot.com/spell:faerie-fire",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -2956,7 +2956,7 @@
       "index": "false-life",
       "name": "False Life",
       "url": "http://dnd2024.wikidot.com/spell:false-life",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -3010,7 +3010,7 @@
       "index": "feather-fall",
       "name": "Feather Fall",
       "url": "http://dnd2024.wikidot.com/spell:feather-fall",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -3059,7 +3059,7 @@
       "index": "find-familiar",
       "name": "Find Familiar",
       "url": "http://dnd2024.wikidot.com/spell:find-familiar",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -3099,7 +3099,7 @@
       "index": "fog-cloud",
       "name": "Fog Cloud",
       "url": "http://dnd2024.wikidot.com/spell:fog-cloud",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -3149,7 +3149,7 @@
       "index": "goodberry",
       "name": "Goodberry",
       "url": "http://dnd2024.wikidot.com/spell:goodberry",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -3190,7 +3190,7 @@
       "index": "grease",
       "name": "Grease",
       "url": "http://dnd2024.wikidot.com/spell:grease",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -3236,7 +3236,7 @@
       "index": "guiding-bolt",
       "name": "Guiding Bolt",
       "url": "http://dnd2024.wikidot.com/spell:guiding-bolt",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -3280,7 +3280,7 @@
       "index": "hail-of-thorns",
       "name": "Hail of Thorns",
       "url": "http://dnd2024.wikidot.com/spell:hail-of-thorns",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -3322,7 +3322,7 @@
       "index": "healing-word",
       "name": "Healing Word",
       "url": "http://dnd2024.wikidot.com/spell:healing-word",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -3374,7 +3374,7 @@
       "index": "hellish-rebuke",
       "name": "Hellish Rebuke",
       "url": "http://dnd2024.wikidot.com/spell:hellish-rebuke",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -3417,7 +3417,7 @@
       "index": "heroism",
       "name": "Heroism",
       "url": "http://dnd2024.wikidot.com/spell:heroism",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -3457,7 +3457,7 @@
       "index": "hex",
       "name": "Hex",
       "url": "http://dnd2024.wikidot.com/spell:hex",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -3502,7 +3502,7 @@
       "index": "hunter-s-mark",
       "name": "Hunter's Mark",
       "url": "http://dnd2024.wikidot.com/spell:hunter-s-mark",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -3545,7 +3545,7 @@
       "index": "ice-knife",
       "name": "Ice Knife",
       "url": "http://dnd2024.wikidot.com/spell:ice-knife",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -3599,7 +3599,7 @@
       "index": "identify",
       "name": "Identify",
       "url": "http://dnd2024.wikidot.com/spell:identify",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -3645,7 +3645,7 @@
       "index": "illusory-script",
       "name": "Illusory Script",
       "url": "http://dnd2024.wikidot.com/spell:illusory-script",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -3691,7 +3691,7 @@
       "index": "inflict-wounds",
       "name": "Inflict Wounds",
       "url": "http://dnd2024.wikidot.com/spell:inflict-wounds",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -3734,7 +3734,7 @@
       "index": "jump",
       "name": "Jump",
       "url": "http://dnd2024.wikidot.com/spell:jump",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -3790,7 +3790,7 @@
       "index": "longstrider",
       "name": "Longstrider",
       "url": "http://dnd2024.wikidot.com/spell:longstrider",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -3846,7 +3846,7 @@
       "index": "mage-armor",
       "name": "Mage Armor",
       "url": "http://dnd2024.wikidot.com/spell:mage-armor",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -3886,7 +3886,7 @@
       "index": "magic-missile",
       "name": "Magic Missile",
       "url": "http://dnd2024.wikidot.com/spell:magic-missile",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -3934,7 +3934,7 @@
       "index": "protection-from-evil-and-good",
       "name": "Protection from Evil and Good",
       "url": "http://dnd2024.wikidot.com/spell:protection-from-evil-and-good",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -3989,7 +3989,7 @@
       "index": "purify-food-and-drink",
       "name": "Purify Food and Drink",
       "url": "http://dnd2024.wikidot.com/spell:purify-food-and-drink",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -4038,7 +4038,7 @@
       "index": "ray-of-sickness",
       "name": "Ray of Sickness",
       "url": "http://dnd2024.wikidot.com/spell:ray-of-sickness",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -4087,7 +4087,7 @@
       "index": "sanctuary",
       "name": "Sanctuary",
       "url": "http://dnd2024.wikidot.com/spell:sanctuary",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -4128,7 +4128,7 @@
       "index": "searing-smite",
       "name": "Searing Smite",
       "url": "http://dnd2024.wikidot.com/spell:searing-smite",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -4170,7 +4170,7 @@
       "index": "shield",
       "name": "Shield",
       "url": "http://dnd2024.wikidot.com/spell:shield",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -4209,7 +4209,7 @@
       "index": "shield-of-faith",
       "name": "Shield of Faith",
       "url": "http://dnd2024.wikidot.com/spell:shield-of-faith",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -4249,7 +4249,7 @@
       "index": "silent-image",
       "name": "Silent Image",
       "url": "http://dnd2024.wikidot.com/spell:silent-image",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -4296,7 +4296,7 @@
       "index": "sleep",
       "name": "Sleep",
       "url": "http://dnd2024.wikidot.com/spell:sleep",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -4342,7 +4342,7 @@
       "index": "speak-with-animals",
       "name": "Speak with Animals",
       "url": "http://dnd2024.wikidot.com/spell:speak-with-animals",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -4440,7 +4440,7 @@
       "index": "tasha-s-hideous-laughter",
       "name": "Tasha's Hideous Laughter",
       "url": "http://dnd2024.wikidot.com/spell:tasha-s-hideous-laughter",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -4487,7 +4487,7 @@
       "index": "tenser-s-floating-disk",
       "name": "Tenser's Floating Disk",
       "url": "http://dnd2024.wikidot.com/spell:tenser-s-floating-disk",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -4524,7 +4524,7 @@
       "index": "thunderous-smite",
       "name": "Thunderous Smite",
       "url": "http://dnd2024.wikidot.com/spell:thunderous-smite",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -4566,7 +4566,7 @@
       "index": "thunderwave",
       "name": "Thunderwave",
       "url": "http://dnd2024.wikidot.com/spell:thunderwave",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -4625,7 +4625,7 @@
       "index": "unseen-servant",
       "name": "Unseen Servant",
       "url": "http://dnd2024.wikidot.com/spell:unseen-servant",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -4731,7 +4731,7 @@
       "index": "witch-bolt",
       "name": "Witch Bolt",
       "url": "http://dnd2024.wikidot.com/spell:witch-bolt",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -4788,7 +4788,7 @@
       "index": "wrathful-smite",
       "name": "Wrathful Smite",
       "url": "http://dnd2024.wikidot.com/spell:wrathful-smite",
-      "level": 0,
+      "level": 1,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -4830,7 +4830,7 @@
       "index": "aid",
       "name": "Aid",
       "url": "http://dnd2024.wikidot.com/spell:aid",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -4891,7 +4891,7 @@
       "index": "alter-self",
       "name": "Alter Self",
       "url": "http://dnd2024.wikidot.com/spell:alter-self",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -4946,7 +4946,7 @@
       "index": "animal-messenger",
       "name": "Animal Messenger",
       "url": "http://dnd2024.wikidot.com/spell:animal-messenger",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -4993,7 +4993,7 @@
       "index": "arcane-lock",
       "name": "Arcane Lock",
       "url": "http://dnd2024.wikidot.com/spell:arcane-lock",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -5033,7 +5033,7 @@
       "index": "arcane-vigor",
       "name": "Arcane Vigor",
       "url": "http://dnd2024.wikidot.com/spell:arcane-vigor",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -5078,7 +5078,7 @@
       "index": "augury",
       "name": "Augury",
       "url": "http://dnd2024.wikidot.com/spell:augury",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -5125,7 +5125,7 @@
       "index": "barkskin",
       "name": "Barkskin",
       "url": "http://dnd2024.wikidot.com/spell:barkskin",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -5165,7 +5165,7 @@
       "index": "beast-sense",
       "name": "Beast Sense",
       "url": "http://dnd2024.wikidot.com/spell:beast-sense",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -5203,7 +5203,7 @@
       "index": "blindness-deafness",
       "name": "Blindness/Deafness",
       "url": "http://dnd2024.wikidot.com/spell:blindness-deafness",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -5252,7 +5252,7 @@
       "index": "blur",
       "name": "Blur",
       "url": "http://dnd2024.wikidot.com/spell:blur",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -5295,7 +5295,7 @@
       "index": "calm-emotions",
       "name": "Calm Emotions",
       "url": "http://dnd2024.wikidot.com/spell:calm-emotions",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -5334,7 +5334,7 @@
       "index": "cloud-of-daggers",
       "name": "Cloud Of Daggers",
       "url": "http://dnd2024.wikidot.com/spell:cloud-of-daggers",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -5394,7 +5394,7 @@
       "index": "continual-flame",
       "name": "Continual Flame",
       "url": "http://dnd2024.wikidot.com/spell:continual-flame",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -5444,7 +5444,7 @@
       "index": "cordon-of-arrows",
       "name": "Cordon Of Arrows",
       "url": "http://dnd2024.wikidot.com/spell:cordon-of-arrows",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -5489,7 +5489,7 @@
       "index": "crown-of-madness",
       "name": "Crown Of Madness",
       "url": "http://dnd2024.wikidot.com/spell:crown-of-madness",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -5540,7 +5540,7 @@
       "index": "darkness",
       "name": "Darkness",
       "url": "http://dnd2024.wikidot.com/spell:darkness",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -5586,7 +5586,7 @@
       "index": "darkvision",
       "name": "Darkvision",
       "url": "http://dnd2024.wikidot.com/spell:darkvision",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -5688,7 +5688,7 @@
       "index": "deryan-s-helpful-homunculi",
       "name": "Deryan's Helpful Homunculi",
       "url": "http://dnd2024.wikidot.com/spell:deryan-s-helpful-homunculi",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -5729,7 +5729,7 @@
       "index": "detect-thoughts",
       "name": "Detect Thoughts",
       "url": "http://dnd2024.wikidot.com/spell:detect-thoughts",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -5778,7 +5778,7 @@
       "index": "dragon-s-breath",
       "name": "Dragon's Breath",
       "url": "http://dnd2024.wikidot.com/spell:dragon-s-breath",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -5832,7 +5832,7 @@
       "index": "elminster-s-elusion",
       "name": "Elminster's Elusion",
       "url": "http://dnd2024.wikidot.com/spell:elminster-s-elusion",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -5866,7 +5866,7 @@
       "index": "enhance-ability",
       "name": "Enhance Ability",
       "url": "http://dnd2024.wikidot.com/spell:enhance-ability",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -5932,7 +5932,7 @@
       "index": "enlarge-reduce",
       "name": "Enlarge/Reduce",
       "url": "http://dnd2024.wikidot.com/spell:enlarge-reduce",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -5998,7 +5998,7 @@
       "index": "enthrall",
       "name": "Enthrall",
       "url": "http://dnd2024.wikidot.com/spell:enthrall",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -6037,7 +6037,7 @@
       "index": "find-steed",
       "name": "Find Steed",
       "url": "http://dnd2024.wikidot.com/spell:find-steed",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -6075,7 +6075,7 @@
       "index": "find-traps",
       "name": "Find Traps",
       "url": "http://dnd2024.wikidot.com/spell:find-traps",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -6120,7 +6120,7 @@
       "index": "flame-blade",
       "name": "Flame Blade",
       "url": "http://dnd2024.wikidot.com/spell:flame-blade",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -6172,7 +6172,7 @@
       "index": "flaming-sphere",
       "name": "Flaming Sphere",
       "url": "http://dnd2024.wikidot.com/spell:flaming-sphere",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -6228,7 +6228,7 @@
       "index": "gentle-repose",
       "name": "Gentle Repose",
       "url": "http://dnd2024.wikidot.com/spell:gentle-repose",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -6326,7 +6326,7 @@
       "index": "heat-metal",
       "name": "Heat Metal",
       "url": "http://dnd2024.wikidot.com/spell:heat-metal",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -6381,7 +6381,7 @@
       "index": "hold-person",
       "name": "Hold Person",
       "url": "http://dnd2024.wikidot.com/spell:hold-person",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -6442,7 +6442,7 @@
       "index": "homunculus-servant",
       "name": "Homunculus Servant",
       "url": "http://dnd2024.wikidot.com/spell:homunculus-servant",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -6479,7 +6479,7 @@
       "index": "invisibility",
       "name": "Invisibility",
       "url": "http://dnd2024.wikidot.com/spell:invisibility",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -6535,7 +6535,7 @@
       "index": "knock",
       "name": "Knock",
       "url": "http://dnd2024.wikidot.com/spell:knock",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -6581,7 +6581,7 @@
       "index": "lesser-restoration",
       "name": "Lesser Restoration",
       "url": "http://dnd2024.wikidot.com/spell:lesser-restoration",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -6640,7 +6640,7 @@
       "index": "levitate",
       "name": "Levitate",
       "url": "http://dnd2024.wikidot.com/spell:levitate",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -6687,7 +6687,7 @@
       "index": "locate-animals-or-plants",
       "name": "Locate Animals or Plants",
       "url": "http://dnd2024.wikidot.com/spell:locate-animals-or-plants",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -6732,7 +6732,7 @@
       "index": "locate-object",
       "name": "Locate Object",
       "url": "http://dnd2024.wikidot.com/spell:locate-object",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -6794,7 +6794,7 @@
       "index": "magic-mouth",
       "name": "Magic Mouth",
       "url": "http://dnd2024.wikidot.com/spell:magic-mouth",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -6841,7 +6841,7 @@
       "index": "magic-weapon",
       "name": "Magic Weapon",
       "url": "http://dnd2024.wikidot.com/spell:magic-weapon",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -6896,7 +6896,7 @@
       "index": "melfs-acid-arrow",
       "name": "Melf's Acid Arrow",
       "url": "http://dnd2024.wikidot.com/spell:melfs-acid-arrow",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -6941,7 +6941,7 @@
       "index": "mind-spike",
       "name": "Mind Spike",
       "url": "http://dnd2024.wikidot.com/spell:mind-spike",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -6993,7 +6993,7 @@
       "index": "mirror-image",
       "name": "Mirror Image",
       "url": "http://dnd2024.wikidot.com/spell:mirror-image",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -7044,7 +7044,7 @@
       "index": "misty-step",
       "name": "Misty Step",
       "url": "http://dnd2024.wikidot.com/spell:misty-step",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -7087,7 +7087,7 @@
       "index": "moonbeam",
       "name": "Moonbeam",
       "url": "http://dnd2024.wikidot.com/spell:moonbeam",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -7132,7 +7132,7 @@
       "index": "nystul-s-magic-aura",
       "name": "Nystul's Magic Aura",
       "url": "http://dnd2024.wikidot.com/spell:nystul-s-magic-aura",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -7169,7 +7169,7 @@
       "index": "pass-without-trace",
       "name": "Pass without Trace",
       "url": "http://dnd2024.wikidot.com/spell:pass-without-trace",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -7209,7 +7209,7 @@
       "index": "phantasmal-force",
       "name": "Phantasmal Force",
       "url": "http://dnd2024.wikidot.com/spell:phantasmal-force",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -7265,7 +7265,7 @@
       "index": "prayer-of-healing",
       "name": "Prayer of Healing",
       "url": "http://dnd2024.wikidot.com/spell:prayer-of-healing",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -7312,7 +7312,7 @@
       "index": "protection-from-poison",
       "name": "Protection from Poison",
       "url": "http://dnd2024.wikidot.com/spell:protection-from-poison",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -7366,7 +7366,7 @@
       "index": "ray-of-enfeeblement",
       "name": "Ray of Enfeeblement",
       "url": "http://dnd2024.wikidot.com/spell:ray-of-enfeeblement",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -7414,7 +7414,7 @@
       "index": "rope-trick",
       "name": "Rope Trick",
       "url": "http://dnd2024.wikidot.com/spell:rope-trick",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -7455,7 +7455,7 @@
       "index": "scorching-ray",
       "name": "Scorching Ray",
       "url": "http://dnd2024.wikidot.com/spell:scorching-ray",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -7504,7 +7504,7 @@
       "index": "see-invisibility",
       "name": "See Invisibility",
       "url": "http://dnd2024.wikidot.com/spell:see-invisibility",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -7554,7 +7554,7 @@
       "index": "shatter",
       "name": "Shatter",
       "url": "http://dnd2024.wikidot.com/spell:shatter",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -7609,7 +7609,7 @@
       "index": "shining-smite",
       "name": "Shining Smite",
       "url": "http://dnd2024.wikidot.com/spell:shining-smite",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -7651,7 +7651,7 @@
       "index": "silence",
       "name": "Silence",
       "url": "http://dnd2024.wikidot.com/spell:silence",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -7695,7 +7695,7 @@
       "index": "spider-climb",
       "name": "Spider Climb",
       "url": "http://dnd2024.wikidot.com/spell:spider-climb",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -7746,7 +7746,7 @@
       "index": "spike-growth",
       "name": "Spike Growth",
       "url": "http://dnd2024.wikidot.com/spell:spike-growth",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -7795,7 +7795,7 @@
       "index": "spiritual-weapon",
       "name": "Spiritual Weapon",
       "url": "http://dnd2024.wikidot.com/spell:spiritual-weapon",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -7840,7 +7840,7 @@
       "index": "suggestion",
       "name": "Suggestion",
       "url": "http://dnd2024.wikidot.com/spell:suggestion",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -7890,7 +7890,7 @@
       "index": "summon-beast",
       "name": "Summon Beast",
       "url": "http://dnd2024.wikidot.com/spell:summon-beast",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -7932,7 +7932,7 @@
       "index": "warding-bond",
       "name": "Warding Bond",
       "url": "http://dnd2024.wikidot.com/spell:warding-bond",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -7973,7 +7973,7 @@
       "index": "web",
       "name": "Web",
       "url": "http://dnd2024.wikidot.com/spell:web",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -8030,7 +8030,7 @@
       "index": "zone-of-truth",
       "name": "Zone of Truth",
       "url": "http://dnd2024.wikidot.com/spell:zone-of-truth",
-      "level": 0,
+      "level": 2,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -8075,7 +8075,7 @@
       "index": "animate-dead",
       "name": "Animate Dead",
       "url": "http://dnd2024.wikidot.com/spell:animate-dead",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -8118,7 +8118,7 @@
       "index": "aura-of-vitality",
       "name": "Aura of Vitality",
       "url": "http://dnd2024.wikidot.com/spell:aura-of-vitality",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -8169,7 +8169,7 @@
       "index": "beacon-of-hope",
       "name": "Beacon Of Hope",
       "url": "http://dnd2024.wikidot.com/spell:beacon-of-hope",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -8203,7 +8203,7 @@
       "index": "bestow-curse",
       "name": "Bestow Curse",
       "url": "http://dnd2024.wikidot.com/spell:bestow-curse",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -8248,7 +8248,7 @@
       "index": "blinding-smite",
       "name": "Blinding Smite",
       "url": "http://dnd2024.wikidot.com/spell:blinding-smite",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -8290,7 +8290,7 @@
       "index": "blink",
       "name": "Blink",
       "url": "http://dnd2024.wikidot.com/spell:blink",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -8396,7 +8396,7 @@
       "index": "call-lightning",
       "name": "Call Lightning",
       "url": "http://dnd2024.wikidot.com/spell:call-lightning",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -8442,7 +8442,7 @@
       "index": "clairvoyance",
       "name": "Clairvoyance",
       "url": "http://dnd2024.wikidot.com/spell:clairvoyance",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -8494,7 +8494,7 @@
       "index": "conjure-animals",
       "name": "Conjure Animals",
       "url": "http://dnd2024.wikidot.com/spell:conjure-animals",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -8544,7 +8544,7 @@
       "index": "conjure-barrage",
       "name": "Conjure Barrage",
       "url": "http://dnd2024.wikidot.com/spell:conjure-barrage",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -8635,7 +8635,7 @@
       "index": "counterspell",
       "name": "Counterspell",
       "url": "http://dnd2024.wikidot.com/spell:counterspell",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -8678,7 +8678,7 @@
       "index": "create-food-and-water",
       "name": "Create Food And Water",
       "url": "http://dnd2024.wikidot.com/spell:create-food-and-water",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -8722,7 +8722,7 @@
       "index": "crusader-s-mantle",
       "name": "Crusader's Mantle",
       "url": "http://dnd2024.wikidot.com/spell:crusader-s-mantle",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -8763,7 +8763,7 @@
       "index": "daylight",
       "name": "Daylight",
       "url": "http://dnd2024.wikidot.com/spell:daylight",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -8819,7 +8819,7 @@
       "index": "dispel-magic",
       "name": "Dispel Magic",
       "url": "http://dnd2024.wikidot.com/spell:dispel-magic",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -8894,7 +8894,7 @@
       "index": "elemental-weapon",
       "name": "Elemental Weapon",
       "url": "http://dnd2024.wikidot.com/spell:elemental-weapon",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -8952,7 +8952,7 @@
       "index": "fear",
       "name": "Fear",
       "url": "http://dnd2024.wikidot.com/spell:fear",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -9003,7 +9003,7 @@
       "index": "feign-death",
       "name": "Feign Death",
       "url": "http://dnd2024.wikidot.com/spell:feign-death",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -9055,7 +9055,7 @@
       "index": "fireball",
       "name": "Fireball",
       "url": "http://dnd2024.wikidot.com/spell:fireball",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -9105,7 +9105,7 @@
       "index": "fly",
       "name": "Fly",
       "url": "http://dnd2024.wikidot.com/spell:fly",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -9156,7 +9156,7 @@
       "index": "gaseous-form",
       "name": "Gaseous Form",
       "url": "http://dnd2024.wikidot.com/spell:gaseous-form",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -9204,7 +9204,7 @@
       "index": "glyph-of-warding",
       "name": "Glyph of Warding",
       "url": "http://dnd2024.wikidot.com/spell:glyph-of-warding",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -9270,7 +9270,7 @@
       "index": "haste",
       "name": "Haste",
       "url": "http://dnd2024.wikidot.com/spell:haste",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -9316,7 +9316,7 @@
       "index": "hunger-of-hadar",
       "name": "Hunger of Hadar",
       "url": "http://dnd2024.wikidot.com/spell:hunger-of-hadar",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -9361,7 +9361,7 @@
       "index": "hypnotic-pattern",
       "name": "Hypnotic Pattern",
       "url": "http://dnd2024.wikidot.com/spell:hypnotic-pattern",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -9464,7 +9464,7 @@
       "index": "leomund-s-tiny-hut",
       "name": "Leomund's Tiny Hut",
       "url": "http://dnd2024.wikidot.com/spell:leomund-s-tiny-hut",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -9507,7 +9507,7 @@
       "index": "lightning-arrow",
       "name": "Lightning Arrow",
       "url": "http://dnd2024.wikidot.com/spell:lightning-arrow",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -9551,7 +9551,7 @@
       "index": "lightning-bolt",
       "name": "Lightning Bolt",
       "url": "http://dnd2024.wikidot.com/spell:lightning-bolt",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -9600,7 +9600,7 @@
       "index": "magic-circle",
       "name": "Magic Circle",
       "url": "http://dnd2024.wikidot.com/spell:magic-circle",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -9653,7 +9653,7 @@
       "index": "major-image",
       "name": "Major Image",
       "url": "http://dnd2024.wikidot.com/spell:major-image",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -9706,7 +9706,7 @@
       "index": "mass-healing-word",
       "name": "Mass Healing Word",
       "url": "http://dnd2024.wikidot.com/spell:mass-healing-word",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -9753,7 +9753,7 @@
       "index": "meld-into-stone",
       "name": "Meld into Stone",
       "url": "http://dnd2024.wikidot.com/spell:meld-into-stone",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -9807,7 +9807,7 @@
       "index": "nondetection",
       "name": "Nondetection",
       "url": "http://dnd2024.wikidot.com/spell:nondetection",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -9852,7 +9852,7 @@
       "index": "phantom-steed",
       "name": "Phantom Steed",
       "url": "http://dnd2024.wikidot.com/spell:phantom-steed",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -9887,7 +9887,7 @@
       "index": "plant-growth",
       "name": "Plant Growth",
       "url": "http://dnd2024.wikidot.com/spell:plant-growth",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -9933,7 +9933,7 @@
       "index": "protection-from-energy",
       "name": "Protection from Energy",
       "url": "http://dnd2024.wikidot.com/spell:protection-from-energy",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -9992,7 +9992,7 @@
       "index": "remove-curse",
       "name": "Remove Curse",
       "url": "http://dnd2024.wikidot.com/spell:remove-curse",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -10041,7 +10041,7 @@
       "index": "revivify",
       "name": "Revivify",
       "url": "http://dnd2024.wikidot.com/spell:revivify",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -10096,7 +10096,7 @@
       "index": "sending",
       "name": "Sending",
       "url": "http://dnd2024.wikidot.com/spell:sending",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -10143,7 +10143,7 @@
       "index": "sleet-storm",
       "name": "Sleet Storm",
       "url": "http://dnd2024.wikidot.com/spell:sleet-storm",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -10189,7 +10189,7 @@
       "index": "slow",
       "name": "Slow",
       "url": "http://dnd2024.wikidot.com/spell:slow",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -10236,7 +10236,7 @@
       "index": "speak-with-dead",
       "name": "Speak with Dead",
       "url": "http://dnd2024.wikidot.com/spell:speak-with-dead",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -10282,7 +10282,7 @@
       "index": "speak-with-plants",
       "name": "Speak with Plants",
       "url": "http://dnd2024.wikidot.com/spell:speak-with-plants",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -10329,7 +10329,7 @@
       "index": "spirit-guardians",
       "name": "Spirit Guardians",
       "url": "http://dnd2024.wikidot.com/spell:spirit-guardians",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -10374,7 +10374,7 @@
       "index": "stinking-cloud",
       "name": "Stinking Cloud",
       "url": "http://dnd2024.wikidot.com/spell:stinking-cloud",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -10420,7 +10420,7 @@
       "index": "summon-fey",
       "name": "Summon Fey",
       "url": "http://dnd2024.wikidot.com/spell:summon-fey",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -10472,7 +10472,7 @@
       "index": "summon-undead",
       "name": "Summon Undead",
       "url": "http://dnd2024.wikidot.com/spell:summon-undead",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -10514,7 +10514,7 @@
       "index": "sylune-s-viper",
       "name": "Sylune's Viper",
       "url": "http://dnd2024.wikidot.com/spell:sylune-s-viper",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -10567,7 +10567,7 @@
       "index": "tongues",
       "name": "Tongues",
       "url": "http://dnd2024.wikidot.com/spell:tongues",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -10621,7 +10621,7 @@
       "index": "vampiric-touch",
       "name": "Vampiric Touch",
       "url": "http://dnd2024.wikidot.com/spell:vampiric-touch",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -10676,7 +10676,7 @@
       "index": "water-breathing",
       "name": "Water Breathing",
       "url": "http://dnd2024.wikidot.com/spell:water-breathing",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -10731,7 +10731,7 @@
       "index": "water-walk",
       "name": "Water Walk",
       "url": "http://dnd2024.wikidot.com/spell:water-walk",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -10787,7 +10787,7 @@
       "index": "wind-wall",
       "name": "Wind Wall",
       "url": "http://dnd2024.wikidot.com/spell:wind-wall",
-      "level": 0,
+      "level": 3,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -10837,7 +10837,7 @@
       "index": "arcane-eye",
       "name": "Arcane Eye",
       "url": "http://dnd2024.wikidot.com/spell:arcane-eye",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -10878,7 +10878,7 @@
       "index": "aura-of-life",
       "name": "Aura of Life",
       "url": "http://dnd2024.wikidot.com/spell:aura-of-life",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -10916,7 +10916,7 @@
       "index": "aura-of-purity",
       "name": "Aura of Purity",
       "url": "http://dnd2024.wikidot.com/spell:aura-of-purity",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -10954,7 +10954,7 @@
       "index": "backlash",
       "name": "Backlash",
       "url": "http://dnd2024.wikidot.com/spell:backlash",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -11012,7 +11012,7 @@
       "index": "banishment",
       "name": "Banishment",
       "url": "http://dnd2024.wikidot.com/spell:banishment",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -11069,7 +11069,7 @@
       "index": "blight",
       "name": "Blight",
       "url": "http://dnd2024.wikidot.com/spell:blight",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -11128,7 +11128,7 @@
       "index": "charm-monster",
       "name": "Charm Monster",
       "url": "http://dnd2024.wikidot.com/spell:charm-monster",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -11183,7 +11183,7 @@
       "index": "compulsion",
       "name": "Compulsion",
       "url": "http://dnd2024.wikidot.com/spell:compulsion",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -11218,7 +11218,7 @@
       "index": "confusion",
       "name": "Confusion",
       "url": "http://dnd2024.wikidot.com/spell:confusion",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -11278,7 +11278,7 @@
       "index": "conjure-minor-elementals",
       "name": "Conjure Minor Elementals",
       "url": "http://dnd2024.wikidot.com/spell:conjure-minor-elementals",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -11327,7 +11327,7 @@
       "index": "conjure-woodland-beings",
       "name": "Conjure Woodland Beings",
       "url": "http://dnd2024.wikidot.com/spell:conjure-woodland-beings",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -11376,7 +11376,7 @@
       "index": "control-water",
       "name": "Control Water",
       "url": "http://dnd2024.wikidot.com/spell:control-water",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -11434,7 +11434,7 @@
       "index": "death-ward",
       "name": "Death Ward",
       "url": "http://dnd2024.wikidot.com/spell:death-ward",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -11474,7 +11474,7 @@
       "index": "dimension-door",
       "name": "Dimension Door",
       "url": "http://dnd2024.wikidot.com/spell:dimension-door",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -11532,7 +11532,7 @@
       "index": "divination",
       "name": "Divination",
       "url": "http://dnd2024.wikidot.com/spell:divination",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -11578,7 +11578,7 @@
       "index": "dominate-beast",
       "name": "Dominate Beast",
       "url": "http://dnd2024.wikidot.com/spell:dominate-beast",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -11681,7 +11681,7 @@
       "index": "evard-s-black-tentacles",
       "name": "Evard's Black Tentacles",
       "url": "http://dnd2024.wikidot.com/spell:evard-s-black-tentacles",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -11726,7 +11726,7 @@
       "index": "fabricate",
       "name": "Fabricate",
       "url": "http://dnd2024.wikidot.com/spell:fabricate",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -11767,7 +11767,7 @@
       "index": "fire-shield",
       "name": "Fire Shield",
       "url": "http://dnd2024.wikidot.com/spell:fire-shield",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -11822,7 +11822,7 @@
       "index": "fount-of-moonlight",
       "name": "Fount of Moonlight",
       "url": "http://dnd2024.wikidot.com/spell:fount-of-moonlight",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -11871,7 +11871,7 @@
       "index": "freedom-of-movement",
       "name": "Freedom of Movement",
       "url": "http://dnd2024.wikidot.com/spell:freedom-of-movement",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -11928,7 +11928,7 @@
       "index": "giant-insect",
       "name": "Giant Insect",
       "url": "http://dnd2024.wikidot.com/spell:giant-insect",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -11964,7 +11964,7 @@
       "index": "grasping-vine",
       "name": "Grasping Vine",
       "url": "http://dnd2024.wikidot.com/spell:grasping-vine",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -12015,7 +12015,7 @@
       "index": "greater-invisibility",
       "name": "Greater Invisibility",
       "url": "http://dnd2024.wikidot.com/spell:greater-invisibility",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -12059,7 +12059,7 @@
       "index": "guardian-of-faith",
       "name": "Guardian of Faith",
       "url": "http://dnd2024.wikidot.com/spell:guardian-of-faith",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -12093,7 +12093,7 @@
       "index": "hallucinatory-terrain",
       "name": "Hallucinatory Terrain",
       "url": "http://dnd2024.wikidot.com/spell:hallucinatory-terrain",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -12144,7 +12144,7 @@
       "index": "ice-storm",
       "name": "Ice Storm",
       "url": "http://dnd2024.wikidot.com/spell:ice-storm",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -12199,7 +12199,7 @@
       "index": "leomunds-secret-chest",
       "name": "Leomund's Secret Chest",
       "url": "http://dnd2024.wikidot.com/spell:leomunds-secret-chest",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -12241,7 +12241,7 @@
       "index": "locate-creature",
       "name": "Locate Creature",
       "url": "http://dnd2024.wikidot.com/spell:locate-creature",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -12303,7 +12303,7 @@
       "index": "mordenkainen-s-faithful-hound",
       "name": "Mordenkainen's Faithful Hound",
       "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-faithful-hound",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -12349,7 +12349,7 @@
       "index": "mordenkainen-s-private-sanctum",
       "name": "Mordenkainen's Private Sanctum",
       "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-private-sanctum",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -12392,7 +12392,7 @@
       "index": "otilukes-resilient-sphere",
       "name": "Otiluke's Resilient Sphere",
       "url": "http://dnd2024.wikidot.com/spell:otilukes-resilient-sphere",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -12435,7 +12435,7 @@
       "index": "phantasmal-killer",
       "name": "Phantasmal Killer",
       "url": "http://dnd2024.wikidot.com/spell:phantasmal-killer",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -12484,7 +12484,7 @@
       "index": "polymorph",
       "name": "Polymorph",
       "url": "http://dnd2024.wikidot.com/spell:polymorph",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -12587,7 +12587,7 @@
       "index": "staggering-smite",
       "name": "Staggering Smite",
       "url": "http://dnd2024.wikidot.com/spell:staggering-smite",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -12629,7 +12629,7 @@
       "index": "stone-shape",
       "name": "Stone Shape",
       "url": "http://dnd2024.wikidot.com/spell:stone-shape",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -12679,7 +12679,7 @@
       "index": "stoneskin",
       "name": "Stoneskin",
       "url": "http://dnd2024.wikidot.com/spell:stoneskin",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -12734,7 +12734,7 @@
       "index": "summon-aberration",
       "name": "Summon Aberration",
       "url": "http://dnd2024.wikidot.com/spell:summon-aberration",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -12776,7 +12776,7 @@
       "index": "summon-construct",
       "name": "Summon Construct",
       "url": "http://dnd2024.wikidot.com/spell:summon-construct",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -12818,7 +12818,7 @@
       "index": "summon-elemental",
       "name": "Summon Elemental",
       "url": "http://dnd2024.wikidot.com/spell:summon-elemental",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -12865,7 +12865,7 @@
       "index": "vitriolic-sphere",
       "name": "Vitriolic Sphere",
       "url": "http://dnd2024.wikidot.com/spell:vitriolic-sphere",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -12914,7 +12914,7 @@
       "index": "wall-of-fire",
       "name": "Wall of Fire",
       "url": "http://dnd2024.wikidot.com/spell:wall-of-fire",
-      "level": 0,
+      "level": 4,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -13030,7 +13030,7 @@
       "index": "animate-objects",
       "name": "Animate Objects",
       "url": "http://dnd2024.wikidot.com/spell:animate-objects",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -13090,7 +13090,7 @@
       "index": "antilife-shell",
       "name": "Antilife Shell",
       "url": "http://dnd2024.wikidot.com/spell:antilife-shell",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -13125,7 +13125,7 @@
       "index": "awaken",
       "name": "Awaken",
       "url": "http://dnd2024.wikidot.com/spell:awaken",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -13166,7 +13166,7 @@
       "index": "banishing-smite",
       "name": "Banishing Smite",
       "url": "http://dnd2024.wikidot.com/spell:banishing-smite",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -13207,7 +13207,7 @@
       "index": "bigby-s-hand",
       "name": "Bigby's Hand",
       "url": "http://dnd2024.wikidot.com/spell:bigby-s-hand",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -13268,7 +13268,7 @@
       "index": "circle-of-power",
       "name": "Circle Of Power",
       "url": "http://dnd2024.wikidot.com/spell:circle-of-power",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -13316,7 +13316,7 @@
       "index": "cloudkill",
       "name": "Cloudkill",
       "url": "http://dnd2024.wikidot.com/spell:cloudkill",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -13366,7 +13366,7 @@
       "index": "commune",
       "name": "Commune",
       "url": "http://dnd2024.wikidot.com/spell:commune",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -13403,7 +13403,7 @@
       "index": "commune-with-nature",
       "name": "Commune With Nature",
       "url": "http://dnd2024.wikidot.com/spell:commune-with-nature",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -13444,7 +13444,7 @@
       "index": "cone-of-cold",
       "name": "Cone Of Cold",
       "url": "http://dnd2024.wikidot.com/spell:cone-of-cold",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -13498,7 +13498,7 @@
       "index": "conjure-elemental",
       "name": "Conjure Elemental",
       "url": "http://dnd2024.wikidot.com/spell:conjure-elemental",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -13547,7 +13547,7 @@
       "index": "conjure-volley",
       "name": "Conjure Volley",
       "url": "http://dnd2024.wikidot.com/spell:conjure-volley",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -13590,7 +13590,7 @@
       "index": "contact-other-plane",
       "name": "Contact Other Plane",
       "url": "http://dnd2024.wikidot.com/spell:contact-other-plane",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -13637,7 +13637,7 @@
       "index": "contagion",
       "name": "Contagion",
       "url": "http://dnd2024.wikidot.com/spell:contagion",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -13686,7 +13686,7 @@
       "index": "creation",
       "name": "Creation",
       "url": "http://dnd2024.wikidot.com/spell:creation",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -13733,7 +13733,7 @@
       "index": "destructive-wave",
       "name": "Destructive Wave",
       "url": "http://dnd2024.wikidot.com/spell:destructive-wave",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -13774,7 +13774,7 @@
       "index": "dispel-evil-and-good",
       "name": "Dispel Evil and Good",
       "url": "http://dnd2024.wikidot.com/spell:dispel-evil-and-good",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -13816,7 +13816,7 @@
       "index": "dominate-person",
       "name": "Dominate Person",
       "url": "http://dnd2024.wikidot.com/spell:dominate-person",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -13863,7 +13863,7 @@
       "index": "dream",
       "name": "Dream",
       "url": "http://dnd2024.wikidot.com/spell:dream",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -13919,7 +13919,7 @@
       "index": "flame-strike",
       "name": "Flame Strike",
       "url": "http://dnd2024.wikidot.com/spell:flame-strike",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -13963,7 +13963,7 @@
       "index": "geas",
       "name": "Geas",
       "url": "http://dnd2024.wikidot.com/spell:geas",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -14028,7 +14028,7 @@
       "index": "greater-restoration",
       "name": "Greater Restoration",
       "url": "http://dnd2024.wikidot.com/spell:greater-restoration",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -14088,7 +14088,7 @@
       "index": "hallow",
       "name": "Hallow",
       "url": "http://dnd2024.wikidot.com/spell:hallow",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -14135,7 +14135,7 @@
       "index": "hold-monster",
       "name": "Hold Monster",
       "url": "http://dnd2024.wikidot.com/spell:hold-monster",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -14186,7 +14186,7 @@
       "index": "insect-plague",
       "name": "Insect Plague",
       "url": "http://dnd2024.wikidot.com/spell:insect-plague",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -14241,7 +14241,7 @@
       "index": "jallarzi-s-storm-of-radiance",
       "name": "Jallarzi's Storm of Radiance",
       "url": "http://dnd2024.wikidot.com/spell:jallarzi-s-storm-of-radiance",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -14291,7 +14291,7 @@
       "index": "legend-lore",
       "name": "Legend Lore",
       "url": "http://dnd2024.wikidot.com/spell:legend-lore",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -14338,7 +14338,7 @@
       "index": "mass-cure-wounds",
       "name": "Mass Cure Wounds",
       "url": "http://dnd2024.wikidot.com/spell:mass-cure-wounds",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -14391,7 +14391,7 @@
       "index": "mislead",
       "name": "Mislead",
       "url": "http://dnd2024.wikidot.com/spell:mislead",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -14436,7 +14436,7 @@
       "index": "modify-memory",
       "name": "Modify Memory",
       "url": "http://dnd2024.wikidot.com/spell:modify-memory",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -14480,7 +14480,7 @@
       "index": "passwall",
       "name": "Passwall",
       "url": "http://dnd2024.wikidot.com/spell:passwall",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -14516,7 +14516,7 @@
       "index": "planar-binding",
       "name": "Planar Binding",
       "url": "http://dnd2024.wikidot.com/spell:planar-binding",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -14573,7 +14573,7 @@
       "index": "raise-dead",
       "name": "Raise Dead",
       "url": "http://dnd2024.wikidot.com/spell:raise-dead",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -14621,7 +14621,7 @@
       "index": "rary-s-telepathic-bond",
       "name": "Rary's Telepathic Bond",
       "url": "http://dnd2024.wikidot.com/spell:rary-s-telepathic-bond",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -14662,7 +14662,7 @@
       "index": "reincarnate",
       "name": "Reincarnate",
       "url": "http://dnd2024.wikidot.com/spell:reincarnate",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -14706,7 +14706,7 @@
       "index": "scrying",
       "name": "Scrying",
       "url": "http://dnd2024.wikidot.com/spell:scrying",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -14764,7 +14764,7 @@
       "index": "seeming",
       "name": "Seeming",
       "url": "http://dnd2024.wikidot.com/spell:seeming",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -14868,7 +14868,7 @@
       "index": "steel-wind-strike",
       "name": "Steel Wind Strike",
       "url": "http://dnd2024.wikidot.com/spell:steel-wind-strike",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -14917,7 +14917,7 @@
       "index": "summon-celestial",
       "name": "Summon Celestial",
       "url": "http://dnd2024.wikidot.com/spell:summon-celestial",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -14959,7 +14959,7 @@
       "index": "summon-dragon",
       "name": "Summon Dragon",
       "url": "http://dnd2024.wikidot.com/spell:summon-dragon",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -14996,7 +14996,7 @@
       "index": "swift-quiver",
       "name": "Swift Quiver",
       "url": "http://dnd2024.wikidot.com/spell:swift-quiver",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -15031,7 +15031,7 @@
       "index": "synaptic-static",
       "name": "Synaptic Static",
       "url": "http://dnd2024.wikidot.com/spell:synaptic-static",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -15089,7 +15089,7 @@
       "index": "telekinesis",
       "name": "Telekinesis",
       "url": "http://dnd2024.wikidot.com/spell:telekinesis",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -15132,7 +15132,7 @@
       "index": "teleportation-circle",
       "name": "Teleportation Circle",
       "url": "http://dnd2024.wikidot.com/spell:teleportation-circle",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -15184,7 +15184,7 @@
       "index": "tree-stride",
       "name": "Tree Stride",
       "url": "http://dnd2024.wikidot.com/spell:tree-stride",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -15224,7 +15224,7 @@
       "index": "wall-of-force",
       "name": "Wall of Force",
       "url": "http://dnd2024.wikidot.com/spell:wall-of-force",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -15260,7 +15260,7 @@
       "index": "wall-of-stone",
       "name": "Wall of Stone",
       "url": "http://dnd2024.wikidot.com/spell:wall-of-stone",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -15315,7 +15315,7 @@
       "index": "yolande-s-regal-presence",
       "name": "Yolande's Regal Presence",
       "url": "http://dnd2024.wikidot.com/spell:yolande-s-regal-presence",
-      "level": 0,
+      "level": 5,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -15363,7 +15363,7 @@
       "index": "arcane-gate",
       "name": "Arcane Gate",
       "url": "http://dnd2024.wikidot.com/spell:arcane-gate",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -15409,7 +15409,7 @@
       "index": "blade-barrier",
       "name": "Blade Barrier",
       "url": "http://dnd2024.wikidot.com/spell:blade-barrier",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -15452,7 +15452,7 @@
       "index": "chain-lightning",
       "name": "Chain Lightning",
       "url": "http://dnd2024.wikidot.com/spell:chain-lightning",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -15502,7 +15502,7 @@
       "index": "circle-of-death",
       "name": "Circle Of Death",
       "url": "http://dnd2024.wikidot.com/spell:circle-of-death",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -15556,7 +15556,7 @@
       "index": "conjure-fey",
       "name": "Conjure Fey",
       "url": "http://dnd2024.wikidot.com/spell:conjure-fey",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -15601,7 +15601,7 @@
       "index": "contingency",
       "name": "Contingency",
       "url": "http://dnd2024.wikidot.com/spell:contingency",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -15638,7 +15638,7 @@
       "index": "create-undead",
       "name": "Create Undead",
       "url": "http://dnd2024.wikidot.com/spell:create-undead",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -15735,7 +15735,7 @@
       "index": "disintegrate",
       "name": "Disintegrate",
       "url": "http://dnd2024.wikidot.com/spell:disintegrate",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -15786,7 +15786,7 @@
       "index": "drawmij-s-instant-summons",
       "name": "Drawmij's Instant Summons",
       "url": "http://dnd2024.wikidot.com/spell:drawmij-s-instant-summons",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -15881,7 +15881,7 @@
       "index": "eyebite",
       "name": "Eyebite",
       "url": "http://dnd2024.wikidot.com/spell:eyebite",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -15934,7 +15934,7 @@
       "index": "find-the-path",
       "name": "Find the Path",
       "url": "http://dnd2024.wikidot.com/spell:find-the-path",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -15980,7 +15980,7 @@
       "index": "flesh-to-stone",
       "name": "Flesh to Stone",
       "url": "http://dnd2024.wikidot.com/spell:flesh-to-stone",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -16027,7 +16027,7 @@
       "index": "forbiddance",
       "name": "Forbiddance",
       "url": "http://dnd2024.wikidot.com/spell:forbiddance",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -16073,7 +16073,7 @@
       "index": "globe-of-invulnerability",
       "name": "Globe of Invulnerability",
       "url": "http://dnd2024.wikidot.com/spell:globe-of-invulnerability",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -16115,7 +16115,7 @@
       "index": "guards-and-wards",
       "name": "Guards and Wards",
       "url": "http://dnd2024.wikidot.com/spell:guards-and-wards",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -16161,7 +16161,7 @@
       "index": "harm",
       "name": "Harm",
       "url": "http://dnd2024.wikidot.com/spell:harm",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -16203,7 +16203,7 @@
       "index": "heal",
       "name": "Heal",
       "url": "http://dnd2024.wikidot.com/spell:heal",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -16243,7 +16243,7 @@
       "index": "heroes-feast",
       "name": "Heroes' Feast",
       "url": "http://dnd2024.wikidot.com/spell:heroes-feast",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -16297,7 +16297,7 @@
       "index": "magic-jar",
       "name": "Magic Jar",
       "url": "http://dnd2024.wikidot.com/spell:magic-jar",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -16338,7 +16338,7 @@
       "index": "mass-suggestion",
       "name": "Mass Suggestion",
       "url": "http://dnd2024.wikidot.com/spell:mass-suggestion",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -16384,7 +16384,7 @@
       "index": "move-earth",
       "name": "Move Earth",
       "url": "http://dnd2024.wikidot.com/spell:move-earth",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -16432,7 +16432,7 @@
       "index": "otiluke-s-freezing-sphere",
       "name": "Otiluke's Freezing Sphere",
       "url": "http://dnd2024.wikidot.com/spell:otiluke-s-freezing-sphere",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -16483,7 +16483,7 @@
       "index": "otto-s-irresistible-dance",
       "name": "Otto's Irresistible Dance",
       "url": "http://dnd2024.wikidot.com/spell:otto-s-irresistible-dance",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -16522,7 +16522,7 @@
       "index": "planar-ally",
       "name": "Planar Ally",
       "url": "http://dnd2024.wikidot.com/spell:planar-ally",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -16560,7 +16560,7 @@
       "index": "programmed-illusion",
       "name": "Programmed Illusion",
       "url": "http://dnd2024.wikidot.com/spell:programmed-illusion",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -16603,7 +16603,7 @@
       "index": "summon-fiend",
       "name": "Summon Fiend",
       "url": "http://dnd2024.wikidot.com/spell:summon-fiend",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -16645,7 +16645,7 @@
       "index": "sunbeam",
       "name": "Sunbeam",
       "url": "http://dnd2024.wikidot.com/spell:sunbeam",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -16705,7 +16705,7 @@
       "index": "tasha-s-bubbling-cauldron",
       "name": "Tasha's Bubbling Cauldron",
       "url": "http://dnd2024.wikidot.com/spell:tasha-s-bubbling-cauldron",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -16747,7 +16747,7 @@
       "index": "transport-via-plants",
       "name": "Transport via Plants",
       "url": "http://dnd2024.wikidot.com/spell:transport-via-plants",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -16781,7 +16781,7 @@
       "index": "true-seeing",
       "name": "True Seeing",
       "url": "http://dnd2024.wikidot.com/spell:true-seeing",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -16836,7 +16836,7 @@
       "index": "wall-of-ice",
       "name": "Wall of Ice",
       "url": "http://dnd2024.wikidot.com/spell:wall-of-ice",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -16883,7 +16883,7 @@
       "index": "wall-of-thorns",
       "name": "Wall of Thorns",
       "url": "http://dnd2024.wikidot.com/spell:wall-of-thorns",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -16929,7 +16929,7 @@
       "index": "wind-walk",
       "name": "Wind Walk",
       "url": "http://dnd2024.wikidot.com/spell:wind-walk",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -16965,7 +16965,7 @@
       "index": "word-of-recall",
       "name": "Word of Recall",
       "url": "http://dnd2024.wikidot.com/spell:word-of-recall",
-      "level": 0,
+      "level": 6,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -16999,7 +16999,7 @@
       "index": "conjure-celestial",
       "name": "Conjure Celestial",
       "url": "http://dnd2024.wikidot.com/spell:conjure-celestial",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -17046,7 +17046,7 @@
       "index": "delayed-blast-fireball",
       "name": "Delayed Blast Fireball",
       "url": "http://dnd2024.wikidot.com/spell:delayed-blast-fireball",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -17098,7 +17098,7 @@
       "index": "divine-word",
       "name": "Divine Word",
       "url": "http://dnd2024.wikidot.com/spell:divine-word",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -17131,7 +17131,7 @@
       "index": "etherealness",
       "name": "Etherealness",
       "url": "http://dnd2024.wikidot.com/spell:etherealness",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -17189,7 +17189,7 @@
       "index": "finger-of-death",
       "name": "Finger of Death",
       "url": "http://dnd2024.wikidot.com/spell:finger-of-death",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -17242,7 +17242,7 @@
       "index": "fire-storm",
       "name": "Fire Storm",
       "url": "http://dnd2024.wikidot.com/spell:fire-storm",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -17295,7 +17295,7 @@
       "index": "forcecage",
       "name": "Forcecage",
       "url": "http://dnd2024.wikidot.com/spell:forcecage",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -17344,7 +17344,7 @@
       "index": "mirage-arcane",
       "name": "Mirage Arcane",
       "url": "http://dnd2024.wikidot.com/spell:mirage-arcane",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -17391,7 +17391,7 @@
       "index": "mordenkainen-s-magnificent-mansion",
       "name": "Mordenkainen's Magnificent Mansion",
       "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-magnificent-mansion",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -17435,7 +17435,7 @@
       "index": "mordenkainen-s-sword",
       "name": "Mordenkainen's Sword",
       "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-sword",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -17486,7 +17486,7 @@
       "index": "plane-shift",
       "name": "Plane Shift",
       "url": "http://dnd2024.wikidot.com/spell:plane-shift",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -17542,7 +17542,7 @@
       "index": "power-word-fortify",
       "name": "Power Word Fortify",
       "url": "http://dnd2024.wikidot.com/spell:power-word-fortify",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -17580,7 +17580,7 @@
       "index": "prismatic-spray",
       "name": "Prismatic Spray",
       "url": "http://dnd2024.wikidot.com/spell:prismatic-spray",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -17632,7 +17632,7 @@
       "index": "project-image",
       "name": "Project Image",
       "url": "http://dnd2024.wikidot.com/spell:project-image",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -17674,7 +17674,7 @@
       "index": "regenerate",
       "name": "Regenerate",
       "url": "http://dnd2024.wikidot.com/spell:regenerate",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -17727,7 +17727,7 @@
       "index": "resurrection",
       "name": "Resurrection",
       "url": "http://dnd2024.wikidot.com/spell:resurrection",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -17770,7 +17770,7 @@
       "index": "reverse-gravity",
       "name": "Reverse Gravity",
       "url": "http://dnd2024.wikidot.com/spell:reverse-gravity",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -17816,7 +17816,7 @@
       "index": "sequester",
       "name": "Sequester",
       "url": "http://dnd2024.wikidot.com/spell:sequester",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -17891,7 +17891,7 @@
       "index": "simulacrum",
       "name": "Simulacrum",
       "url": "http://dnd2024.wikidot.com/spell:simulacrum",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -17929,7 +17929,7 @@
       "index": "symbol",
       "name": "Symbol",
       "url": "http://dnd2024.wikidot.com/spell:symbol",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -17998,7 +17998,7 @@
       "index": "teleport",
       "name": "Teleport",
       "url": "http://dnd2024.wikidot.com/spell:teleport",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -18055,7 +18055,7 @@
       "index": "animal-shapes",
       "name": "Animal Shapes",
       "url": "http://dnd2024.wikidot.com/spell:animal-shapes",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -18091,7 +18091,7 @@
       "index": "antimagic-field",
       "name": "Antimagic Field",
       "url": "http://dnd2024.wikidot.com/spell:antimagic-field",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -18134,7 +18134,7 @@
       "index": "antipathy-sympathy",
       "name": "Antipathy/Sympathy",
       "url": "http://dnd2024.wikidot.com/spell:antipathy-sympathy",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -18182,7 +18182,7 @@
       "index": "befuddlement",
       "name": "Befuddlement",
       "url": "http://dnd2024.wikidot.com/spell:befuddlement",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -18242,7 +18242,7 @@
       "index": "clone",
       "name": "Clone",
       "url": "http://dnd2024.wikidot.com/spell:clone",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -18278,7 +18278,7 @@
       "index": "control-weather",
       "name": "Control Weather",
       "url": "http://dnd2024.wikidot.com/spell:control-weather",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -18333,7 +18333,7 @@
       "index": "demiplane",
       "name": "Demiplane",
       "url": "http://dnd2024.wikidot.com/spell:demiplane",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -18378,7 +18378,7 @@
       "index": "dominate-monster",
       "name": "Dominate Monster",
       "url": "http://dnd2024.wikidot.com/spell:dominate-monster",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -18430,7 +18430,7 @@
       "index": "earthquake",
       "name": "Earthquake",
       "url": "http://dnd2024.wikidot.com/spell:earthquake",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -18488,7 +18488,7 @@
       "index": "glibness",
       "name": "Glibness",
       "url": "http://dnd2024.wikidot.com/spell:glibness",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -18526,7 +18526,7 @@
       "index": "holy-aura",
       "name": "Holy Aura",
       "url": "http://dnd2024.wikidot.com/spell:holy-aura",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -18561,7 +18561,7 @@
       "index": "holy-star-of-mystra",
       "name": "Holy Star of Mystra",
       "url": "http://dnd2024.wikidot.com/spell:holy-star-of-mystra",
-      "level": 0,
+      "level": 7,
       "school": {
         "index": "source: forgotten realms - heroes of faerun\nlevel 8 evocation (cleric, wizard)\ncasting time: bonus action\nrange: self\ncomponents: v, s\nduration: concentration, up to 1 minute",
         "name": "Source: Forgotten Realms - Heroes of Faerun\nLevel 8 Evocation (Cleric, Wizard)\nCasting Time: Bonus Action\nRange: Self\nComponents: V, S\nDuration: Concentration, up to 1 minute",
@@ -18610,7 +18610,7 @@
       "index": "incendiary-cloud",
       "name": "Incendiary Cloud",
       "url": "http://dnd2024.wikidot.com/spell:incendiary-cloud",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -18664,7 +18664,7 @@
       "index": "maze",
       "name": "Maze",
       "url": "http://dnd2024.wikidot.com/spell:maze",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -18700,7 +18700,7 @@
       "index": "mind-blank",
       "name": "Mind Blank",
       "url": "http://dnd2024.wikidot.com/spell:mind-blank",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -18739,7 +18739,7 @@
       "index": "power-word-stun",
       "name": "Power Word Stun",
       "url": "http://dnd2024.wikidot.com/spell:power-word-stun",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -18788,7 +18788,7 @@
       "index": "sunburst",
       "name": "Sunburst",
       "url": "http://dnd2024.wikidot.com/spell:sunburst",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -18848,7 +18848,7 @@
       "index": "telepathy",
       "name": "Telepathy",
       "url": "http://dnd2024.wikidot.com/spell:telepathy",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -18884,7 +18884,7 @@
       "index": "tsunami",
       "name": "Tsunami",
       "url": "http://dnd2024.wikidot.com/spell:tsunami",
-      "level": 0,
+      "level": 8,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -18929,7 +18929,7 @@
       "index": "astral-projection",
       "name": "Astral Projection",
       "url": "http://dnd2024.wikidot.com/spell:astral-projection",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -18978,7 +18978,7 @@
       "index": "blade-of-disaster",
       "name": "Blade Of Disaster",
       "url": "http://dnd2024.wikidot.com/spell:blade-of-disaster",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -19033,7 +19033,7 @@
       "index": "foresight",
       "name": "Foresight",
       "url": "http://dnd2024.wikidot.com/spell:foresight",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "divination",
         "name": "Divination",
@@ -19083,7 +19083,7 @@
       "index": "gate",
       "name": "Gate",
       "url": "http://dnd2024.wikidot.com/spell:gate",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -19136,7 +19136,7 @@
       "index": "imprisonment",
       "name": "Imprisonment",
       "url": "http://dnd2024.wikidot.com/spell:imprisonment",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -19184,7 +19184,7 @@
       "index": "mass-heal",
       "name": "Mass Heal",
       "url": "http://dnd2024.wikidot.com/spell:mass-heal",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -19218,7 +19218,7 @@
       "index": "meteor-swarm",
       "name": "Meteor Swarm",
       "url": "http://dnd2024.wikidot.com/spell:meteor-swarm",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "evocation",
         "name": "Evocation",
@@ -19266,7 +19266,7 @@
       "index": "power-word-heal",
       "name": "Power Word Heal",
       "url": "http://dnd2024.wikidot.com/spell:power-word-heal",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -19304,7 +19304,7 @@
       "index": "power-word-kill",
       "name": "Power Word Kill",
       "url": "http://dnd2024.wikidot.com/spell:power-word-kill",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "enchantment",
         "name": "Enchantment",
@@ -19360,7 +19360,7 @@
       "index": "prismatic-wall",
       "name": "Prismatic Wall",
       "url": "http://dnd2024.wikidot.com/spell:prismatic-wall",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "abjuration",
         "name": "Abjuration",
@@ -19402,7 +19402,7 @@
       "index": "shapechange",
       "name": "Shapechange",
       "url": "http://dnd2024.wikidot.com/spell:shapechange",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -19445,7 +19445,7 @@
       "index": "storm-of-vengeance",
       "name": "Storm of Vengeance",
       "url": "http://dnd2024.wikidot.com/spell:storm-of-vengeance",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
@@ -19492,7 +19492,7 @@
       "index": "time-stop",
       "name": "Time Stop",
       "url": "http://dnd2024.wikidot.com/spell:time-stop",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -19539,7 +19539,7 @@
       "index": "true-polymorph",
       "name": "True Polymorph",
       "url": "http://dnd2024.wikidot.com/spell:true-polymorph",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "transmutation",
         "name": "Transmutation",
@@ -19592,7 +19592,7 @@
       "index": "true-resurrection",
       "name": "True Resurrection",
       "url": "http://dnd2024.wikidot.com/spell:true-resurrection",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "necromancy",
         "name": "Necromancy",
@@ -19634,7 +19634,7 @@
       "index": "weird",
       "name": "Weird",
       "url": "http://dnd2024.wikidot.com/spell:weird",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "illusion",
         "name": "Illusion",
@@ -19682,7 +19682,7 @@
       "index": "wish",
       "name": "Wish",
       "url": "http://dnd2024.wikidot.com/spell:wish",
-      "level": 0,
+      "level": 9,
       "school": {
         "index": "conjuration",
         "name": "Conjuration",
