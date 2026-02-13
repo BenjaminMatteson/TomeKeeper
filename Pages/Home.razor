@@ -45,12 +45,18 @@
 
         @foreach (var levelGroup in GetSpellsByLevel())
         {
+            var isExpanded = IsLevelExpanded(levelGroup.Key);
             <div class="spell-level-section">
-                <div class="spell-level-header">
-                    <h3>@GetLevelName(levelGroup.Key)</h3>
+                <div class="spell-level-header" @onclick="@(() => ToggleLevelExpansion(levelGroup.Key))">
+                    <div class="spell-level-header-content">
+                        <span class="expand-icon">@(isExpanded ? "▼" : "▶")</span>
+                        <h3>@GetLevelName(levelGroup.Key)</h3>
+                    </div>
                     <span class="spell-count">@levelGroup.Count() spells</span>
                 </div>
-                <div class="spell-list">
+                @if (isExpanded)
+                {
+                    <div class="spell-list">
                     @foreach (var spell in levelGroup)
                     {
                         <div class="spell-list-item" @onclick="@(() => OnCardClick(spell))">
@@ -77,6 +83,7 @@
                         </div>
                     }
                 </div>
+                }
             </div>
         }
     </MudContainer>
@@ -193,6 +200,9 @@ else
     private bool _isLoadingDetails { get; set; } = false;
     private bool _isActive { get; set; } = false;
     private bool _isInitialized = false;
+
+    // Track expanded spell level sections (all expanded by default)
+    private HashSet<short> _expandedLevels = new HashSet<short> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
     // Dialog-related fields
     private bool _showSpellDialog = false;
@@ -342,6 +352,23 @@ else
     private string GetLevelName(short level)
     {
         return level == 0 ? "Cantrips" : $"Level {level} Spells";
+    }
+
+    private bool IsLevelExpanded(short level)
+    {
+        return _expandedLevels.Contains(level);
+    }
+
+    private void ToggleLevelExpansion(short level)
+    {
+        if (_expandedLevels.Contains(level))
+        {
+            _expandedLevels.Remove(level);
+        }
+        else
+        {
+            _expandedLevels.Add(level);
+        }
     }
     #endregion
 
