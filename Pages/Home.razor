@@ -43,56 +43,42 @@
                          AdornmentIcon="@Icons.Material.Filled.Search"
                          Class="mb-4" />
 
-        <MudGrid Spacing="3" Justify="Justify.FlexStart">
-            @foreach (var spell in _filteredSpellList)
-            {
-                <MudItem xs="12" sm="6" md="4" lg="3">
-                    <MudCard Class="spell-card" Style="height: 180px;">
-                            <MudCardHeader Style="background: linear-gradient(180deg, var(--primary-red-dark) 0%, #4a1510 100%); color: var(--parchment-light); padding: 12px 16px; border-bottom: 2px solid var(--accent-gold);">
-                                <CardHeaderContent>
-                                    <div @onclick="@(() => OnCardClick(spell))" style="cursor: pointer;">
-                                        <MudText Typo="Typo.h6" Style="font-weight: 600; margin-bottom: 4px; font-family: 'Cinzel', serif;">@spell.Name</MudText>
-                                        <MudText Typo="Typo.caption" Style="color: var(--accent-gold-light);">
-                                            @if (spell.Level == 0)
-                                            {
-                                                <text>Cantrip</text>
-                                            }
-                                            else
-                                            {
-                                                <text>Level @spell.Level</text>
-                                            }
-                                        </MudText>
-                                    </div>
-                                </CardHeaderContent>
-                                <CardHeaderActions>
-                                    @if (IsSpellSaved(spell.Index))
-                                    {
-                                        <MudIconButton Icon="@Icons.Material.Filled.BookmarkRemove"
-                                                       Color="Color.Warning"
-                                                       Size="Size.Small"
-                                                       OnClick="@(() => ToggleSpellbook(spell))" />
-                                    }
-                                    else
-                                    {
-                                        <MudIconButton Icon="@Icons.Material.Filled.BookmarkAdd"
-                                                       Color="Color.Success"
-                                                       Size="Size.Small"
-                                                       OnClick="@(() => ToggleSpellbook(spell))" />
-                                    }
-                                </CardHeaderActions>
-                            </MudCardHeader>
-                            <MudCardContent Style="padding: 8px 16px; background-color: var(--parchment-medium); cursor: pointer; height: 70px; overflow: hidden;" @onclick="@(() => OnCardClick(spell))">
-                                <MudText Typo="Typo.caption" Style="color: var(--primary-red-dark); font-weight: 600; margin-bottom: 4px;">
-                                    @spell.School @(spell.Level == 0 ? "Cantrip" : $"• Level {spell.Level}")
-                                </MudText>
-                                <MudText Typo="Typo.body2" Style="color: var(--iron-grey); font-size: 0.7rem; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
-                                    @spell.DescPreview
-                                </MudText>
-                            </MudCardContent>
-                        </MudCard>
-                    </MudItem>
-            }
-        </MudGrid>
+        @foreach (var levelGroup in GetSpellsByLevel())
+        {
+            <div class="spell-level-section">
+                <div class="spell-level-header">
+                    <h3>@GetLevelName(levelGroup.Key)</h3>
+                    <span class="spell-count">@levelGroup.Count() spells</span>
+                </div>
+                <div class="spell-list">
+                    @foreach (var spell in levelGroup)
+                    {
+                        <div class="spell-list-item" @onclick="@(() => OnCardClick(spell))">
+                            <div class="spell-list-main">
+                                <div class="spell-list-name">@spell.Name</div>
+                                <div class="spell-list-school">@spell.School</div>
+                            </div>
+                            <div class="spell-list-actions" @onclick:stopPropagation="true">
+                                @if (IsSpellSaved(spell.Index))
+                                {
+                                    <MudIconButton Icon="@Icons.Material.Filled.BookmarkRemove"
+                                                   Color="Color.Warning"
+                                                   Size="Size.Small"
+                                                   OnClick="@(() => ToggleSpellbook(spell))" />
+                                }
+                                else
+                                {
+                                    <MudIconButton Icon="@Icons.Material.Filled.BookmarkAdd"
+                                                   Color="Color.Success"
+                                                   Size="Size.Small"
+                                                   OnClick="@(() => ToggleSpellbook(spell))" />
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
     </MudContainer>
 
     @* Spell Details Modal Overlay *@
@@ -344,6 +330,18 @@ else
             await SavedSpellsService.AddSpell(spell.Index);
         }
         StateHasChanged();
+    }
+
+    private IEnumerable<IGrouping<short, SpellListItem>> GetSpellsByLevel()
+    {
+        return _filteredSpellList
+            .GroupBy(s => s.Level)
+            .OrderBy(g => g.Key);
+    }
+
+    private string GetLevelName(short level)
+    {
+        return level == 0 ? "Cantrips" : $"Level {level} Spells";
     }
     #endregion
 

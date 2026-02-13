@@ -873,7 +873,127 @@ article.content {
 }
 
 /* ================================================
-   SPELL CARD GRID - Enhanced Card Design
+   SPELL LIST - Sectioned by Level
+   ================================================ */
+.spell-level-section {
+    margin-bottom: 2rem;
+}
+
+.spell-level-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: linear-gradient(180deg, var(--primary-red-dark) 0%, #4a1510 100%);
+    border: 2px solid var(--accent-gold);
+    border-bottom: none;
+    position: relative;
+}
+
+.spell-level-header h3 {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--parchment-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.spell-count {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: var(--accent-gold-light);
+    font-weight: 600;
+}
+
+.spell-list {
+    border: 2px solid var(--parchment-dark-border);
+    background-color: var(--parchment-medium);
+}
+
+.spell-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--parchment-dark-border);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--parchment-medium);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.spell-list-item:last-child {
+    border-bottom: none;
+}
+
+.spell-list-item:hover {
+    background-color: var(--parchment-light);
+    padding-left: 25px;
+    box-shadow: inset 3px 0 0 var(--primary-red-dark);
+}
+
+.spell-list-item:active {
+    background-color: var(--parchment-dark);
+}
+
+.spell-list-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.spell-list-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink-black);
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.spell-list-school {
+    font-size: 0.85rem;
+    color: var(--primary-red-dark);
+    font-weight: 500;
+}
+
+.spell-list-actions {
+    margin-left: 12px;
+    flex-shrink: 0;
+}
+
+/* Mobile adjustments for spell list */
+@media (max-width: 480px) {
+    .spell-level-header {
+        padding: 10px 15px;
+    }
+
+    .spell-level-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .spell-count {
+        font-size: 0.75rem;
+    }
+
+    .spell-list-item {
+        padding: 10px 15px;
+    }
+
+    .spell-list-name {
+        font-size: 0.95rem;
+    }
+
+    .spell-list-school {
+        font-size: 0.8rem;
+    }
+}
+
+/* ================================================
+   SPELL CARD GRID - Enhanced Card Design (Legacy - keeping for reference)
    ================================================ */
 .spell-card {
     transition: all 0.3s ease;
