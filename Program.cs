@@ -15,11 +15,10 @@ builder.Services.AddScoped<SavedSpellsService>();
 
 builder.Services.AddTransient<IExpandableScrollViewModel, ExpandableScrollViewModel>();
 
-builder.Services.AddSingleton<IAPIService, APIService>();
+builder.Services.AddScoped<IAPIService, APIService>();
 builder.Services.AddSingleton<ITextFormatterService, TextFormatterService>();
-builder.Services.AddSingleton<ISpellListItemsCacheService, SpellListItemsCacheService>();
-
 builder.Services.AddSingleton<SpellListItemsCacheService>();
+builder.Services.AddSingleton<ISpellListItemsCacheService>(sp => sp.GetRequiredService<SpellListItemsCacheService>());
 builder.Services.AddSingleton<SpellDetailsCacheService>();
 
 builder.Services.AddMudServices();
